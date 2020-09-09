@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSx-um-fQb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MyPage-->
+        <scene sceneID="A4Q-55-VfN">
+            <objects>
+                <viewController id="fSx-um-fQb" customClass="MyPageViewController" customModule="ZooTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="89z-Yc-6sj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xyV-kB-iHx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="MyPage" image="person" catalog="system" id="AhU-Kc-lFl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAq-i2-c50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="317"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Vhn-g9-jWj">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="AQH-x6-p6f" customClass="LoginViewController" customModule="YoutubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oyP-Fw-8yI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ログインをすると、お気に入りの動物の動画をお届けします。" translatesAutoresizingMaskIntoConstraints="NO" id="wJP-Sd-CTr">
+                                <rect key="frame" x="57" y="64" width="300" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="al8-yv-x93"/>
+                                    <constraint firstAttribute="height" constant="70" id="v9f-dp-klN"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アカウント名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2H-8D-7Tn">
+                                <rect key="frame" x="57" y="144" width="300" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pta-5O-hoF">
+                                <rect key="frame" x="57" y="188" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="k8q-S0-ekk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSF-hJ-jAZ">
+                                <rect key="frame" x="57" y="232" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MgH-6e-1ju"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2MM-TR-4e9">
+                                <rect key="frame" x="0.0" y="306" width="414" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="lJF-Do-m4z"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKL-Uh-mzh">
+                                <rect key="frame" x="132" y="486" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Qni-Zx-q2e"/>
+                                </constraints>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleLoginButton:" destination="AQH-x6-p6f" eventType="touchUpInside" id="K7W-1X-Tht"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-eE-fwW">
+                                <rect key="frame" x="132" y="526" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="S89-sI-2eO"/>
+                                </constraints>
+                                <state key="normal" title="アカウント作成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleCreateAccountButton:" destination="AQH-x6-p6f" eventType="touchUpInside" id="Ttt-zT-stP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好きな動物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-KT-hgL">
+                                <rect key="frame" x="157" y="276" width="100" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ByO-Oo-2py"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t53-dw-Vn7" firstAttribute="trailing" secondItem="2MM-TR-4e9" secondAttribute="trailing" id="2tz-ig-M35"/>
+                            <constraint firstItem="LKL-Uh-mzh" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="Cd3-Hi-fHe"/>
+                            <constraint firstItem="wJP-Sd-CTr" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="E3c-MW-67h"/>
+                            <constraint firstItem="O0d-eE-fwW" firstAttribute="top" secondItem="LKL-Uh-mzh" secondAttribute="bottom" constant="10" id="GHE-aZ-5Fa"/>
+                            <constraint firstItem="jSF-hJ-jAZ" firstAttribute="top" secondItem="pta-5O-hoF" secondAttribute="bottom" constant="10" id="NJm-AU-bj9"/>
+                            <constraint firstItem="m2H-8D-7Tn" firstAttribute="trailing" secondItem="pta-5O-hoF" secondAttribute="trailing" id="PAJ-s2-wso"/>
+                            <constraint firstItem="m2H-8D-7Tn" firstAttribute="leading" secondItem="pta-5O-hoF" secondAttribute="leading" id="VNn-mU-itm"/>
+                            <constraint firstItem="wJP-Sd-CTr" firstAttribute="top" secondItem="t53-dw-Vn7" secondAttribute="top" constant="20" id="aKG-RK-Nws"/>
+                            <constraint firstItem="pta-5O-hoF" firstAttribute="top" secondItem="m2H-8D-7Tn" secondAttribute="bottom" constant="10" id="as1-Qf-vcQ"/>
+                            <constraint firstItem="jSF-hJ-jAZ" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="ayk-cZ-rI1"/>
+                            <constraint firstItem="2MM-TR-4e9" firstAttribute="top" secondItem="D5X-KT-hgL" secondAttribute="bottom" constant="10" id="b1x-mi-uaT"/>
+                            <constraint firstItem="2MM-TR-4e9" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="bWG-sY-NSF"/>
+                            <constraint firstItem="m2H-8D-7Tn" firstAttribute="top" secondItem="wJP-Sd-CTr" secondAttribute="bottom" constant="10" id="iAZ-TX-Ppw"/>
+                            <constraint firstItem="pta-5O-hoF" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="iNk-Ki-BgU"/>
+                            <constraint firstItem="t53-dw-Vn7" firstAttribute="trailing" secondItem="2MM-TR-4e9" secondAttribute="trailing" id="lLK-Ep-jt0"/>
+                            <constraint firstItem="D5X-KT-hgL" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="sFH-UC-8nf"/>
+                            <constraint firstItem="2MM-TR-4e9" firstAttribute="leading" secondItem="t53-dw-Vn7" secondAttribute="leading" id="xvN-Ya-aLt"/>
+                            <constraint firstItem="D5X-KT-hgL" firstAttribute="top" secondItem="jSF-hJ-jAZ" secondAttribute="bottom" constant="10" id="ymZ-vX-Lhm"/>
+                            <constraint firstItem="LKL-Uh-mzh" firstAttribute="top" secondItem="2MM-TR-4e9" secondAttribute="bottom" constant="10" id="zJz-rm-wRM"/>
+                            <constraint firstItem="O0d-eE-fwW" firstAttribute="centerX" secondItem="oyP-Fw-8yI" secondAttribute="centerX" id="zbA-CU-3Nc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t53-dw-Vn7"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="m2H-8D-7Tn" id="ipi-6W-DFk"/>
+                        <outlet property="likeAnimalLabel" destination="D5X-KT-hgL" id="MWl-4F-Z4m"/>
+                        <outlet property="likeAnimalPicker" destination="2MM-TR-4e9" id="0su-dl-QQQ"/>
+                        <outlet property="mailAddressTextField" destination="jSF-hJ-jAZ" id="S0P-IW-dJ7"/>
+                        <outlet property="passwordTextField" destination="pta-5O-hoF" id="ASe-zI-y8M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsg-oJ-IKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="325"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="JVj-zG-6KF">
+            <objects>
+                <viewController id="3ZB-C0-vhQ" customClass="SettingViewController" customModule="YoutubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="azS-GH-d7S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アカウント名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcF-S7-FYm">
+                                <rect key="frame" x="57" y="119" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="xhF-uC-79M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SR8-Ns-fzW">
+                                <rect key="frame" x="132" y="413" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Oij-R0-0tk"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleLogoutButton:" destination="3ZB-C0-vhQ" eventType="touchUpInside" id="0XR-aU-x1e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckM-BH-qkF">
+                                <rect key="frame" x="132" y="373" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Ia1-Se-spU"/>
+                                </constraints>
+                                <state key="normal" title="変更を更新">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleChangeButton:" destination="3ZB-C0-vhQ" eventType="touchUpInside" id="LoI-ug-LaK"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNr-4Z-4sS">
+                                <rect key="frame" x="0.0" y="193" width="414" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="o8n-j2-RRS"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好きな動物の変更" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtN-KG-d3C">
+                                <rect key="frame" x="107" y="163" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eFd-Op-EfQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="vf0-dA-00h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アカウント名の変更" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4m-Hw-u9B">
+                                <rect key="frame" x="107" y="81" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="7sw-WB-WJh"/>
+                                    <constraint firstAttribute="width" constant="200" id="Lhk-UP-KvY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZMi-0Y-y1q" firstAttribute="trailing" secondItem="wNr-4Z-4sS" secondAttribute="trailing" id="2kE-c7-pcZ"/>
+                            <constraint firstItem="SR8-Ns-fzW" firstAttribute="centerX" secondItem="azS-GH-d7S" secondAttribute="centerX" id="5n9-Ki-Owp"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="leading" secondItem="ZMi-0Y-y1q" secondAttribute="leading" id="6jN-8b-A8o"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="top" secondItem="EtN-KG-d3C" secondAttribute="bottom" constant="10" id="8CW-5g-8o9"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="centerX" secondItem="azS-GH-d7S" secondAttribute="centerX" id="Bhh-Rw-a0v"/>
+                            <constraint firstItem="ckM-BH-qkF" firstAttribute="centerX" secondItem="azS-GH-d7S" secondAttribute="centerX" id="CMw-Z7-d6Z"/>
+                            <constraint firstItem="vcF-S7-FYm" firstAttribute="centerX" secondItem="EtN-KG-d3C" secondAttribute="centerX" id="Id1-XG-ze6"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="trailing" secondItem="ZMi-0Y-y1q" secondAttribute="trailing" id="Kj5-cE-GdN"/>
+                            <constraint firstItem="l4m-Hw-u9B" firstAttribute="centerX" secondItem="azS-GH-d7S" secondAttribute="centerX" id="LGB-mc-9Gp"/>
+                            <constraint firstItem="EtN-KG-d3C" firstAttribute="centerX" secondItem="azS-GH-d7S" secondAttribute="centerX" id="Oho-MX-jbr"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="top" secondItem="EtN-KG-d3C" secondAttribute="bottom" constant="10" id="YHX-LB-QUj"/>
+                            <constraint firstItem="ckM-BH-qkF" firstAttribute="top" secondItem="wNr-4Z-4sS" secondAttribute="bottom" constant="10" id="ai1-aG-pa6"/>
+                            <constraint firstItem="vcF-S7-FYm" firstAttribute="top" secondItem="l4m-Hw-u9B" secondAttribute="bottom" constant="18" id="g2V-oR-6b5"/>
+                            <constraint firstItem="wNr-4Z-4sS" firstAttribute="leading" secondItem="ZMi-0Y-y1q" secondAttribute="leading" id="gy9-hs-B0k"/>
+                            <constraint firstItem="SR8-Ns-fzW" firstAttribute="top" secondItem="ckM-BH-qkF" secondAttribute="bottom" constant="10" id="mYs-Zp-eOF"/>
+                            <constraint firstItem="l4m-Hw-u9B" firstAttribute="top" secondItem="ZMi-0Y-y1q" secondAttribute="top" constant="37" id="mhn-iI-Wqm"/>
+                            <constraint firstItem="EtN-KG-d3C" firstAttribute="top" secondItem="vcF-S7-FYm" secondAttribute="bottom" constant="10" id="ybN-rq-Gvf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZMi-0Y-y1q"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="vcF-S7-FYm" id="rg3-17-eAn"/>
+                        <outlet property="likeAnimalLabel" destination="EtN-KG-d3C" id="Irg-dp-8Nr"/>
+                        <outlet property="likeAnimalPicker" destination="wNr-4Z-4sS" id="5Ge-cH-oZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twv-sG-c6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="325"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
+</document>

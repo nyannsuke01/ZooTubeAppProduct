@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pmH-yx-ubP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Empty Data Set Delegate-->
+        <scene sceneID="2NY-TW-fbf">
+            <objects>
+                <viewController id="pmH-yx-ubP" customClass="LikeViewController" customModule="ZooTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ujE-rU-XOH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RPM-fu-6Uu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hoy-hC-pwb">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hoy-hC-pwb" id="EfQ-ae-47d">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pmH-yx-ubP" id="kfF-Kl-AxI"/>
+                                    <outlet property="delegate" destination="pmH-yx-ubP" id="RMQ-bb-Zls"/>
+                                    <outlet property="emptyDataSetDelegate" destination="pmH-yx-ubP" id="le2-6L-mh2"/>
+                                    <outlet property="emptyDataSetSource" destination="pmH-yx-ubP" id="AVd-Nl-gqT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RPM-fu-6Uu" firstAttribute="top" secondItem="4oK-3V-eqU" secondAttribute="top" id="ICa-eb-QvU"/>
+                            <constraint firstItem="RPM-fu-6Uu" firstAttribute="leading" secondItem="4oK-3V-eqU" secondAttribute="leading" id="IUs-Hj-1We"/>
+                            <constraint firstItem="4oK-3V-eqU" firstAttribute="trailing" secondItem="RPM-fu-6Uu" secondAttribute="trailing" id="rzo-9m-GzQ"/>
+                            <constraint firstItem="4oK-3V-eqU" firstAttribute="bottom" secondItem="RPM-fu-6Uu" secondAttribute="bottom" id="t3R-cV-hm3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4oK-3V-eqU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Like" image="heart" catalog="system" id="gsz-lt-KEX"/>
+                    <connections>
+                        <outlet property="likeTableView" destination="RPM-fu-6Uu" id="4Hh-EJ-GTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7DT-H3-ZJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+    </resources>
+</document>
