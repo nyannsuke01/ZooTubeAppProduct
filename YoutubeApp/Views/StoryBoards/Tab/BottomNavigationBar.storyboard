@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Base Tab Bar Controller-->
+        <!--Bottom Navigation Bar View Controller-->
         <scene sceneID="1he-s7-b6d">
             <objects>
-                <tabBarController id="h0v-8x-ccc" customClass="BaseTabBarController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="h0v-8x-ccc" customClass="BottomNavigationBarViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Egu-lj-WaH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,7 +29,7 @@
         <scene sceneID="MXr-mJ-eG0">
             <objects>
                 <viewControllerPlaceholder storyboardName="VideoList" id="Ybr-5h-SX0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aQ3-jP-2KQ"/>
+                    <tabBarItem key="tabBarItem" title="home" image="house" catalog="system" id="aQ3-jP-2KQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dy8-lk-hg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +39,7 @@
         <scene sceneID="CY0-8g-YdE">
             <objects>
                 <viewControllerPlaceholder storyboardName="Like" id="PTS-js-jtZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="z4x-y3-kvp"/>
+                    <tabBarItem key="tabBarItem" title="like" image="heart" catalog="system" id="z4x-y3-kvp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqV-8k-oOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,11 +49,16 @@
         <scene sceneID="dXN-Sf-FeE">
             <objects>
                 <viewControllerPlaceholder storyboardName="MyPage" id="seY-4y-Qjh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YLy-97-Uj2"/>
+                    <tabBarItem key="tabBarItem" title="my page" image="person" catalog="system" id="YLy-97-Uj2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3P-b3-Y1Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85" y="-31"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

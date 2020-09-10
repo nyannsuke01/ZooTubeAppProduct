@@ -222,6 +222,8 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - Firebase (6.31.1):
     - Firebase/Core (= 6.31.1)
+  - Firebase/Analytics (6.31.1):
+    - Firebase/Core
   - Firebase/Auth (6.31.1):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.0)
@@ -352,6 +354,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.2)
   - DZNEmptyDataSet
   - Firebase
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
@@ -418,6 +421,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: e4baa8063d25aefed6bfa922e25e35923b95d22e
+PODFILE CHECKSUM: be212624952de207f8f0f0e63aa4d14c738d27e5
 
 COCOAPODS: 1.8.4
