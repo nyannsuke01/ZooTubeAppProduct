@@ -12,7 +12,6 @@
 		7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C138CD024C410E300C4DB2F /* BottomNavigationBar.storyboard */; };
 		7C138CD724C4178900C4DB2F /* UIImage-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C138CD624C4178900C4DB2F /* UIImage-Extension.swift */; };
 		7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C138CD924C420F000C4DB2F /* Zoo.storyboard */; };
-		7C138CDC24C4211000C4DB2F /* Like.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C138CDB24C4211000C4DB2F /* Like.storyboard */; };
 		7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C138CDF24C4213900C4DB2F /* MyPage.storyboard */; };
 		7C26DA6924B595C900CB29B9 /* VideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26DA6824B595C900CB29B9 /* VideoListCell.swift */; };
 		7C26DA6C24B5965800CB29B9 /* VideoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */; };
@@ -58,6 +57,7 @@
 		CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32FEC9250765E2001082A2 /* Photos.xcassets */; };
 		CE32FECD2507BB61001082A2 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FECC2507BB60001082A2 /* APIKey.plist */; };
 		CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */; };
+		CEB71224250A42620045FD15 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71223250A42620045FD15 /* LikeView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 		7C138CD024C410E300C4DB2F /* BottomNavigationBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BottomNavigationBar.storyboard; sourceTree = "<group>"; };
 		7C138CD624C4178900C4DB2F /* UIImage-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage-Extension.swift"; sourceTree = "<group>"; };
 		7C138CD924C420F000C4DB2F /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
-		7C138CDB24C4211000C4DB2F /* Like.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Like.storyboard; sourceTree = "<group>"; };
 		7C138CDF24C4213900C4DB2F /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		7C26DA6824B595C900CB29B9 /* VideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListCell.swift; sourceTree = "<group>"; };
 		7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListCell.xib; sourceTree = "<group>"; };
@@ -137,6 +136,7 @@
 		CE32FEC9250765E2001082A2 /* Photos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Photos.xcassets; sourceTree = "<group>"; };
 		CE32FECC2507BB60001082A2 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEB71223250A42620045FD15 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 				7C138CD024C410E300C4DB2F /* BottomNavigationBar.storyboard */,
 				7CE584D224B1F19300281866 /* VideoList.storyboard */,
 				7C138CD924C420F000C4DB2F /* Zoo.storyboard */,
-				7C138CDB24C4211000C4DB2F /* Like.storyboard */,
+				CEB71223250A42620045FD15 /* LikeView.storyboard */,
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
 			);
 			path = Tab;
@@ -510,7 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE584D924B1F19400281866 /* LaunchScreen.storyboard in Resources */,
-				7C138CDC24C4211000C4DB2F /* Like.storyboard in Resources */,
+				CEB71224250A42620045FD15 /* LikeView.storyboard in Resources */,
 				7C26DA6C24B5965800CB29B9 /* VideoListCell.xib in Resources */,
 				7C34CF5F24D624EE00160445 /* AttentionCollectionViewCell.xib in Resources */,
 				CE32FECD2507BB61001082A2 /* APIKey.plist in Resources */,

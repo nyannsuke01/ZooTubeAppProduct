@@ -20,8 +20,6 @@ class PlayWebViewController: UIViewController {
         webView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 50)
         view.addSubview(webView)
 
-        //TODO: 戻るボタンの実装(左上　コードで)
-
         //渡されたurlをwebViewに読み込む
         if UserDefaults.standard.object(forKey: "url") != nil{
             let urlString = UserDefaults.standard.object(forKey: "url")

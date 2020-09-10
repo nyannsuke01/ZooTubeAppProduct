@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="91" y="-251"/>
         </scene>
-        <!--Like-->
+        <!--LikeView-->
         <scene sceneID="CY0-8g-YdE">
             <objects>
-                <viewControllerPlaceholder storyboardName="Like" id="PTS-js-jtZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="LikeView" id="PTS-js-jtZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="like" image="heart" catalog="system" id="z4x-y3-kvp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqV-8k-oOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -94,7 +94,7 @@ class VideoListViewController: UIViewController {
 // MARK: - ScrollViewのDelegateメソッド
 extension VideoListViewController {
     
-    // scrollViewがscrollした時に呼ばれるメソッド
+    // scrollした時に呼ばれるメソッド
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         headerAnimation(scrollView: scrollView)
     }
