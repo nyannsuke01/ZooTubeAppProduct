@@ -22,19 +22,19 @@ class BottomNavigationBarViewController: UITabBarController, UITabBarControllerD
     }
 
     // タブバーのアイコンがタップされた時に呼ばれるdelegateメソッドを処理する。
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController is MyPageViewController {
-            // MyPageViewControllerをタップした時、ログインしていなければ
-            if Auth.auth().currentUser == nil {
-                // loginViewControllerに遷移
-                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-                self.present(loginViewController!, animated: true, completion: nil)
-            }
-            return false
-
-        } else {
-            // その他のViewControllerは通常のタブ切り替えを実施
-            return true
-        }
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        if viewController is MyPageViewController {
+//            // MyPageViewControllerをタップした時、ログインしていなければ
+//            if Auth.auth().currentUser == nil {
+//                // loginViewControllerに遷移
+//                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+//                self.present(loginViewController!, animated: true, completion: nil)
+//            }
+//            return false
+//
+//        } else {
+//            // その他のViewControllerは通常のタブ切り替えを実施
+//            return true
+//        }
+//    }
 }

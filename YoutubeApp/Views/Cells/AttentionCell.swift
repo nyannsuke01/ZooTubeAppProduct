@@ -28,10 +28,10 @@ class AttentionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .blue
+        backgroundColor = .gray
         
         addSubview(attentionCollectionView)
-        
+        //制約をコードで記述　セル内部の制約
         [
             attentionCollectionView.topAnchor.constraint(equalTo: self.topAnchor),
             attentionCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -52,25 +52,29 @@ class AttentionCell: UICollectionViewCell {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension AttentionCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    //コレクションビューの最小幅の設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
-    
+    //コレクションビューの高さ幅を設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = self.frame.height
         
         return .init(width: height, height: height)
     }
-    
+    //コレクションビューのアイテム数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-    
+    //コレクションビューのアイテム
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = attentionCollectionView.dequeueReusableCell(withReuseIdentifier: attentionId, for: indexPath) as! AttentionCollectionViewCell
-        cell.videoItem = videoItems[indexPath.row]
-        
+
+        if self.videoItems.count == 0 {
+            return cell
+        } else {
+            cell.videoItem = videoItems[indexPath.row]
+        }
         return cell
     }
     

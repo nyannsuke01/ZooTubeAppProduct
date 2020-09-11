@@ -21,10 +21,13 @@ class VideoListViewController: UIViewController {
     private let headerMoveHeight: CGFloat = 5
     
     private let cellId = "cellId"
-    private let atentionCellId = "atentionCellId"
     private var videoItems = [Item]()
 
-
+    @IBAction func toSetting(_ sender: Any) {
+        print("設定ボタンがタップされました")
+        let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
+        self.present(settingVC, animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,6 @@ class VideoListViewController: UIViewController {
 
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
-        videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: atentionCellId)
         //プロフィール写真を円に設定
         profileImageView.layer.cornerRadius = 20
         
@@ -138,49 +140,38 @@ extension VideoListViewController {
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    //　videoListCollectionViewのCollectionViewの処理
-
+    //アイテムが選択された時の動作
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        //VideoViewControllerに遷移
         let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
         
-        videoViewController.selectedItem = indexPath.row > 2 ? videoItems[indexPath.row - 1] : videoItems[indexPath.row]
+        videoViewController.selectedItem = videoItems[indexPath.row]
         
         self.present(videoViewController, animated: true, completion: nil)
     }
-    
+    //アイテムの高さを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width
-        
-        if indexPath.row == 2 {
-            return .init(width: width, height: 200)
-        } else {
-            return .init(width: width, height: width)
-        }
+
+        return .init(width: width, height: width)
+
     }
-    
+    //アイテムの数を返す
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videoItems.count + 1
+        return videoItems.count
     }
-    
+
+    //アイテムの中身を返すメソッド
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 2 {
-            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: atentionCellId, for: indexPath) as! AttentionCell
-            cell.videoItems = self.videoItems
-            
+
+        let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
+
+        if self.videoItems.count == 0 {
             return cell
         } else {
-            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
-            
-            if self.videoItems.count == 0 { return cell }
-            
-            if indexPath.row > 2 {
-                cell.videoItem = videoItems[indexPath.row - 1]
-            } else {
-                cell.videoItem = videoItems[indexPath.row]
-            }
-            
-            return cell
+            cell.videoItem = videoItems[indexPath.row]
         }
+        return cell
     }
+
 }
