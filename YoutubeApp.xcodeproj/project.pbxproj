@@ -58,6 +58,7 @@
 		CE32FECD2507BB61001082A2 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FECC2507BB60001082A2 /* APIKey.plist */; };
 		CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */; };
 		CEB71224250A42620045FD15 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71223250A42620045FD15 /* LikeView.storyboard */; };
+		CEB71226250B54EA0045FD15 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB71225250B54E90045FD15 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		CE32FECC2507BB60001082A2 /* APIKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEB71223250A42620045FD15 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
+		CEB71225250B54E90045FD15 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Const.swift; path = /Users/user/Desktop/ZooTubeApp/YoutubeApp/Models/Const.swift; sourceTree = "<absolute>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				7C2E60B124BACC2100D3DCDC /* Video.swift */,
 				7C2E60B324BAE5BB00D3DCDC /* Chnnel.swift */,
 				CE32FEC225075D29001082A2 /* KeyManager.swift */,
+				CEB71225250B54E90045FD15 /* Const.swift */,
 				CE32FEC025075D0C001082A2 /* Photo.swift */,
 				CE32FEC62507656C001082A2 /* Photos.plist */,
 			);
@@ -682,6 +685,7 @@
 				CE32FEB425075603001082A2 /* ZooPictureLayout.swift in Sources */,
 				CE09D8F32509208D00C4D1BE /* CommonPageViewController.swift in Sources */,
 				CE09D8EE25091F0100C4D1BE /* Page3ViewController.swift in Sources */,
+				CEB71226250B54EA0045FD15 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

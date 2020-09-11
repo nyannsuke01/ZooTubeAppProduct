@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -33,6 +35,17 @@ class MyPageViewController: UIViewController {
         let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
         self.present(settingVC, animated: true, completion: nil)
     }
+    // アイコンの変更をタップしたときに呼ばれるメソッド
+    @IBAction func handleLibraryButton(_ sender: Any) {
+        // ライブラリ（カメラロール）を指定してピッカーを開く
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let pickerController = UIImagePickerController()
+            pickerController.delegate = self
+            pickerController.sourceType = .photoLibrary
+            self.present(pickerController, animated: true, completion: nil)
+        }
+    }
+    
     private func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self

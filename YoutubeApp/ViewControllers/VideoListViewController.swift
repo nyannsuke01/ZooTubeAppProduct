@@ -23,12 +23,6 @@ class VideoListViewController: UIViewController {
     private let cellId = "cellId"
     private var videoItems = [Item]()
 
-    @IBAction func toSetting(_ sender: Any) {
-        print("設定ボタンがタップされました")
-        let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
-        self.present(settingVC, animated: true, completion: nil)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +42,7 @@ class VideoListViewController: UIViewController {
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
-        let params = ["q": "ねこ　かわいい"]
+        let params = ["q": "犬"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
