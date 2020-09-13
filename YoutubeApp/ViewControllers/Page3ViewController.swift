@@ -8,12 +8,19 @@
 
 import UIKit
 import SDWebImage
+import XLPagerTabStrip
+import Alamofire
 
-class Page3ViewController: CommonPageViewController {
+class Page3ViewController: CommonPageViewController,IndicatorInfoProvider {
 
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.magenta
+        self.keyword = "ねこ"
         super.viewDidLoad()
 
+    }
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: self.keyword)
     }
 }
 

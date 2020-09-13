@@ -26,7 +26,6 @@
 		7CE584CD24B1F19300281866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE584CC24B1F19300281866 /* AppDelegate.swift */; };
 		7CE584CF24B1F19300281866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE584CE24B1F19300281866 /* SceneDelegate.swift */; };
 		7CE584D124B1F19300281866 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE584D024B1F19300281866 /* VideoListViewController.swift */; };
-		7CE584D424B1F19300281866 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE584D224B1F19300281866 /* VideoList.storyboard */; };
 		7CE584D624B1F19400281866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE584D524B1F19400281866 /* Assets.xcassets */; };
 		7CE584D924B1F19400281866 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE584D724B1F19400281866 /* LaunchScreen.storyboard */; };
 		7CE584E424B1F19400281866 /* YoutubeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE584E324B1F19400281866 /* YoutubeAppTests.swift */; };
@@ -34,7 +33,7 @@
 		AEF8897D65EFCBB114C0CE7D /* Pods_YoutubeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED0C2289B781FE692433285 /* Pods_YoutubeAppTests.framework */; };
 		CE09D8E125089F2F00C4D1BE /* PlayWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */; };
 		CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */; };
-		CE09D8E525091DB500C4D1BE /* HeaderTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E425091DB500C4D1BE /* HeaderTabViewController.swift */; };
+		CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */; };
 		CE09D8EC25091F0100C4D1BE /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */; };
 		CE09D8ED25091F0100C4D1BE /* Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */; };
 		CE09D8EE25091F0100C4D1BE /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */; };
@@ -59,6 +58,9 @@
 		CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */; };
 		CEB71224250A42620045FD15 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71223250A42620045FD15 /* LikeView.storyboard */; };
 		CEB71226250B54EA0045FD15 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB71225250B54E90045FD15 /* Const.swift */; };
+		CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71227250DD85F0045FD15 /* Header.storyboard */; };
+		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
+		CEB71233250DF22B0045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71232250DF22B0045FD15 /* VideoList.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +102,6 @@
 		7CE584CC24B1F19300281866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE584CE24B1F19300281866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7CE584D024B1F19300281866 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
-		7CE584D324B1F19300281866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
 		7CE584D524B1F19400281866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CE584D824B1F19400281866 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CE584DA24B1F19400281866 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +115,7 @@
 		C5F77455085684AF2EADF011 /* Pods_YoutubeApp_YoutubeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeApp_YoutubeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWebViewController.swift; sourceTree = "<group>"; };
 		CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
-		CE09D8E425091DB500C4D1BE /* HeaderTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabViewController.swift; sourceTree = "<group>"; };
+		CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
 		CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page6ViewController.swift; sourceTree = "<group>"; };
 		CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +140,9 @@
 		CE32FECE2507BB78001082A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEB71223250A42620045FD15 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
 		CEB71225250B54E90045FD15 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		CEB71227250DD85F0045FD15 /* Header.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Header.storyboard; sourceTree = "<group>"; };
+		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
+		CEB71232250DF22B0045FD15 /* VideoList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,16 +190,16 @@
 		7C138CD424C4154700C4DB2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE09D8E425091DB500C4D1BE /* HeaderTabViewController.swift */,
+				CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */,
 				CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */,
 				CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */,
 				CE09D8EA25091F0100C4D1BE /* Page1ViewController.swift */,
+				7CE584D024B1F19300281866 /* VideoListViewController.swift */,
 				CE09D8E925091F0100C4D1BE /* Page2ViewController.swift */,
 				CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */,
 				CE09D8EB25091F0100C4D1BE /* Page4ViewController.swift */,
 				CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */,
 				CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */,
-				7CE584D024B1F19300281866 /* VideoListViewController.swift */,
 				7C272FE624D67C11001C376F /* VideoViewController.swift */,
 				CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */,
 				CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */,
@@ -248,10 +252,12 @@
 			isa = PBXGroup;
 			children = (
 				7C138CD024C410E300C4DB2F /* BottomNavigationBar.storyboard */,
-				7CE584D224B1F19300281866 /* VideoList.storyboard */,
 				7C138CD924C420F000C4DB2F /* Zoo.storyboard */,
 				CEB71223250A42620045FD15 /* LikeView.storyboard */,
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
+				CEB71232250DF22B0045FD15 /* VideoList.storyboard */,
+				CEB71228250DD85F0045FD15 /* Page2.storyboard */,
+				CEB71227250DD85F0045FD15 /* Header.storyboard */,
 			);
 			path = Tab;
 			sourceTree = "<group>";
@@ -518,13 +524,15 @@
 				7C34CF5F24D624EE00160445 /* AttentionCollectionViewCell.xib in Resources */,
 				CE32FECD2507BB61001082A2 /* APIKey.plist in Resources */,
 				7CE584D624B1F19400281866 /* Assets.xcassets in Resources */,
+				CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */,
+				CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */,
 				7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */,
 				7C272FEA24D67C54001C376F /* Video.storyboard in Resources */,
 				7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
-				7CE584D424B1F19300281866 /* VideoList.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
 				CE32FEC72507656C001082A2 /* Photos.plist in Resources */,
+				CEB71233250DF22B0045FD15 /* VideoList.storyboard in Resources */,
 				CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,7 +668,7 @@
 				CE32FEC125075D0C001082A2 /* Photo.swift in Sources */,
 				CE32FEBF25075625001082A2 /* LoginViewController.swift in Sources */,
 				CE32FEB225075603001082A2 /* ZooViewController.swift in Sources */,
-				CE09D8E525091DB500C4D1BE /* HeaderTabViewController.swift in Sources */,
+				CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */,
 				CE09D8ED25091F0100C4D1BE /* Page6ViewController.swift in Sources */,
 				CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */,
 				CE09D8EF25091F0100C4D1BE /* Page2ViewController.swift in Sources */,
@@ -721,14 +729,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7CE584D224B1F19300281866 /* VideoList.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7CE584D324B1F19300281866 /* Base */,
-			);
-			name = VideoList.storyboard;
-			sourceTree = "<group>";
-		};
 		7CE584D724B1F19400281866 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
