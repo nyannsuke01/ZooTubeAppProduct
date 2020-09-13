@@ -36,6 +36,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.present(settingVC, animated: true, completion: nil)
     }
     // アイコンの変更をタップしたときに呼ばれるメソッド
+
+
+    //TODO: 設定画面に遷移するようにする
     @IBAction func handleLibraryButton(_ sender: Any) {
         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -58,6 +61,23 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
+
+        //好きな動物データの取得
+        // ログインしているユーザーのidを取得
+        let uid = Auth.auth().currentUser?.uid
+        // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
+        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let userDic = document.data()
+                let favoriteAnimal = userDic!["favoriteAnimal"] as? String
+            } else {
+                print("Document does not exist")
+            }
+        }
+        // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
+
+
         //TODO: paramを好きな動物に変える
         let params = ["q": "ねこ　かわいい"]
 

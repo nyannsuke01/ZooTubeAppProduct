@@ -8,6 +8,7 @@
 import Foundation
 
 struct Const {
+    static let UserPath = "users"
     static let IconImagePath = "images"
     static let ParamterPath = "params"
 }

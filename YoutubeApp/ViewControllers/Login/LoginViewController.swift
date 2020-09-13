@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var likeAnimalPicker: UIPickerView!
     @IBOutlet weak var likeAnimalLabel: UILabel!
 
-    var selectLikeAnimal = ""
+    var selectedAnimal = ""
 
     //PickerViewに格納されるリスト
     let dataList = [
@@ -33,8 +33,8 @@ class LoginViewController: UIViewController {
     @IBAction func handleLoginButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
 
-            // アドレスとパスワード名のいずれかでも入力されていない時は何もしない
-            if address.isEmpty || password.isEmpty {
+            // アドレスとパスワード名、好きな動物のいずれかでも入力されていない時は何もしない
+        if address.isEmpty || password.isEmpty {
                 return
             }
 
@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
         if let address = mailAddressTextField.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
 
             // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
-            if address.isEmpty || password.isEmpty || displayName.isEmpty {
+            if address.isEmpty || password.isEmpty || displayName.isEmpty || self.selectedAnimal != "" {
                 print("DEBUG_PRINT: 何かが空文字です。")
                 return
             }
@@ -74,6 +74,15 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("DEBUG_PRINT: ユーザー作成に成功しました。")
+
+                // ここで好きな動物の追加のコードを書く　ログインできたことが前提であるため
+                let uid = Auth.auth().currentUser?.uid
+                // ログインしているユーザーのidをドキュメントのidとして作成するドキュメントを指定
+                let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
+                let userDic = [
+                    "favoriteAnimal": self.selectedAnimal // 「好きな動物」欄で選ばれた動物
+                ] as [String : Any]
+                  userRef.setData(userDic)
 
                 // 表示名を設定する
                 let user = Auth.auth().currentUser
@@ -125,7 +134,7 @@ extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var selectLikeAnimal = dataList[row]
-        self.selectLikeAnimal = selectLikeAnimal
+        self.selectedAnimal = selectLikeAnimal
         likeAnimalLabel.text = "好きな動物  " + selectLikeAnimal
     }
 }
