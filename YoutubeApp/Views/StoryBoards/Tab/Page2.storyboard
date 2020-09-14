@@ -82,6 +82,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FA0-Pr-Lm3"/>
                     </view>
+                    <connections>
+                        <outlet property="videoListCollectionView" destination="3Rd-FZ-am6" id="Q45-LR-2GQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uh-fS-02C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

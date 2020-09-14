@@ -9,7 +9,7 @@
 import UIKit
 
 class TextFieldViewController: UIViewController, UITextFieldDelegate {
-    // キーボード立ち上げ時に、UITextFieldが隠れない処理を以下記述
+    // キーボード立ち上げ時に、UITextFieldが隠れないようにする処理を以下記述
     // VideoViewControllerに継承しています。https://qiita.com/koooooo/items/ad20862cd486e0656d17
 
     private var activeTextField: UITextField?

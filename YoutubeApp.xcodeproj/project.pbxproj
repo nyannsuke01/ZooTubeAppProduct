@@ -34,12 +34,6 @@
 		CE09D8E125089F2F00C4D1BE /* PlayWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */; };
 		CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */; };
 		CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */; };
-		CE09D8EC25091F0100C4D1BE /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */; };
-		CE09D8ED25091F0100C4D1BE /* Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */; };
-		CE09D8EE25091F0100C4D1BE /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */; };
-		CE09D8EF25091F0100C4D1BE /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E925091F0100C4D1BE /* Page2ViewController.swift */; };
-		CE09D8F025091F0100C4D1BE /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8EA25091F0100C4D1BE /* Page1ViewController.swift */; };
-		CE09D8F125091F0100C4D1BE /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8EB25091F0100C4D1BE /* Page4ViewController.swift */; };
 		CE09D8F32509208D00C4D1BE /* CommonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */; };
 		CE09D8F52509862E00C4D1BE /* BottomNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */; };
 		CE32FEB225075603001082A2 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FEAF25075603001082A2 /* ZooViewController.swift */; };
@@ -62,6 +56,15 @@
 		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
 		CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71237250E43630045FD15 /* VideoList.storyboard */; };
 		CEB71239250E47110045FD15 /* CollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB71238250E47110045FD15 /* CollectionView.xib */; };
+		CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43ED250F825400B27B85 /* Page5.storyboard */; };
+		CEDD43F2250F825500B27B85 /* Page6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EE250F825400B27B85 /* Page6.storyboard */; };
+		CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EF250F825500B27B85 /* Page4.storyboard */; };
+		CEDD43F4250F825500B27B85 /* Page3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43F0250F825500B27B85 /* Page3.storyboard */; };
+		CEDD43FA250F829900B27B85 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F5250F829800B27B85 /* Page3ViewController.swift */; };
+		CEDD43FB250F829900B27B85 /* Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F6250F829900B27B85 /* Page6ViewController.swift */; };
+		CEDD43FC250F829900B27B85 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F7250F829900B27B85 /* Page4ViewController.swift */; };
+		CEDD43FD250F829900B27B85 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F8250F829900B27B85 /* Page2ViewController.swift */; };
+		CEDD43FE250F829900B27B85 /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F9250F829900B27B85 /* Page5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,12 +120,6 @@
 		CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWebViewController.swift; sourceTree = "<group>"; };
 		CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
-		CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
-		CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page6ViewController.swift; sourceTree = "<group>"; };
-		CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
-		CE09D8E925091F0100C4D1BE /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
-		CE09D8EA25091F0100C4D1BE /* Page1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
-		CE09D8EB25091F0100C4D1BE /* Page4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
 		CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonPageViewController.swift; sourceTree = "<group>"; };
 		CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBarViewController.swift; sourceTree = "<group>"; };
 		CE32FEAF25075603001082A2 /* ZooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +142,15 @@
 		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
 		CEB71236250E43630045FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
 		CEB71238250E47110045FD15 /* CollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionView.xib; sourceTree = "<group>"; };
+		CEDD43ED250F825400B27B85 /* Page5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page5.storyboard; sourceTree = "<group>"; };
+		CEDD43EE250F825400B27B85 /* Page6.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page6.storyboard; sourceTree = "<group>"; };
+		CEDD43EF250F825500B27B85 /* Page4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page4.storyboard; sourceTree = "<group>"; };
+		CEDD43F0250F825500B27B85 /* Page3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page3.storyboard; sourceTree = "<group>"; };
+		CEDD43F5250F829800B27B85 /* Page3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		CEDD43F6250F829900B27B85 /* Page6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page6ViewController.swift; sourceTree = "<group>"; };
+		CEDD43F7250F829900B27B85 /* Page4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
+		CEDD43F8250F829900B27B85 /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		CEDD43F9250F829900B27B85 /* Page5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,19 +198,7 @@
 		7C138CD424C4154700C4DB2F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */,
-				CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */,
-				CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */,
-				CE09D8EA25091F0100C4D1BE /* Page1ViewController.swift */,
-				7CE584D024B1F19300281866 /* VideoListViewController.swift */,
-				CE09D8E925091F0100C4D1BE /* Page2ViewController.swift */,
-				CE09D8E825091F0000C4D1BE /* Page3ViewController.swift */,
-				CE09D8EB25091F0100C4D1BE /* Page4ViewController.swift */,
-				CE09D8E625091F0000C4D1BE /* Page5ViewController.swift */,
-				CE09D8E725091F0000C4D1BE /* Page6ViewController.swift */,
-				7C272FE624D67C11001C376F /* VideoViewController.swift */,
-				CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */,
-				CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */,
+				CEDD43FF250FB14B00B27B85 /* Home */,
 				CE32FEAE25075603001082A2 /* Zoo */,
 				CE32FEB52507560C001082A2 /* Like */,
 				CE32FEB82507561B001082A2 /* MyPage */,
@@ -260,6 +254,10 @@
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
 				CEB71237250E43630045FD15 /* VideoList.storyboard */,
 				CEB71228250DD85F0045FD15 /* Page2.storyboard */,
+				CEDD43F0250F825500B27B85 /* Page3.storyboard */,
+				CEDD43EF250F825500B27B85 /* Page4.storyboard */,
+				CEDD43ED250F825400B27B85 /* Page5.storyboard */,
+				CEDD43EE250F825400B27B85 /* Page6.storyboard */,
 				CEB71227250DD85F0045FD15 /* Header.storyboard */,
 			);
 			path = Tab;
@@ -399,6 +397,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CEDD43FF250FB14B00B27B85 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */,
+				CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */,
+				CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */,
+				7CE584D024B1F19300281866 /* VideoListViewController.swift */,
+				CEDD43F8250F829900B27B85 /* Page2ViewController.swift */,
+				CEDD43F5250F829800B27B85 /* Page3ViewController.swift */,
+				CEDD43F7250F829900B27B85 /* Page4ViewController.swift */,
+				CEDD43F9250F829900B27B85 /* Page5ViewController.swift */,
+				CEDD43F6250F829900B27B85 /* Page6ViewController.swift */,
+				CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */,
+				7C272FE624D67C11001C376F /* VideoViewController.swift */,
+				CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		EB950DF09A82F91A1616182D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE584D924B1F19400281866 /* LaunchScreen.storyboard in Resources */,
+				CEDD43F2250F825500B27B85 /* Page6.storyboard in Resources */,
 				CEB71224250A42620045FD15 /* LikeView.storyboard in Resources */,
 				7C26DA6C24B5965800CB29B9 /* VideoListCell.xib in Resources */,
 				7C34CF5F24D624EE00160445 /* AttentionCollectionViewCell.xib in Resources */,
@@ -532,11 +550,14 @@
 				7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */,
 				7C272FEA24D67C54001C376F /* Video.storyboard in Resources */,
 				7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */,
+				CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
 				CEB71239250E47110045FD15 /* CollectionView.xib in Resources */,
+				CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */,
 				CE32FEC72507656C001082A2 /* Photos.plist in Resources */,
 				CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */,
+				CEDD43F4250F825500B27B85 /* Page3.storyboard in Resources */,
 				CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,36 +688,35 @@
 			files = (
 				CE32FEBC2507561B001082A2 /* MyPageViewController.swift in Sources */,
 				CE32FEC325075D29001082A2 /* KeyManager.swift in Sources */,
+				CEDD43FD250F829900B27B85 /* Page2ViewController.swift in Sources */,
 				7CE584D124B1F19300281866 /* VideoListViewController.swift in Sources */,
 				7C272FE724D67C11001C376F /* VideoViewController.swift in Sources */,
 				CE32FEC125075D0C001082A2 /* Photo.swift in Sources */,
 				CE32FEBF25075625001082A2 /* LoginViewController.swift in Sources */,
 				CE32FEB225075603001082A2 /* ZooViewController.swift in Sources */,
+				CEDD43FE250F829900B27B85 /* Page5ViewController.swift in Sources */,
 				CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */,
-				CE09D8ED25091F0100C4D1BE /* Page6ViewController.swift in Sources */,
 				CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */,
-				CE09D8EF25091F0100C4D1BE /* Page2ViewController.swift in Sources */,
 				7C34CF5D24D624C400160445 /* AttentionCollectionViewCell.swift in Sources */,
+				CEDD43FA250F829900B27B85 /* Page3ViewController.swift in Sources */,
 				CE32FEBB2507561B001082A2 /* SettingViewController.swift in Sources */,
 				CE32FEB325075603001082A2 /* PhotoStreamViewController.swift in Sources */,
-				CE09D8EC25091F0100C4D1BE /* Page5ViewController.swift in Sources */,
 				7C2E60B724BB000200D3DCDC /* API.swift in Sources */,
 				CE32FEB72507560C001082A2 /* LikeViewController.swift in Sources */,
 				CE32FEC525075DFC001082A2 /* AnnotatedPhotoCell.swift in Sources */,
 				CE09D8E125089F2F00C4D1BE /* PlayWebViewController.swift in Sources */,
 				7C26DA6924B595C900CB29B9 /* VideoListCell.swift in Sources */,
-				CE09D8F025091F0100C4D1BE /* Page1ViewController.swift in Sources */,
 				7C34CF5B24D6200800160445 /* AttentionCell.swift in Sources */,
 				7C138CD724C4178900C4DB2F /* UIImage-Extension.swift in Sources */,
-				CE09D8F125091F0100C4D1BE /* Page4ViewController.swift in Sources */,
 				7CE584CD24B1F19300281866 /* AppDelegate.swift in Sources */,
 				7CE584CF24B1F19300281866 /* SceneDelegate.swift in Sources */,
 				7C2E60B224BACC2100D3DCDC /* Video.swift in Sources */,
+				CEDD43FC250F829900B27B85 /* Page4ViewController.swift in Sources */,
+				CEDD43FB250F829900B27B85 /* Page6ViewController.swift in Sources */,
 				7C2E60B424BAE5BB00D3DCDC /* Chnnel.swift in Sources */,
 				CE09D8F52509862E00C4D1BE /* BottomNavigationBarViewController.swift in Sources */,
 				CE32FEB425075603001082A2 /* ZooPictureLayout.swift in Sources */,
 				CE09D8F32509208D00C4D1BE /* CommonPageViewController.swift in Sources */,
-				CE09D8EE25091F0100C4D1BE /* Page3ViewController.swift in Sources */,
 				CEB71226250B54EA0045FD15 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
