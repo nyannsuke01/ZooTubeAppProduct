@@ -37,8 +37,7 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
     //タブを管理するためのViewControllerの設定(XLPagerTabStripを利用)
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        
-        //管理されるViewControllerを返す処理　 //ViewControllerインスタンスを生成
+        //管理されるViewControllerを返す処理
          let first = UIStoryboard(name: "VideoList", bundle: nil)
         let firstVC = first.instantiateViewController(withIdentifier: "VideoList") as! VideoListViewController
          let second = UIStoryboard(name: "Page2", bundle: nil)
@@ -46,7 +45,7 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
 //        let firstVC = Page1ViewController(keyword: Tab.cat.rawValue)
 //        let secondVC = Page2ViewController(keyword: Tab.dog.rawValue)
-//        let thirdVC = Page3ViewController(keyword: Tab.rabbit.rawValue)
+       // let thirdVC = Page3ViewController()
 //        let fourthVC = Page4ViewController(keyword: Tab.hedgehog.rawValue)
 //        let fifthVC = Page5ViewController(keyword: Tab.zoo.rawValue)
 //        let sixthVC = Page6ViewController(keyword: Tab.polarBear.rawValue)
@@ -55,6 +54,27 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
         return childViewControllers
 
     }
+
+    //HeaderView消える処理
+    private func headerViewEndAnimation() {
+        if headerTopConstraint.constant < -headerHeightConstraint.constant / 2 {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+
+                self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
+                self.headerView.alpha = 0
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            //再出現
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
+
+                self.headerTopConstraint.constant = 0
+                self.headerView.alpha = 1
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+
 
     //タブの文字列の管理
     enum Tab: String {

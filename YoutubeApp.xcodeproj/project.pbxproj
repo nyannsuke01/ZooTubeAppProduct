@@ -60,7 +60,8 @@
 		CEB71226250B54EA0045FD15 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB71225250B54E90045FD15 /* Const.swift */; };
 		CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71227250DD85F0045FD15 /* Header.storyboard */; };
 		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
-		CEB71233250DF22B0045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71232250DF22B0045FD15 /* VideoList.storyboard */; };
+		CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71237250E43630045FD15 /* VideoList.storyboard */; };
+		CEB71239250E47110045FD15 /* CollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB71238250E47110045FD15 /* CollectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +143,8 @@
 		CEB71225250B54E90045FD15 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		CEB71227250DD85F0045FD15 /* Header.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Header.storyboard; sourceTree = "<group>"; };
 		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
-		CEB71232250DF22B0045FD15 /* VideoList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
+		CEB71236250E43630045FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
+		CEB71238250E47110045FD15 /* CollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionView.xib; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */,
 				7C34CF5E24D624EE00160445 /* AttentionCollectionViewCell.xib */,
+				CEB71238250E47110045FD15 /* CollectionView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -255,7 +258,7 @@
 				7C138CD924C420F000C4DB2F /* Zoo.storyboard */,
 				CEB71223250A42620045FD15 /* LikeView.storyboard */,
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
-				CEB71232250DF22B0045FD15 /* VideoList.storyboard */,
+				CEB71237250E43630045FD15 /* VideoList.storyboard */,
 				CEB71228250DD85F0045FD15 /* Page2.storyboard */,
 				CEB71227250DD85F0045FD15 /* Header.storyboard */,
 			);
@@ -531,8 +534,9 @@
 				7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
+				CEB71239250E47110045FD15 /* CollectionView.xib in Resources */,
 				CE32FEC72507656C001082A2 /* Photos.plist in Resources */,
-				CEB71233250DF22B0045FD15 /* VideoList.storyboard in Resources */,
+				CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */,
 				CE32FECF2507BB78001082A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +739,14 @@
 				7CE584D824B1F19400281866 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CEB71237250E43630045FD15 /* VideoList.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEB71236250E43630045FD15 /* Base */,
+			);
+			name = VideoList.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

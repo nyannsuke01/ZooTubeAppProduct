@@ -82,7 +82,7 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="videoListCollectionView" destination="7an-4e-cbg" id="Qze-1H-fQq"/>
+                        <outlet property="videoListCollectionView" destination="HBs-LN-FG7" id="G9z-RK-7N9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
