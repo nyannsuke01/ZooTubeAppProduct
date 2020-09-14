@@ -16,8 +16,6 @@ final class Page2ViewController: CommonPageViewController, IndicatorInfoProvider
 
     @IBOutlet weak var videoListCollectionView: UICollectionView!
 
-    let cellId = "cellId"
-    var videoItems = [Item]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

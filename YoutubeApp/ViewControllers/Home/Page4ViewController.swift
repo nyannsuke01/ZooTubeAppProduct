@@ -16,9 +16,6 @@ class Page4ViewController: CommonPageViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var videoListCollectionView: UICollectionView!
 
-    let cellId = "cellId"
-    var videoItems = [Item]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.magenta

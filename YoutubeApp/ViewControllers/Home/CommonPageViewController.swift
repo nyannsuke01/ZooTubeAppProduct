@@ -16,9 +16,9 @@ class CommonPageViewController: UIViewController {
     //キーワードのインスタンス化 selfのプロパティを当てる
     var keyword: String?
 
-//    private let cellId = "cellId"
-//    private var videoItems = [Item]()
-//
+    let cellId = "cellId"
+    var videoItems = [Item]()
+
 //    init(keyword: String) {
 //        self.keyword = keyword
 //        // クラスの持つ指定イニシャライザを呼び出す
