@@ -61,23 +61,20 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
-
-        //好きな動物データの取得
-        // ログインしているユーザーのidを取得
-        let uid = Auth.auth().currentUser?.uid
-        // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
-        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
-        userRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let userDic = document.data()
-                let favoriteAnimal = userDic!["favoriteAnimal"] as? String
-            } else {
-                print("Document does not exist")
-            }
-        }
+//        //好きな動物データの取得 ログインで好きな動物の登録が終わった後に、登録していた好きな動物を取り出す操作
+//        // ログインしているユーザーのidを取得
+//        let uid = Auth.auth().currentUser?.uid
+//        // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
+//        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
+//        userRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let userDic = document.data()
+//                let favoriteAnimal = userDic!["favoriteAnimal"] as? String
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
         // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
-
-
         //TODO: paramを好きな動物に変える
         let params = ["q": "ねこ　かわいい"]
 

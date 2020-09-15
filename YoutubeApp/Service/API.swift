@@ -10,20 +10,18 @@ import Foundation
 import Alamofire
 
 class API {
-    
+
     enum PathType: String {
         case search
         case channels
     }
     
     static let shared = API()
-    
-    private let baseUrl = "https://www.googleapis.com/youtube/v3/"
-    
-    
+    let keyManager = KeyManager()
+
     func request<T: Decodable>(path: PathType, params: [String: Any], type: T.Type, completion: @escaping (T) -> Void) {
         let path = path.rawValue
-        let url = baseUrl + path + "?"
+        let url = keyManager.baseUrl + path + "?"
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す

@@ -29,11 +29,11 @@ class SettingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        // 表示名を取得してTextFieldに設定する
-        let user = Auth.auth().currentUser
-        if let user = user {
-            displayNameTextField.text = user.displayName
-        }
+//        // 表示名を取得してTextFieldに設定する
+//        let user = Auth.auth().currentUser
+//        if let user = user {
+//            displayNameTextField.text = user.displayName
+//        }
     }
 
     @IBAction func handleChangeButton(_ sender: Any) {

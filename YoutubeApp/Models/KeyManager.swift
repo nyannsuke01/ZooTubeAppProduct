@@ -10,6 +10,8 @@ import Foundation
 
 struct KeyManager {
 
+    let baseUrl = "https://www.googleapis.com/youtube/v3/"
+
     private let keyFilePath = Bundle.main.path(forResource: "APIKey", ofType: "plist")
 
     func getKeys() -> NSDictionary? {

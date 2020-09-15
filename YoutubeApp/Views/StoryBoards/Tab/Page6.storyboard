@@ -9,27 +9,27 @@
     </dependencies>
     <scenes>
         <!--Page6 View Controller-->
-        <scene sceneID="uTC-fe-aU4">
+        <scene sceneID="Z5B-x9-PVG">
             <objects>
-                <viewController storyboardIdentifier="Page6" id="ciI-MG-d7c" customClass="Page6ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UXH-hl-VfL">
+                <viewController storyboardIdentifier="Page6" id="YPc-tL-wqe" customClass="Page6ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DqJ-ue-lKa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pbi-8B-x57">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32z-r2-dhX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VYC-2f-vO5">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jsi-iq-5sf">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dWK-Hp-Nim">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4FO-Wh-WIj">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yyy-Lq-fav">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="btE-JJ-UrK">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -39,20 +39,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pbi-8B-x57" firstAttribute="leading" secondItem="0Za-hM-O1e" secondAttribute="leading" id="9C0-r5-NTk"/>
-                            <constraint firstItem="pbi-8B-x57" firstAttribute="trailing" secondItem="0Za-hM-O1e" secondAttribute="trailing" id="MLA-5W-SpR"/>
-                            <constraint firstItem="pbi-8B-x57" firstAttribute="bottom" secondItem="0Za-hM-O1e" secondAttribute="bottom" id="kfv-Sk-71R"/>
-                            <constraint firstItem="pbi-8B-x57" firstAttribute="top" secondItem="0Za-hM-O1e" secondAttribute="top" id="plL-z0-6Kw"/>
+                            <constraint firstItem="32z-r2-dhX" firstAttribute="top" secondItem="Ta4-un-usq" secondAttribute="top" id="UC8-9H-wbL"/>
+                            <constraint firstItem="32z-r2-dhX" firstAttribute="bottom" secondItem="Ta4-un-usq" secondAttribute="bottom" id="UQY-7r-lbz"/>
+                            <constraint firstItem="32z-r2-dhX" firstAttribute="trailing" secondItem="Ta4-un-usq" secondAttribute="trailing" id="jKA-La-be4"/>
+                            <constraint firstItem="32z-r2-dhX" firstAttribute="leading" secondItem="Ta4-un-usq" secondAttribute="leading" id="n3X-lq-SM6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0Za-hM-O1e"/>
+                        <viewLayoutGuide key="safeArea" id="Ta4-un-usq"/>
                     </view>
                     <connections>
-                        <outlet property="videoListCollectionView" destination="pbi-8B-x57" id="Ja3-oi-09P"/>
+                        <outlet property="videoListCollectionView" destination="32z-r2-dhX" id="cCA-Cm-RmF"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4G7-fC-6SC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBB-5R-vDU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-7"/>
+            <point key="canvasLocation" x="667" y="-17"/>
         </scene>
     </scenes>
 </document>

@@ -63,6 +63,9 @@
                                             <constraint firstAttribute="width" secondItem="1x7-Xr-jFo" secondAttribute="height" multiplier="1:1" id="pbo-UL-dBE"/>
                                         </constraints>
                                         <state key="normal" image="setting"/>
+                                        <connections>
+                                            <action selector="toSetting:" destination="sdq-V6-PX6" eventType="touchUpInside" id="iGl-We-TZZ"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" translatesAutoresizingMaskIntoConstraints="NO" id="SIs-Fj-grf">
                                         <rect key="frame" x="364" y="10" width="40" height="40"/>

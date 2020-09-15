@@ -60,6 +60,12 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
         return childViewControllers
 
     }
+
+    @IBAction func toSetting(_ sender: Any) {
+        print("設定ボタンがタップされました")
+        let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
+        self.present(settingVC, animated: true, completion: nil)
+    }
     //タブの文字列の管理
     enum Tab: String {
         case cat = "ねこ"
