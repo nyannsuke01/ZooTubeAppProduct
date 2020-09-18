@@ -17,11 +17,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var mailAddressTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     // ログインボタンをタップしたときに呼ばれるメソッド
     @IBAction func handleLoginButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
@@ -97,4 +95,42 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //ログインボタンの状態　非活性
+        loginButton.layer.cornerRadius = 10
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        //アカウント作成ボタンの状態　非活性
+        createAccountButton.layer.cornerRadius = 10
+        createAccountButton.isEnabled = false
+        createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+
+        mailAddressTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let emaillIsEmpty = mailAddressTextField.text?.isEmpty ?? true
+        let passwordIsEmpty = passwordTextField.text?.isEmpty ?? true
+
+        if emaillIsEmpty || passwordIsEmpty {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+            createAccountButton.isEnabled = false
+            createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        } else {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+            createAccountButton.isEnabled = true
+            createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+        }
+    }
+
 }

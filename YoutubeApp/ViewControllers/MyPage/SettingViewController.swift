@@ -99,7 +99,8 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                       userRef.setData(userDic)
 
                     //プロフィール写真の保存の処理
-                    self.handlePostButton((Any).self)
+
+
                     // HUDで完了を知らせる
                     SVProgressHUD.showSuccess(withStatus: "表示名を変更しました")
                 }
@@ -108,6 +109,8 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         // キーボードを閉じる
         self.view.endEditing(true)
     }
+
+    //インスタグラムアプリの処理を借りています
 
     @objc func handlePostButton(_ sender: Any) {
         // 画像をJPEG形式に変換する
@@ -132,21 +135,20 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
             // FireStoreに投稿データを保存する
             let name = Auth.auth().currentUser?.displayName
 
-            let postDic = [
-                "name": name!,
-                "caption":self.textField.text!,
-                "date": FieldValue.serverTimestamp(),
-                ] as [String : Any]
-            postRef.setData(postDic)
+//            let postDic = [
+//                "name": name!,
+//                "date": FieldValue.serverTimestamp(),
+//                ] as [String : Any]
+//            postRef.setData(postDic)
             // HUDで投稿完了を表示する
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
             // 投稿処理が完了したので先頭画面に戻る
             UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
-
+    
+    // ログアウトする
     @IBAction func handleLogoutButton(_ sender: Any) {
-        // ログアウトする
         do {
             try Auth.auth().signOut()
             // ログイン画面を表示する

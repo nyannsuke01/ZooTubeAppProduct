@@ -22,6 +22,13 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     private let atentionCellId = "atentionCellId"
     private var videoItems = [Item]()
 
+    var user: User? {
+        //受け取ったuser情報をここで一旦取り出す
+        didSet {
+            print("user?.name: ", user?.name as Any)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,18 +44,18 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         print("設定ボタンがタップされました")
         let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
         self.present(settingVC, animated: true, completion: nil)
-//        // ライブラリ（カメラロール）を指定してピッカーを開く
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            let pickerController = UIImagePickerController()
-//            pickerController.delegate = self
-//            pickerController.sourceType = .photoLibrary
-//            self.present(pickerController, animated: true, completion: nil)
-//        }
     }
     
     private func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
+
+        //ユーザー登録されていれば、アカウント名と好きな動物を表示
+        if let user = user {
+            userName.text = user.name + "さんようこそ"
+            likeAnimalLabel?.text = user.likeAnimal
+
+        }
 
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: atentionCellId)
@@ -72,8 +79,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
 //            }
 //        }
         // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
+        likeAnimalLabel?.text = user?.likeAnimal
         //TODO: paramを好きな動物に変える
-        let params = ["q": "ねこ　かわいい"]
+        let params = ["q": likeAnimalLabel!.text]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items

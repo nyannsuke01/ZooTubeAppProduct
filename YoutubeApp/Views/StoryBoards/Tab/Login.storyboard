@@ -120,7 +120,9 @@
                         <viewLayoutGuide key="safeArea" id="aiG-kg-bR4"/>
                     </view>
                     <connections>
+                        <outlet property="createAccountButton" destination="zcw-fC-gS0" id="p4O-wd-q8T"/>
                         <outlet property="displayNameTextField" destination="xjr-Ul-r7a" id="F68-gp-h8a"/>
+                        <outlet property="loginButton" destination="Pa8-RB-9bc" id="4Xv-Ax-Jn8"/>
                         <outlet property="mailAddressTextField" destination="7UD-rA-JtG" id="ld6-cC-s5Q"/>
                         <outlet property="passwordTextField" destination="oIE-Aq-aau" id="mBB-t1-6m4"/>
                     </connections>
