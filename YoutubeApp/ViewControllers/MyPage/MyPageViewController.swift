@@ -26,27 +26,24 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
 
         setupViews()
+        //好きな動物が入力されていれば、
         fetchYoutubeSerachInfo()
     }
 
+    // アイコンの変更をタップしたときに呼ばれるメソッド
+    //TODO: 設定画面に遷移するようにする
+    @IBAction func handleLibraryButton(_ sender: Any) {
 
-    @IBAction func toSetting(_ sender: Any) {
         print("設定ボタンがタップされました")
         let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
         self.present(settingVC, animated: true, completion: nil)
-    }
-    // アイコンの変更をタップしたときに呼ばれるメソッド
-
-
-    //TODO: 設定画面に遷移するようにする
-    @IBAction func handleLibraryButton(_ sender: Any) {
-        // ライブラリ（カメラロール）を指定してピッカーを開く
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let pickerController = UIImagePickerController()
-            pickerController.delegate = self
-            pickerController.sourceType = .photoLibrary
-            self.present(pickerController, animated: true, completion: nil)
-        }
+//        // ライブラリ（カメラロール）を指定してピッカーを開く
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            let pickerController = UIImagePickerController()
+//            pickerController.delegate = self
+//            pickerController.sourceType = .photoLibrary
+//            self.present(pickerController, animated: true, completion: nil)
+//        }
     }
     
     private func setupViews() {
