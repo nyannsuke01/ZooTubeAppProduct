@@ -13,7 +13,7 @@ import SVProgressHUD
 class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likeAnimalLabel: UILabel!
     @IBOutlet weak var changeIconButton: UIButton!
     @IBOutlet weak var videoListCollectionView: UICollectionView!
@@ -29,21 +29,21 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
         setupViews()
-        //好きな動物が入力されていれば、
+        //TODO: 好きな動物が入力されていれば、
         fetchYoutubeSerachInfo()
     }
 
     // アイコンの変更をタップしたときに呼ばれるメソッド
     //TODO: 設定画面に遷移するようにする
-    @IBAction func handleLibraryButton(_ sender: Any) {
+    @IBAction func toSettingButton(_ sender: Any) {
 
         print("設定ボタンがタップされました")
-        let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
-        self.present(settingVC, animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
+        let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController
+        SettingVC.modalPresentationStyle = .fullScreen
+        self.present(SettingVC, animated: true, completion: nil)
     }
     
     private func setupViews() {
@@ -52,9 +52,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         //ユーザー登録されていれば、アカウント名と好きな動物を表示
         if let user = user {
-            userName.text = user.name + "さんようこそ"
-            likeAnimalLabel?.text = user.likeAnimal
-
+            let name = Auth.auth().currentUser?.displayName
+            userNameLabel.text = name
+            likeAnimalLabel.text = user.favoriteAnimal
         }
 
         // VideoListCellのコレクションビューを設定
@@ -65,23 +65,25 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
-//        //好きな動物データの取得 ログインで好きな動物の登録が終わった後に、登録していた好きな動物を取り出す操作
-//        // ログインしているユーザーのidを取得
-//        let uid = Auth.auth().currentUser?.uid
-//        // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
-//        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
-//        userRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                let userDic = document.data()
-//                let favoriteAnimal = userDic!["favoriteAnimal"] as? String
-//            } else {
-//                print("Document does not exist")
-//            }
-//        }
+        //好きな動物データの取得 ログインで好きな動物の登録が終わった後に、登録していた好きな動物を取り出す操作
+        // ログインしているユーザーのidを取得
+        if let uid = Auth.auth().currentUser?.uid {
+            // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
+            let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
+            userRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let userDic = document.data()
+                    let favoriteAnimal = userDic!["favoriteAnimal"] as? String
+                    self.likeAnimalLabel.text = favoriteAnimal
+                    let accountName = userDic!["name"] as? String
+                    self.userNameLabel.text = accountName
+                }
+                print("Document does not exist")
+            }
+        }
         // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
-        likeAnimalLabel?.text = user?.likeAnimal
         //TODO: paramを好きな動物に変える
-        let params = ["q": likeAnimalLabel!.text]
+        let params = ["q": self.likeAnimalLabel.text]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
@@ -137,8 +139,6 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
             return cell
     }
-
-
 }
 
 

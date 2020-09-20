@@ -20,6 +20,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //ログインボタンの状態　非活性 初期化
+        loginButton.layer.cornerRadius = 10
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        //アカウント作成ボタンの状態　非活性
+        createAccountButton.layer.cornerRadius = 10
+        createAccountButton.isEnabled = false
+        createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+
+        setupNotificationObserver()
+
+        mailAddressTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+
     // ログインボタンをタップしたときに呼ばれるメソッド
     @IBAction func handleLoginButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text {
@@ -35,11 +52,11 @@ class LoginViewController: UIViewController {
 
             Auth.auth().signIn(withEmail: address, password: password) { authResult, error in
                 if let error = error {
-                    print("DEBUG_PRINT: " + error.localizedDescription)
+                    print("DEBUG_PRINT1: " + error.localizedDescription)
                     SVProgressHUD.showError(withStatus: "サインインに失敗しました。")
                     return
                 }
-                print("DEBUG_PRINT: ログインに成功しました。")
+                print("DEBUG_PRINT2: ログインに成功しました。")
                 // HUDを消す
                 SVProgressHUD.dismiss()
 
@@ -53,9 +70,9 @@ class LoginViewController: UIViewController {
     @IBAction func handleCreateAccountButton(_ sender: Any) {
         if let address = mailAddressTextField.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
 
-            // アドレスとパスワードと表示名、好きな動物のいずれかでも入力されていない時は何もしない
+            // アドレスとパスワードと表示名、アカウント名のいずれかでも入力されていない時は何もしない
             if address.isEmpty || password.isEmpty || displayName.isEmpty {
-                print("DEBUG_PRINT: 何かが空文字です。")
+                print("DEBUG_PRINT3: 何かが空文字です。")
                 SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
                 return
             }
@@ -67,10 +84,10 @@ class LoginViewController: UIViewController {
             Auth.auth().createUser(withEmail: address, password: password) { authResult, error in
                 if let error = error {
                     // エラーがあったら原因をprintして、returnすることで以降の処理を実行せずに処理を終了する
-                    print("DEBUG_PRINT: " + error.localizedDescription)
+                    print("DEBUG_PRINT4: " + error.localizedDescription)
                     return
                 }
-                print("DEBUG_PRINT: ユーザー作成に成功しました。")
+                print("DEBUG_PRINT5: ユーザー作成に成功しました。")
 
                 // 表示名を設定する
                 let user = Auth.auth().currentUser
@@ -80,10 +97,10 @@ class LoginViewController: UIViewController {
                     changeRequest.commitChanges { error in
                         if let error = error {
                             // プロフィールの更新でエラーが発生
-                            print("DEBUG_PRINT: " + error.localizedDescription)
+                            print("DEBUG_PRINT6: " + error.localizedDescription)
                             return
                         }
-                        print("DEBUG_PRINT: [displayName = \(user.displayName!)]の設定に成功しました。")
+                        print("DEBUG_PRINT7: [displayName = \(user.displayName!)]の設定に成功しました。")
 
                         // HUDを消す
                         SVProgressHUD.dismiss()
@@ -95,20 +112,35 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //ログインボタンの状態　非活性
-        loginButton.layer.cornerRadius = 10
-        loginButton.isEnabled = false
-        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
-        //アカウント作成ボタンの状態　非活性
-        createAccountButton.layer.cornerRadius = 10
-        createAccountButton.isEnabled = false
-        createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
 
-        mailAddressTextField.delegate = self
-        passwordTextField.delegate = self
+    //キーボードの通知の設定
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func showKeyboard(notification: Notification) {
+        let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+
+        guard let keyboardMinY = keyboardFrame?.minY else { return }
+        let registerButtonMaxY = loginButton.frame.maxY
+        let distance = registerButtonMaxY - keyboardMinY + 20
+
+        let transform = CGAffineTransform(translationX: 0, y: -distance)
+
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.view.transform = transform
+        })
+    }
+
+    @objc func hideKeyboard() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.view.transform = .identity
+        })
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

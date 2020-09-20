@@ -17,6 +17,8 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var likeAnimalLabel: UILabel!
     @IBOutlet weak var likeAnimalPicker: UIPickerView!
+    @IBOutlet weak var changeButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
 
     var selectedAnimal = ""
 
@@ -36,12 +38,21 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let user = user {
             displayNameTextField.text = user.displayName
         }
-        //プロフィール写真を円に設定
+
+        //ImageViewのタップ認識をONにする
+        iconImageView.isUserInteractionEnabled = true
+
+        setupNotificationObserver()
+        
+        //プロフィール写真の設定
         iconImageView.layer.cornerRadius = 40
+        iconImageView.layer.borderColor = UIColor.gray.cgColor
+        iconImageView.layer.borderWidth = 1
     }
 
     //アイコンイメージの設定
     @IBAction func imageSetting(_ sender: Any) {
+        print("image Tapped")
         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerController = UIImagePickerController()
@@ -58,13 +69,46 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
 
             // 選択された画像をiconImageViewに入れる
             iconImageView.image = image
-
             //画面の再描画
             self.viewWillAppear(true)
-
+            //picker閉じる
+            picker.dismiss(animated: true, completion: nil)
         }
     }
 
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // ImageSelectViewController画面を閉じてMyPageViewControllerに戻る
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func showKeyboard(notification: Notification) {
+        let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+
+        guard let keyboardMinY = keyboardFrame?.minY else { return }
+        let registerButtonMaxY = changeButton.frame.maxY
+        let distance = registerButtonMaxY - keyboardMinY + 20
+
+        let transform = CGAffineTransform(translationX: 0, y: -distance)
+
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.view.transform = transform
+        })
+    }
+
+    @objc func hideKeyboard() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.view.transform = .identity
+        })
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     @IBAction func handleChangeButton(_ sender: Any) {
 
@@ -93,14 +137,14 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                     let uid = Auth.auth().currentUser?.uid
                     // ログインしているユーザーのidをドキュメントのidとして作成するドキュメントを指定
                     let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
+                    let name = Auth.auth().currentUser?.displayName
                     let userDic = [
-                        "favoriteAnimal": self.selectedAnimal // 「好きな動物」欄で選ばれた動物
+                        "favoriteAnimal": self.selectedAnimal, // 「好きな動物」欄で選ばれた動物
+                        "name": name!,
+                        "date": FieldValue.serverTimestamp()
                     ] as [String : Any]
                       userRef.setData(userDic)
-
                     //プロフィール写真の保存の処理
-
-
                     // HUDで完了を知らせる
                     SVProgressHUD.showSuccess(withStatus: "表示名を変更しました")
                 }
@@ -108,6 +152,8 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         // キーボードを閉じる
         self.view.endEditing(true)
+        // 投稿処理が完了したのでHome画面に戻る
+        self.toMypage()
     }
 
     //インスタグラムアプリの処理を借りています
@@ -129,22 +175,29 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print(error!)
                 SVProgressHUD.showError(withStatus: "画像のアップロードが失敗しました")
                 // 投稿処理をキャンセルし、先頭画面に戻る
-                UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+                self.toMypage()
                 return
             }
             // FireStoreに投稿データを保存する
             let name = Auth.auth().currentUser?.displayName
 
-//            let postDic = [
-//                "name": name!,
-//                "date": FieldValue.serverTimestamp(),
-//                ] as [String : Any]
-//            postRef.setData(postDic)
+            let postDic = [
+                "name": name!,
+                "date": FieldValue.serverTimestamp(),
+                ] as [String : Any]
+            postRef.setData(postDic)
             // HUDで投稿完了を表示する
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
-            // 投稿処理が完了したので先頭画面に戻る
-            UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+            // 投稿処理が完了したのでHome画面に戻る
+            self.toMypage()
         }
+    }
+
+    private func toMypage() {
+        let storyBoard = UIStoryboard(name: "MyPage", bundle: nil)
+        let VideoListVC = storyBoard.instantiateViewController(identifier: "MyPage") as! MyPageViewController
+        VideoListVC.modalPresentationStyle = .fullScreen
+        self.present(VideoListVC, animated: true, completion: nil)
     }
     
     // ログアウトする
@@ -152,8 +205,9 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         do {
             try Auth.auth().signOut()
             // ログイン画面を表示する
-            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-            self.present(loginViewController!, animated: true, completion: nil)
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+            let loginViewController = storyBoard.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController, animated: true, completion: nil)
         } catch (let err) {
             print("ログアウトに失敗しました: \(err)")
         }
@@ -184,6 +238,7 @@ extension SettingViewController:UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectLikeAnimal = dataList[row]
+        self.selectedAnimal = selectLikeAnimal
         likeAnimalLabel.text = "好きな動物  " + selectLikeAnimal
     }
 }

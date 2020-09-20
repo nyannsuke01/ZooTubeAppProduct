@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fSx-um-fQb">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,15 +13,15 @@
             <objects>
                 <viewController storyboardIdentifier="MyPage" id="fSx-um-fQb" customClass="MyPageViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="89z-Yc-6sj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-te-uJr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-pz-rbG">
-                                <rect key="frame" x="0.0" y="44" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="あなたの好きな動物 : 動物名 の動画" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-BK-PyS">
-                                <rect key="frame" x="0.0" y="234" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="234" width="414" height="35"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="XjD-7T-hSU"/>
@@ -73,7 +73,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fVr-nN-xke">
-                                <rect key="frame" x="0.0" y="284" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="284" width="414" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="A2H-6l-gpD"/>
@@ -107,7 +107,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleLibraryButton:" destination="fSx-um-fQb" eventType="touchUpInside" id="1Bv-1m-wS7"/>
+                                    <action selector="toSettingButton:" destination="fSx-um-fQb" eventType="touchUpInside" id="1Bv-1m-wS7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,7 +151,7 @@
                         <outlet property="changeIconButton" destination="aPe-A6-Zy8" id="iZk-HT-mvK"/>
                         <outlet property="iconImageView" destination="wbs-BQ-eEG" id="i0s-BL-VPR"/>
                         <outlet property="likeAnimalLabel" destination="GPQ-hI-rNA" id="Dw6-oT-mp6"/>
-                        <outlet property="userName" destination="mCg-OI-yei" id="Tqk-cP-naF"/>
+                        <outlet property="userNameLabel" destination="mCg-OI-yei" id="Tqk-cP-naF"/>
                         <outlet property="videoListCollectionView" destination="fVr-nN-xke" id="f7V-Dq-WSU"/>
                     </connections>
                 </viewController>

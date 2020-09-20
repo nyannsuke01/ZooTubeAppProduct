@@ -1,14 +1,12 @@
 //
 //  Const.swift
-//  
+//  YoutubeApp
 //
-//  Created by user on 2020/09/11.
+//  Created by user on 2020/09/18.
+//  Copyright © 2020 Uske. All rights reserved.
 //
-
-import Foundation
 
 struct Const {
     static let UserPath = "users"
     static let IconImagePath = "images"
-    static let FavoritePath = "favorites"
 }

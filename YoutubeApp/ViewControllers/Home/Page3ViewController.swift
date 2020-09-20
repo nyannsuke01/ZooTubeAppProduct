@@ -19,14 +19,14 @@ class Page3ViewController: CommonPageViewController,IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.magenta
-        self.keyword = "ねこ"
+        self.keyword = "うさぎ"
         setupViews()
         fetchYoutubeSerachInfo()
 
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ねこ")
+        return IndicatorInfo(title: "うさぎ")
     }
 
     func setupViews() {
@@ -39,7 +39,7 @@ class Page3ViewController: CommonPageViewController,IndicatorInfoProvider {
     }
     //Youtube検索情報を取得
     func fetchYoutubeSerachInfo() {
-        let params = ["q": "ねこ"]
+        let params = ["q": "うさぎ"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items

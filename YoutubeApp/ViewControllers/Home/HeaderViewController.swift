@@ -63,8 +63,10 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
     @IBAction func toSetting(_ sender: Any) {
         print("設定ボタンがタップされました")
-        let settingVC = storyboard?.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
-        self.present(settingVC, animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
+        let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController
+//        SettingVC.modalPresentationStyle = .fullScreen
+        self.present(SettingVC, animated: true, completion: nil)
     }
     //タブの文字列の管理
     enum Tab: String {

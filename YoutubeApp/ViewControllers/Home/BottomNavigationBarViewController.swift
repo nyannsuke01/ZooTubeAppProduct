@@ -26,10 +26,12 @@ class BottomNavigationBarViewController: UITabBarController, UITabBarControllerD
         if viewController is MyPageViewController {
             // デフォルトMyPageViewControllerに遷移。ログインしていなければloginViewControllerに遷移。
             if Auth.auth().currentUser == nil {
-                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-                self.present(loginViewController!, animated: true, completion: nil)
+                let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+                let loginVC = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true, completion: nil)
             }
-            return false
+            return true
 
         } else {
             // その他のViewControllerは通常のタブ切り替えを実施

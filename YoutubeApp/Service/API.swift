@@ -44,9 +44,6 @@ class API {
                     print("変換に失敗しました。: ", error)
                 }
             }
-
         }
     }
-    
-    
 }

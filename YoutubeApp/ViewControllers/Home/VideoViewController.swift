@@ -8,6 +8,7 @@
 
 import UIKit
 import Nuke
+import Firebase
 
 class VideoViewController: TextFieldViewController {
     
@@ -73,7 +74,38 @@ class VideoViewController: TextFieldViewController {
         present(playWebviewController, animated: true, completion: nil)
 
     }
-    //　コメントボタンの実装 UIActivityViewControllerが表示され、シェアできる。
+
+    @IBAction func likeButtonTapped(_ sender: Any) {
+
+//        let user = User(dic: [String : Any])
+//
+//        //userのlikesを取り出す
+//        let userData = user.likes
+//
+//        let videoId = self.selectedItem?.id.videoId
+//
+//        // likesを更新する
+//        if let myid = Auth.auth().currentUser?.uid {
+//            // 更新データを作成する　タップした動画のvideoIdがuserのlikesに既に保存されていれば、
+//            if userData.isLiked {
+//                // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
+//                updateValue = FieldValue.arrayRemove([myid])
+//
+//                let buttonImage = UIImage(named: "like_exist")
+//                self.likeButton.setImage(buttonImage, for: .normal)
+//            } else {
+//                // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
+//                updateValue = FieldValue.arrayUnion([myid])
+//                let buttonImage = UIImage(named: "like_none")
+//                self.likeButton.setImage(buttonImage, for: .normal)
+//            }
+//            // likesに更新データを書き込む
+//            let postRef = Firestore.firestore().collection(Const.PostPath).document(userData.id)
+//            postRef.updateData(["likes": updateValue])
+//        }
+    }
+
+    //　シェアボタンの実装 UIActivityViewControllerが表示され、シェアできる。
     //　UIActivityViewControllerが立ち上がったら、テキスト、URL、videoImageViewを入れる。
     @IBAction func shareButtonTapped(_ sender: Any) {
         let text = commentTextField!.text
