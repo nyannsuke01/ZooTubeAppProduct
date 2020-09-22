@@ -19,7 +19,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var videoListCollectionView: UICollectionView!
 
 
-    private let atentionCellId = "atentionCellId"
+    let atentionCellId = "atentionCellId"
     private var videoItems = [Item]()
 
     var user: User? {
@@ -50,12 +50,13 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
 
-        //ユーザー登録されていれば、アカウント名と好きな動物を表示
-        if let user = user {
-            let name = Auth.auth().currentUser?.displayName
-            userNameLabel.text = name
-            likeAnimalLabel.text = user.favoriteAnimal
-        }
+        guard let name = Auth.auth().currentUser?.displayName else { return }
+        userNameLabel.text = name
+        likeAnimalLabel.text = user?.favoriteAnimal
+        // strageからアイコン画像の表示
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+        iconImageView.sd_setImage(with: imageRef)
 
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: atentionCellId)
@@ -68,7 +69,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         //好きな動物データの取得 ログインで好きな動物の登録が終わった後に、登録していた好きな動物を取り出す操作
         // ログインしているユーザーのidを取得
         if let uid = Auth.auth().currentUser?.uid {
-            // ユーザー情報はリスナー登録してスナップショットを取得する必要がないので、単純に単一ドキュメントからの情報取得で良いか
+            // ユーザー情報は単純に単一ドキュメントからの情報取得
             let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
             userRef.getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -77,8 +78,9 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                     self.likeAnimalLabel.text = favoriteAnimal
                     let accountName = userDic!["name"] as? String
                     self.userNameLabel.text = accountName
+                } else {
+                    print("Document does not exist")
                 }
-                print("Document does not exist")
             }
         }
         // favoriteAnimalがnilでないならこれを使ってAPIリクエスト

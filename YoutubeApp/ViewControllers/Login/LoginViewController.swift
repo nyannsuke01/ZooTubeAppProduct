@@ -19,18 +19,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var mailAddressTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ログインボタンの状態　非活性 初期化
-        loginButton.layer.cornerRadius = 10
-        loginButton.isEnabled = false
-        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
-        //アカウント作成ボタンの状態　非活性
-        createAccountButton.layer.cornerRadius = 10
-        createAccountButton.isEnabled = false
-        createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
 
+        setupViews()
         setupNotificationObserver()
 
         mailAddressTextField.delegate = self
@@ -111,6 +105,28 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+
+    @IBAction func handleCancelButton(_ sender: Any) {
+        // 画面を閉じてタブ画面に戻る
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    //　画面の初期状態
+    private func setupViews() {
+        //ログインボタンの状態　非活性 初期化
+        loginButton.layer.cornerRadius = 10
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        //アカウント作成ボタンの状態　非活性
+        createAccountButton.layer.cornerRadius = 10
+        createAccountButton.isEnabled = false
+        createAccountButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+        //キャンセルボタンの状態　活性
+        cancelButton.layer.cornerRadius = 10
+        cancelButton.isEnabled = true
+        cancelButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+
     }
 
     //キーボードの通知の設定

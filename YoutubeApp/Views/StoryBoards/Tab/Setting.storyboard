@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-A0-TbL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65N-ZQ-3k3">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -25,7 +26,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="9eW-Zi-4B3"/>
                                     <constraint firstAttribute="height" constant="44" id="lYM-aC-XzW"/>
                                 </constraints>
-                                <color key="barTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" systemColor="systemTealColor"/>
                                 <items>
                                     <navigationItem title="プロフィール設定" id="BUT-cI-oiW"/>
                                 </items>
@@ -59,13 +60,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ao-PS-KLz">
-                                <rect key="frame" x="0.0" y="347" width="375" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="WW4-qO-R75"/>
-                                </constraints>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-tO-sra">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-tO-sra">
                                 <rect key="frame" x="147.66666666666666" y="525" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -79,7 +74,7 @@
                                     <action selector="handleChangeButton:" destination="cbL-ve-YGQ" eventType="touchUpInside" id="2Dd-XI-4ap"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-3o-fm3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-3o-fm3">
                                 <rect key="frame" x="147.66666666666666" y="571" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -102,8 +97,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ao-PS-KLz">
+                                <rect key="frame" x="0.0" y="340" width="375" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="WW4-qO-R75"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9V-Qv-gve">
+                                <rect key="frame" x="147.66666666666666" y="615" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Lim-RJ-0H1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="UuE-LT-yBy"/>
+                                    <constraint firstAttribute="height" constant="30" id="iMk-lf-ad2"/>
+                                    <constraint firstAttribute="width" constant="80" id="ovO-JA-zdA"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancellButtonTapped:" destination="cbL-ve-YGQ" eventType="touchUpInside" id="afU-so-ZSj"/>
+                                    <action selector="handleLogoutButton:" destination="cbL-ve-YGQ" eventType="touchUpInside" id="MGo-j1-wYA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3yD-8e-heQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hWn-rf-8n2" firstAttribute="top" secondItem="0o3-wL-GXQ" secondAttribute="bottom" constant="17" id="1Hc-F9-2qn"/>
                             <constraint firstItem="9Ao-PS-KLz" firstAttribute="leading" secondItem="3yD-8e-heQ" secondAttribute="leading" id="2uX-Qh-rHY"/>
@@ -113,6 +132,7 @@
                             <constraint firstItem="65N-ZQ-3k3" firstAttribute="top" secondItem="2kh-A0-TbL" secondAttribute="bottom" id="EoY-47-08w"/>
                             <constraint firstItem="9Ao-PS-KLz" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" id="F4c-8b-Ct4"/>
                             <constraint firstItem="65N-ZQ-3k3" firstAttribute="top" secondItem="3yD-8e-heQ" secondAttribute="top" id="Fu6-V1-kxg"/>
+                            <constraint firstItem="k9V-Qv-gve" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" id="IBk-o0-QeE"/>
                             <constraint firstItem="PCR-3o-fm3" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" id="IVk-dS-Dum"/>
                             <constraint firstItem="2kh-A0-TbL" firstAttribute="leading" secondItem="DxM-CT-cqB" secondAttribute="leading" id="Ie9-ub-14z"/>
                             <constraint firstItem="sxu-8k-c4c" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" constant="4.5" id="N7Q-X7-7Dp"/>
@@ -129,16 +149,17 @@
                             <constraint firstItem="LP2-hU-0Qb" firstAttribute="top" secondItem="sxu-8k-c4c" secondAttribute="bottom" constant="8" id="je8-vB-ptT"/>
                             <constraint firstItem="sxu-8k-c4c" firstAttribute="top" secondItem="65N-ZQ-3k3" secondAttribute="bottom" constant="9" id="kv0-2w-sct"/>
                             <constraint firstItem="0o3-wL-GXQ" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" id="oXs-Aa-2Ph"/>
-                            <constraint firstItem="9Ao-PS-KLz" firstAttribute="top" secondItem="hWn-rf-8n2" secondAttribute="bottom" constant="15" id="rBp-bh-yCA"/>
+                            <constraint firstItem="9Ao-PS-KLz" firstAttribute="top" secondItem="hWn-rf-8n2" secondAttribute="bottom" constant="8" id="rBp-bh-yCA"/>
                             <constraint firstItem="PCR-3o-fm3" firstAttribute="top" secondItem="Ndd-tO-sra" secondAttribute="bottom" constant="16" id="rck-En-UYC"/>
-                            <constraint firstItem="Ndd-tO-sra" firstAttribute="top" secondItem="9Ao-PS-KLz" secondAttribute="bottom" constant="8" id="sYG-Yw-t9w"/>
+                            <constraint firstItem="Ndd-tO-sra" firstAttribute="top" secondItem="9Ao-PS-KLz" secondAttribute="bottom" constant="15" id="sYG-Yw-t9w"/>
                             <constraint firstItem="LP2-hU-0Qb" firstAttribute="centerX" secondItem="DxM-CT-cqB" secondAttribute="centerX" id="tpL-Tx-mgd"/>
                             <constraint firstAttribute="trailing" secondItem="2kh-A0-TbL" secondAttribute="trailing" id="xgY-bg-LcM"/>
                             <constraint firstItem="65N-ZQ-3k3" firstAttribute="trailing" secondItem="3yD-8e-heQ" secondAttribute="trailing" id="z96-ml-Rch"/>
+                            <constraint firstItem="k9V-Qv-gve" firstAttribute="top" secondItem="PCR-3o-fm3" secondAttribute="bottom" constant="14" id="zFi-hA-SXs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3yD-8e-heQ"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="k9V-Qv-gve" id="ahZ-ez-owa"/>
                         <outlet property="changeButton" destination="Ndd-tO-sra" id="uEm-A5-82r"/>
                         <outlet property="displayNameTextField" destination="0o3-wL-GXQ" id="qjf-pE-896"/>
                         <outlet property="iconImageView" destination="sxu-8k-c4c" id="JrQ-Zz-cQD"/>
@@ -159,5 +180,11 @@
     </scenes>
     <resources>
         <image name="noimage" width="600" height="600"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

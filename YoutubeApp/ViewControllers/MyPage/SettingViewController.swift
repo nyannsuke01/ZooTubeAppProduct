@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 import FirebaseAuth
 import SVProgressHUD
 
@@ -19,6 +20,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var likeAnimalPicker: UIPickerView!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
 
     var selectedAnimal = ""
 
@@ -37,17 +39,31 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         let user = Auth.auth().currentUser
         if let user = user {
             displayNameTextField.text = user.displayName
+            // strageからアイコン画像の表示
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+            iconImageView.sd_setImage(with: imageRef)
         }
 
         //ImageViewのタップ認識をONにする
         iconImageView.isUserInteractionEnabled = true
 
+        //キーボード表示のオブザーバーの設定
         setupNotificationObserver()
-        
+
+        setUpViews()
+    }
+
+    private func setUpViews() {
         //プロフィール写真の設定
         iconImageView.layer.cornerRadius = 40
         iconImageView.layer.borderColor = UIColor.gray.cgColor
         iconImageView.layer.borderWidth = 1
+
+        //ボタンの色の設定
+        changeButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+        logoutButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
+        cancelButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
     }
 
     //アイコンイメージの設定
@@ -69,8 +85,6 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
 
             // 選択された画像をiconImageViewに入れる
             iconImageView.image = image
-            //画面の再描画
-            self.viewWillAppear(true)
             //picker閉じる
             picker.dismiss(animated: true, completion: nil)
         }
@@ -81,6 +95,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
+    //キーボード表示のオブザーバーの設定
     private func setupNotificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -111,6 +126,47 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @IBAction func handleChangeButton(_ sender: Any) {
+        //写真を保存
+        handlePostButton()
+    }
+
+    func handlePostButton() {
+        // 画像をJPEG形式に変換する
+        guard let image = iconImageView.image else { return }
+        guard let imageData = image.jpegData(compressionQuality: 0.7) else { return }
+        // 画像と投稿データの保存場所を定義する
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+        // HUDで投稿処理中の表示を開始
+        SVProgressHUD.show()
+        // Storageに画像をアップロードする
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        imageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+            if error != nil {
+                // 画像のアップロード失敗
+                print(error!)
+                SVProgressHUD.showError(withStatus: "画像のアップロードが失敗しました")
+                // 画面を閉じてタブ画面に戻る
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            //画像のアップロード成功時、画像URLをFirestoreに設定する
+            imageRef.downloadURL { (url, error) in
+                if error != nil {
+                    print("Firestorageからのダウンロードに失敗しました。", error!)
+                    return
+                }
+
+                guard let urlString = url?.absoluteString else { return }
+                self.createUserToFirestore(profileImageUrl: urlString)
+            }
+            // HUDで投稿完了を表示する
+            SVProgressHUD.showSuccess(withStatus: "写真を投稿しました")
+        }
+    }
+
+    private func createUserToFirestore(profileImageUrl: String) {
 
         if let displayName = displayNameTextField.text {
 
@@ -137,14 +193,14 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                     let uid = Auth.auth().currentUser?.uid
                     // ログインしているユーザーのidをドキュメントのidとして作成するドキュメントを指定
                     let userRef = Firestore.firestore().collection(Const.UserPath).document(uid!)
-                    let name = Auth.auth().currentUser?.displayName
+                    guard let name = Auth.auth().currentUser?.displayName else { return }
                     let userDic = [
                         "favoriteAnimal": self.selectedAnimal, // 「好きな動物」欄で選ばれた動物
-                        "name": name!,
-                        "date": FieldValue.serverTimestamp()
+                        "name": name,
+                        "date": FieldValue.serverTimestamp(),
+                        "profileImageUrl": profileImageUrl
                     ] as [String : Any]
                       userRef.setData(userDic)
-                    //プロフィール写真の保存の処理
                     // HUDで完了を知らせる
                     SVProgressHUD.showSuccess(withStatus: "表示名を変更しました")
                 }
@@ -152,54 +208,12 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         // キーボードを閉じる
         self.view.endEditing(true)
-        // 投稿処理が完了したのでHome画面に戻る
-        self.toMypage()
-    }
+        // 画面を閉じてタブ画面に戻る
+        self.dismiss(animated: true, completion: nil)
 
-    //インスタグラムアプリの処理を借りています
-
-    @objc func handlePostButton(_ sender: Any) {
-        // 画像をJPEG形式に変換する
-        let imageData = iconImageView.image!.jpegData(compressionQuality: 0.75)
-        // 画像と投稿データの保存場所を定義する
-        let postRef = Firestore.firestore().collection(Const.UserPath).document()
-        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(postRef.documentID + ".jpg")
-        // HUDで投稿処理中の表示を開始
-        SVProgressHUD.show()
-        // Storageに画像をアップロードする
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-        imageRef.putData(imageData!, metadata: metadata) { (metadata, error) in
-            if error != nil {
-                // 画像のアップロード失敗
-                print(error!)
-                SVProgressHUD.showError(withStatus: "画像のアップロードが失敗しました")
-                // 投稿処理をキャンセルし、先頭画面に戻る
-                self.toMypage()
-                return
-            }
-            // FireStoreに投稿データを保存する
-            let name = Auth.auth().currentUser?.displayName
-
-            let postDic = [
-                "name": name!,
-                "date": FieldValue.serverTimestamp(),
-                ] as [String : Any]
-            postRef.setData(postDic)
-            // HUDで投稿完了を表示する
-            SVProgressHUD.showSuccess(withStatus: "投稿しました")
-            // 投稿処理が完了したのでHome画面に戻る
-            self.toMypage()
-        }
-    }
-
-    private func toMypage() {
-        let storyBoard = UIStoryboard(name: "MyPage", bundle: nil)
-        let VideoListVC = storyBoard.instantiateViewController(identifier: "MyPage") as! MyPageViewController
-        VideoListVC.modalPresentationStyle = .fullScreen
-        self.present(VideoListVC, animated: true, completion: nil)
     }
     
+
     // ログアウトする
     @IBAction func handleLogoutButton(_ sender: Any) {
         do {
@@ -211,6 +225,10 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         } catch (let err) {
             print("ログアウトに失敗しました: \(err)")
         }
+    }
+    @IBAction func cancellButtonTapped(_ sender: Any) {
+        // 画面を閉じてタブ画面に戻る
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
