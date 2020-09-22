@@ -60,7 +60,6 @@
 		CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71227250DD85F0045FD15 /* Header.storyboard */; };
 		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
 		CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71237250E43630045FD15 /* VideoList.storyboard */; };
-		CEB71239250E47110045FD15 /* CollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB71238250E47110045FD15 /* CollectionView.xib */; };
 		CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43ED250F825400B27B85 /* Page5.storyboard */; };
 		CEDD43F2250F825500B27B85 /* Page6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EE250F825400B27B85 /* Page6.storyboard */; };
 		CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EF250F825500B27B85 /* Page4.storyboard */; };
@@ -151,7 +150,6 @@
 		CEB71227250DD85F0045FD15 /* Header.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Header.storyboard; sourceTree = "<group>"; };
 		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
 		CEB71236250E43630045FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
-		CEB71238250E47110045FD15 /* CollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionView.xib; sourceTree = "<group>"; };
 		CEDD43ED250F825400B27B85 /* Page5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page5.storyboard; sourceTree = "<group>"; };
 		CEDD43EE250F825400B27B85 /* Page6.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page6.storyboard; sourceTree = "<group>"; };
 		CEDD43EF250F825500B27B85 /* Page4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page4.storyboard; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			children = (
 				7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */,
 				7C34CF5E24D624EE00160445 /* AttentionCollectionViewCell.xib */,
-				CEB71238250E47110045FD15 /* CollectionView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -571,7 +568,6 @@
 				CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
-				CEB71239250E47110045FD15 /* CollectionView.xib in Resources */,
 				CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */,
 				CE32FEC72507656C001082A2 /* Photos.plist in Resources */,
 				CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */,
@@ -842,7 +838,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -896,7 +892,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

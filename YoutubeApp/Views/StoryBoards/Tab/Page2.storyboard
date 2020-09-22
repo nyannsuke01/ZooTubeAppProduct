@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,14 +12,14 @@
         <!--Page2 View Controller-->
         <scene sceneID="03B-7O-Zau">
             <objects>
-                <viewController storyboardIdentifier="Page2" id="XTs-e0-3rj" customClass="Page2ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XTs-e0-3rj" customClass="Page2ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yp9-1N-d4M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZJD-iI-Jlo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vty-mb-7yD">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -31,7 +32,7 @@
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-Kj-MZj">
                                             <rect key="frame" x="0.0" y="0.0" width="416" height="769"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ybf-Tp-H5f">
                                                 <size key="itemSize" width="128" height="128"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -50,14 +51,14 @@
                                             </cells>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <viewLayoutGuide key="safeArea" id="MXe-AM-vf4"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="MXe-AM-vf4" firstAttribute="bottom" secondItem="aI8-Kj-MZj" secondAttribute="bottom" id="G7t-AI-oMv"/>
                                         <constraint firstItem="aI8-Kj-MZj" firstAttribute="leading" secondItem="MXe-AM-vf4" secondAttribute="leading" id="OLO-Jk-JsQ"/>
                                         <constraint firstItem="aI8-Kj-MZj" firstAttribute="top" secondItem="MXe-AM-vf4" secondAttribute="top" id="QEl-c1-8iv"/>
                                         <constraint firstItem="MXe-AM-vf4" firstAttribute="trailing" secondItem="aI8-Kj-MZj" secondAttribute="trailing" constant="-2" id="piK-EC-8Qi"/>
                                     </constraints>
-                                    <viewLayoutGuide key="safeArea" id="MXe-AM-vf4"/>
                                 </view>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="naG-L9-mwE">
@@ -71,14 +72,14 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Olr-j0-uDx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Olr-j0-uDx" firstAttribute="bottom" secondItem="ZJD-iI-Jlo" secondAttribute="bottom" id="8sx-kf-uSh"/>
                             <constraint firstItem="ZJD-iI-Jlo" firstAttribute="top" secondItem="Olr-j0-uDx" secondAttribute="top" id="Gh7-ed-p9t"/>
                             <constraint firstItem="ZJD-iI-Jlo" firstAttribute="leading" secondItem="Olr-j0-uDx" secondAttribute="leading" id="Oqm-QI-9kF"/>
                             <constraint firstItem="Olr-j0-uDx" firstAttribute="trailing" secondItem="ZJD-iI-Jlo" secondAttribute="trailing" id="ivf-9I-DRf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Olr-j0-uDx"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -90,4 +91,9 @@
             <point key="canvasLocation" x="62" y="-12"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

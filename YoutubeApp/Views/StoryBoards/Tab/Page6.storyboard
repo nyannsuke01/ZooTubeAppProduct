@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,14 +12,14 @@
         <!--Page6 View Controller-->
         <scene sceneID="Z5B-x9-PVG">
             <objects>
-                <viewController storyboardIdentifier="Page6" id="YPc-tL-wqe" customClass="Page6ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page6" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YPc-tL-wqe" customClass="Page6ViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqJ-ue-lKa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32z-r2-dhX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jsi-iq-5sf">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,14 +38,14 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ta4-un-usq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="32z-r2-dhX" firstAttribute="top" secondItem="Ta4-un-usq" secondAttribute="top" id="UC8-9H-wbL"/>
                             <constraint firstItem="32z-r2-dhX" firstAttribute="bottom" secondItem="Ta4-un-usq" secondAttribute="bottom" id="UQY-7r-lbz"/>
                             <constraint firstItem="32z-r2-dhX" firstAttribute="trailing" secondItem="Ta4-un-usq" secondAttribute="trailing" id="jKA-La-be4"/>
                             <constraint firstItem="32z-r2-dhX" firstAttribute="leading" secondItem="Ta4-un-usq" secondAttribute="leading" id="n3X-lq-SM6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ta4-un-usq"/>
                     </view>
                     <connections>
                         <outlet property="videoListCollectionView" destination="32z-r2-dhX" id="cCA-Cm-RmF"/>
@@ -55,4 +56,9 @@
             <point key="canvasLocation" x="667" y="-17"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

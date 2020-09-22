@@ -8,11 +8,13 @@
 
 import UIKit
 import Alamofire
+import Firebase
+import FirebaseUI
 
 class LikeViewController: UIViewController {
 
     @IBOutlet weak var videoListCollectionView: UICollectionView!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
@@ -37,7 +39,11 @@ class LikeViewController: UIViewController {
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         //プロフィール写真を円に設定
-        profileImageView.layer.cornerRadius = 20
+        iconImageView.layer.cornerRadius = 20
+        // strageからアイコン画像の表示
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+        iconImageView.sd_setImage(with: imageRef)
 
     }
     //Youtube検索情報を取得

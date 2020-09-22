@@ -109,7 +109,7 @@
                         <outlet property="headerHeightConstraint" destination="NJb-Ru-A4r" id="WmX-0P-Mhj"/>
                         <outlet property="headerTopConstraint" destination="DSM-Ey-gjd" id="Itn-kq-JXn"/>
                         <outlet property="headerView" destination="NRv-AT-2pl" id="99z-od-SoN"/>
-                        <outlet property="profileImageView" destination="jP5-Td-3Xg" id="6gq-iE-9a9"/>
+                        <outlet property="iconImageView" destination="jP5-Td-3Xg" id="6gq-iE-9a9"/>
                         <outlet property="videoListCollectionView" destination="Yk6-94-mvC" id="GgX-D5-RW3"/>
                     </connections>
                 </viewController>

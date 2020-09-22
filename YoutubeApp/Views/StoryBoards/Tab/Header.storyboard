@@ -130,7 +130,7 @@
                         <outlet property="headerHeightConstraint" destination="6aw-Ll-n5V" id="VDk-p5-WAH"/>
                         <outlet property="headerTopConstraint" destination="Inh-SO-UQY" id="vMQ-jZ-xnS"/>
                         <outlet property="headerView" destination="iGf-7K-u5k" id="xlg-nd-9Nm"/>
-                        <outlet property="profileImageView" destination="SIs-Fj-grf" id="Kih-SK-co9"/>
+                        <outlet property="iconImageView" destination="SIs-Fj-grf" id="Sk6-2y-9hm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6V-x3-bdT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,10 +8,12 @@
 
 import UIKit
 import XLPagerTabStrip
+import Firebase
+import FirebaseUI
 
 class HeaderViewController: ButtonBarPagerTabStripViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
@@ -31,7 +33,11 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
         super.viewDidLoad()
         //プロフィール写真を円に設定
-        profileImageView.layer.cornerRadius = 20
+        iconImageView.layer.cornerRadius = 20
+        // strageからアイコン画像の表示
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+        iconImageView.sd_setImage(with: imageRef)
 
     }
 
@@ -79,70 +85,3 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
     }
 }
-
-//    //HeaderView消える処理
-//    private func headerViewEndAnimation() {
-//        if headerTopConstraint.constant < -headerHeightConstraint.constant / 2 {
-//            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-//
-//                self.headerTopConstraint.constant = -self.headerHeightConstraint.constant
-//                self.headerView.alpha = 0
-//                self.view.layoutIfNeeded()
-//            })
-//        } else {
-//            //再出現
-//            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.8, options: [], animations: {
-//
-//                self.headerTopConstraint.constant = 0
-//                self.headerView.alpha = 1
-//                self.view.layoutIfNeeded()
-//            })
-//        }
-//    }
-
-
-
-// MARK: - ScrollViewのDelegateメソッド
-//extension HeaderViewController {
-//
-//    // scrollした時に呼ばれるメソッド
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        headerAnimation(scrollView: scrollView)
-//    }
-//
-//    private func headerAnimation(scrollView: UIScrollView) {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            self.prevContentOffset = scrollView.contentOffset
-//        }
-//
-//        guard let presentIndexPath = videoListCollectionView.indexPathForItem(at: scrollView.contentOffset) else { return }
-//        if scrollView.contentOffset.y < 0 { return }
-//        if presentIndexPath.row >= videoItems.count - 2 { return }
-//
-//        let alphaRatio = 1 / headerHeightConstraint.constant
-//
-//        if self.prevContentOffset.y < scrollView.contentOffset.y {
-//            if headerTopConstraint.constant <= -headerHeightConstraint.constant { return }
-//            headerTopConstraint.constant -= headerMoveHeight
-//            headerView.alpha -= alphaRatio * headerMoveHeight
-//        } else if self.prevContentOffset.y > scrollView.contentOffset.y {
-//            if headerTopConstraint.constant >= 0 { return }
-//            headerTopConstraint.constant += headerMoveHeight
-//            headerView.alpha += alphaRatio * headerMoveHeight
-//        }
-//
-//    }
-//
-//    // scrollViewのscrollがピタッと止まった時に呼ばれる
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if !decelerate {
-//            headerViewEndAnimation()
-//        }
-//    }
-//
-//    // scrollViewが止まった時に呼ばれる
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        headerViewEndAnimation()
-//    }
-//
-//}
