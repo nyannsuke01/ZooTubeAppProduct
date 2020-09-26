@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import SVProgressHUD
 
 class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -20,6 +21,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
 
 
     let atentionCellId = "atentionCellId"
+    let likeAnimal = ""
     private var videoItems = [Item]()
 
     var user: User? {
@@ -71,11 +73,20 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let uid = Auth.auth().currentUser?.uid {
             // ユーザー情報は単純に単一ドキュメントからの情報取得
             let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
-            userRef.getDocument { (document, error) in
+            userRef.getDocument { [self] (document, error) in
                 if let document = document, document.exists {
                     let userDic = document.data()
-                    let favoriteAnimal = userDic!["favoriteAnimal"] as? String
-                    self.likeAnimalLabel.text = favoriteAnimal
+
+                    if let favoriteAnimal = userDic!["favoriteAnimal"] as? String {
+                        self.likeAnimalLabel.text = favoriteAnimal
+                        // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
+                        guard let likeAnimal = self.likeAnimalLabel.text else { return }
+                        fetchYouTubeAPI(likeAnimal: likeAnimal)
+                        print(self.likeAnimalLabel.text!)
+                    } else {
+                        print("nillです")
+                    }
+
                     let accountName = userDic!["name"] as? String
                     self.userNameLabel.text = accountName
                 } else {
@@ -83,9 +94,13 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
             }
         }
-        // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
+    }
+
+    private func fetchYouTubeAPI(likeAnimal: String) {
         //TODO: paramを好きな動物に変える
-        let params = ["q": self.likeAnimalLabel.text]
+        let params = [
+            "q": likeAnimal
+        ]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items

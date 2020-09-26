@@ -36,6 +36,7 @@
 		CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */; };
 		CE09D8F32509208D00C4D1BE /* CommonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */; };
 		CE09D8F52509862E00C4D1BE /* BottomNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */; };
+		CE19A1B0251A6E960056860B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE19A1AF251A6E960056860B /* GoogleService-Info.plist */; };
 		CE32FEB225075603001082A2 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FEAF25075603001082A2 /* ZooViewController.swift */; };
 		CE32FEB325075603001082A2 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FEB025075603001082A2 /* PhotoStreamViewController.swift */; };
 		CE32FEB425075603001082A2 /* ZooPictureLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FEB125075603001082A2 /* ZooPictureLayout.swift */; };
@@ -126,6 +127,7 @@
 		CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonPageViewController.swift; sourceTree = "<group>"; };
 		CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBarViewController.swift; sourceTree = "<group>"; };
+		CE19A1AF251A6E960056860B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE32FEAF25075603001082A2 /* ZooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
 		CE32FEB025075603001082A2 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		CE32FEB125075603001082A2 /* ZooPictureLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZooPictureLayout.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				7CE584CB24B1F19300281866 /* YoutubeApp */,
 				CE32FECC2507BB60001082A2 /* APIKey.plist */,
+				CE19A1AF251A6E960056860B /* GoogleService-Info.plist */,
 				CE8B5C942515CC3E00F52822 /* GoogleService-Info.plist */,
 				7CE584E224B1F19400281866 /* YoutubeAppTests */,
 				7CE584ED24B1F19400281866 /* YoutubeAppUITests */,
@@ -559,6 +562,7 @@
 				CE8B5C952515CC3E00F52822 /* GoogleService-Info.plist in Resources */,
 				7CE584D624B1F19400281866 /* Assets.xcassets in Resources */,
 				CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */,
+				CE19A1B0251A6E960056860B /* GoogleService-Info.plist in Resources */,
 				CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */,
 				7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */,
 				CE8B5C832513C6EA00F52822 /* Setting.storyboard in Resources */,

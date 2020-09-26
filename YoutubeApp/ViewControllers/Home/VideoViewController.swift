@@ -9,6 +9,8 @@
 import UIKit
 import Nuke
 import Firebase
+import FirebaseFirestore
+import SVProgressHUD
 
 class VideoViewController: TextFieldViewController {
     
@@ -23,6 +25,8 @@ class VideoViewController: TextFieldViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentTextField: UITextField!
 
+    //　お気に入りフラグ　(未登録:0　登録済:1)
+    var likeRegistrationFlag = 0
 
     // 共通URL
     // youtubeURL = https://www.youtube.com/watch?v=\(videoId!)
@@ -77,51 +81,58 @@ class VideoViewController: TextFieldViewController {
 
     @IBAction func likeButtonTapped(_ sender: Any) {
 
-//        let user = User(dic: [String : Any])
-//
-//        //userのlikesを取り出す
-//        let userData = user.likes
-//
-//        let videoId = self.selectedItem?.id.videoId
-//
-//        // likesを更新する
-//        if let myid = Auth.auth().currentUser?.uid {
-//            // 更新データを作成する　タップした動画のvideoIdがuserのlikesに既に保存されていれば、
-//            if userData.isLiked {
-//                // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
-//                updateValue = FieldValue.arrayRemove([myid])
-//
-//                let buttonImage = UIImage(named: "like_exist")
-//                self.likeButton.setImage(buttonImage, for: .normal)
-//            } else {
-//                // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
-//                updateValue = FieldValue.arrayUnion([myid])
-//                let buttonImage = UIImage(named: "like_none")
-//                self.likeButton.setImage(buttonImage, for: .normal)
-//            }
-//            // likesに更新データを書き込む
-//            let postRef = Firestore.firestore().collection(Const.PostPath).document(userData.id)
-//            postRef.updateData(["likes": updateValue])
-//        }
+        //ここでお気に入り追加　ログインできたことが前提であるため
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        // ログインしているユーザーのidをドキュメントのidとして作成するドキュメントを指定
+        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
+        let videoId = self.selectedItem?.id.videoId
+
+        // 既にお気に入りボタンがお押されている場合
+        if likeRegistrationFlag == 1 {
+
+            let buttonImage = UIImage(named: "like_none")
+            self.likeButton.setImage(buttonImage, for: .normal)
+            // 選択したvideoIdをuserDicに追加する
+            let userDic = [
+                "videoId": FieldValue.arrayRemove([videoId!])
+            ] as [String : Any]
+            //　お気に入りフラグ　(未登録:0　登録済:1)
+            likeRegistrationFlag = 0
+            userRef.updateData(userDic)
+            SVProgressHUD.showSuccess(withStatus: "お気に入りを解除しました")
+        } else {
+            //まだお気に入りボタンがお押されていない場合
+            let buttonImage = UIImage(named: "like_exist")
+            self.likeButton.setImage(buttonImage, for: .normal)
+            // 選択したvideoIdをuserDicから取り除く
+            let userDic = [
+                "videoId": FieldValue.arrayUnion([videoId!])
+            ] as [String : Any]
+            //　お気に入りフラグ　(未登録:0　登録済:1)
+            likeRegistrationFlag = 1
+            userRef.updateData(userDic)
+            // HUDで完了を知らせる
+            SVProgressHUD.showSuccess(withStatus: "お気に入り動画に追加しました")
+        }
     }
 
     //　シェアボタンの実装 UIActivityViewControllerが表示され、シェアできる。
     //　UIActivityViewControllerが立ち上がったら、テキスト、URL、videoImageViewを入れる。
     @IBAction func shareButtonTapped(_ sender: Any) {
+        let zooTube = "ZooTubeアプリで動物の動画をみよう！"
         let text = commentTextField!.text
         let videoId = self.selectedItem?.id.videoId
         let url = baseYouTubeUrl + videoId!
         let sampleUrl = NSURL(string: url)!
-        let image = videoImageView.image
 
-        let items = [text!, sampleUrl, image!] as [Any]
+        let items = [zooTube, text!, sampleUrl] as [Any]
 
 
         //　UIActivityViewControllerをインスタンス化
-        let activityVc = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
 
         //　UIAcitivityViewControllerを表示
-        self.present(activityVc, animated: true, completion: nil)
+        self.present(activityVC, animated: true, completion: nil)
     }
 
     //　VideListViewControllerに戻る
