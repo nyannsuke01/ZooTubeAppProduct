@@ -48,7 +48,7 @@ class LikeViewController: UIViewController {
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
-        let params = ["q": "ねこ　かわいい"]
+        let params = ["q": "vRsbUlPmjqY"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
