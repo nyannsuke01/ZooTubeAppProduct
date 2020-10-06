@@ -8,7 +8,9 @@
 youtube動画アプリ作成
 https://www.youtube.com/watch?v=nCpOczu1K68&t=499s
 
-![Simulator Screen Shot - iPhone 11 Pro - 2020-10-06 at 14 49 11](https://user-images.githubusercontent.com/51296886/95164074-45357000-07e4-11eb-903b-57ed31bdf650.png)
-![Simulator Screen Shot - iPhone 11 Pro - 2020-10-06 at 14 49 45](https://user-images.githubusercontent.com/51296886/95164083-4a92ba80-07e4-11eb-9828-d88ace996af8.png)
-![Simulator Screen Shot - iPhone 11 Pro - 2020-10-06 at 14 50 17](https://user-images.githubusercontent.com/51296886/95164085-4b2b5100-07e4-11eb-8df5-154d3eaee55f.png)
-![Simulator Screen Shot - iPhone 11 Pro - 2020-10-06 at 14 51 43](https://user-images.githubusercontent.com/51296886/95164086-4bc3e780-07e4-11eb-814c-acbd7c9e5396.png)
+<img width="244" alt="スクリーンショット 2020-10-06 15 11 15" src="https://user-images.githubusercontent.com/51296886/95165481-00f79f00-07e7-11eb-95e3-7b777cb9ec9f.png">
+<img width="247" alt="スクリーンショット 2020-10-06 15 11 55" src="https://user-images.githubusercontent.com/51296886/95165482-02c16280-07e7-11eb-874e-b98953c05eb7.png">
+<img width="245" alt="スクリーンショット 2020-10-06 15 12 20" src="https://user-images.githubusercontent.com/51296886/95165484-02c16280-07e7-11eb-828e-5f3475662d10.png">
+<img width="248" alt="スクリーンショット 2020-10-06 15 12 41" src="https://user-images.githubusercontent.com/51296886/95165485-0359f900-07e7-11eb-9a8b-b3bc081f3daa.png">
+<img width="246" alt="スクリーンショット 2020-10-06 15 13 21" src="https://user-images.githubusercontent.com/51296886/95165486-03f28f80-07e7-11eb-8173-5ecf30055e38.png">
+<img width="250" alt="スクリーンショット 2020-10-06 15 16 22" src="https://user-images.githubusercontent.com/51296886/95165489-03f28f80-07e7-11eb-9fdd-90fa2e3e69cf.png">
