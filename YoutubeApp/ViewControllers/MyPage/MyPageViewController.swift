@@ -21,7 +21,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
 
 
     let atentionCellId = "atentionCellId"
-    let likeAnimal = ""
+    var favoriteAnimal = ""
     private var videoItems = [Item]()
 
     var user: User? {
@@ -84,7 +84,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                         fetchYouTubeAPI(likeAnimal: likeAnimal)
                         print(self.likeAnimalLabel.text!)
                     } else {
-                        print("nillです")
+                        print("Document does not exist")
                     }
 
                     let accountName = userDic!["name"] as? String

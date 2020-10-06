@@ -74,7 +74,7 @@ class VideoViewController: TextFieldViewController {
         // 選択したvideoIdがFirebaseのvideoIdに含まれていれば、likedImage()を呼ぶ
         // 選択したvideoId
         let videoIds = self.selectedItem?.id.videoId
-        // TODO: FirebaseのvideoIdの取り出し方
+
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
         let db = Firestore.firestore()
@@ -98,7 +98,7 @@ class VideoViewController: TextFieldViewController {
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
-                        print("②お気に入りに登録済の動画です")
+                        print("お気に入りに登録済の動画です")
                         //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
                         self.likedImage()
                         //　お気に入りフラグ　(未登録:0　登録済:1)

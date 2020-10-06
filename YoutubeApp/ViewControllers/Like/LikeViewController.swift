@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Firebase
+import FirebaseFirestore
 import FirebaseUI
 
 class LikeViewController: UIViewController {
@@ -25,11 +26,17 @@ class LikeViewController: UIViewController {
     private let cellId = "cellId"
     private var videoItems = [Item]()
 
+
+    var userData: User!
+    var userArray: [User] = []
+    // Firestoreのリスナー
+    var listener: ListenerRegistration!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
-        fetchYoutubeSerachInfo()
+        fetchFirestoreVideoId()
     }
 
     private func setupViews() {
@@ -46,13 +53,51 @@ class LikeViewController: UIViewController {
         iconImageView.sd_setImage(with: imageRef)
 
     }
+
+    //取得したvidoIdを呼び出す
+
+    private func fetchFirestoreVideoId(){
+
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
+
+        userRef.getDocument { [self] (document, error) in
+            if let document = document, document.exists {
+                let userDic = document.data()
+                //documentのdataの中にある"videoId"を配列として取得
+                if let videoIds: [String] = userDic!["videoId"] as? [String] {
+//                    let videoId = videoIds.joined(separator: ",")
+//                  //取得したvideoIdを元にYoutube検索情報を取得
+//                    fetchYoutubeSerachInfo(videoId: videoId)
+                    // videoIdsがnilでないならこれを使ってAPIリクエスト
+                    for videoId in videoIds {
+                        print(videoId)
+                        //取得したvideoIdを元にYoutube検索情報を取得
+                        fetchYoutubeSerachInfo(videoId: videoId)
+                    }
+                    print(videoIds)
+                }
+                // DocumentにあるvideoIdを配列に格納したい
+
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
+
+
     //Youtube検索情報を取得
-    private func fetchYoutubeSerachInfo() {
-        let params = ["q": "vRsbUlPmjqY"]
+    private func fetchYoutubeSerachInfo(videoId: String) {
+
+        // 配列をString型に変換して、１つずつリクエストをしたい
+        // videoIdを取得した後、YoutubeAPIリクエストのパラメーターとして取り出したvideoIdを入れたい
+        let params = ["q": videoId]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
+            print(self.videoItems)
             let id = self.videoItems[0].snippet.channelId
+            print(id)
             self.fetchYoutubeChannelInfo(id: id)
         }
     }
@@ -175,6 +220,7 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+//  　エンプティステート のためのコード
 //    @IBOutlet weak var likeTableView: UITableView!
 //
 //    override func viewDidLoad() {

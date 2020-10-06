@@ -11,6 +11,7 @@ import Alamofire
 
 class API {
 
+    // youtubeURL = https://www.youtube.com/watch?v=\(videoId!)
     enum PathType: String {
         case search
         case channels
@@ -25,7 +26,7 @@ class API {
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
-        params["key"] = KeyManager().getValue(key: "apiKey5") as? String
+        params["key"] = KeyManager().getValue(key: "apiKey1") as? String
         params["part"] = "snippet"
         
         let request = AF.request(url, method: .get, parameters: params)
