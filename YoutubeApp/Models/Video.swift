@@ -24,7 +24,7 @@ class Item: Decodable {
 }
 
 class id: Decodable {
-    let videoId: String
+    let videoId: String?
 }
 
 
