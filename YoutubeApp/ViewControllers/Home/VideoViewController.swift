@@ -72,26 +72,16 @@ class VideoViewController: TextFieldViewController {
     private func setupLikedImage() {
         // お気に入りに入っている動画なら、ハートマークを表示。そうでないなら、ハートマーク非表示
         // 選択したvideoIdがFirebaseのvideoIdに含まれていれば、likedImage()を呼ぶ
-        // 選択したvideoId
-        let videoIds = self.selectedItem?.id.videoId
 
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
+        let videoIds = self.selectedItem?.id.videoId
+/*
+        // 選択したvideoId
+
         let db = Firestore.firestore()
-
-        //        userRef.getDocument { (document, error) in
-        //            if let document = document, document.exists {
-        //                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-        //
-        //                print("Document data: \(dataDescription)")
-        //                print("①ドキュメントはあります！")
-        //            } else {
-        //                print("Document does not exist")
-        //            }
-        //        }
-
         // タップした動画のvideoIdがFireStoreに保存されているvideoIdにあるか調べる
-        db.collection(Const.UserPath).whereField("videoId", arrayContains: videoIds!)
+        db.collection("users").whereField("videoId", arrayContains: videoIds!)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -106,6 +96,37 @@ class VideoViewController: TextFieldViewController {
                     }
                 }
             }
+*/
+
+
+        //ドキュメントEXISTを使うイメージ
+
+        let likeRef = Firestore.firestore().collection(Const.UserPath).document(uid).collection("likes").document(videoIds!)
+
+       likeRef.getDocument { (document, error) in
+           if let document = document, document.exists {
+               let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+
+               if let videoId = document.data()?["videoId"] as? [String] {
+                   if videoId.contains(videoIds!) {
+                       print("\(document.documentID) => \(document.data())")
+                       print("お気に入りに登録済の動画です")
+                       //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
+                       self.likedImage()
+                       //　お気に入りフラグ　(未登録:0　登録済:1)
+                       self.likeRegistrationFlag = 1
+
+                   } else {
+                       // お気に入りじゃない
+                   }
+               }
+
+               print("Document data: \(dataDescription)")
+               print("①ドキュメントはあります！")
+           } else {
+               print("Document does not exist")
+           }
+       }
     }
 
     private func likedImage() {
@@ -174,13 +195,13 @@ class VideoViewController: TextFieldViewController {
     //　シェアボタンの実装 UIActivityViewControllerが表示され、シェアできる。
     //　UIActivityViewControllerが立ち上がったら、テキスト、URL、videoImageViewを入れる。
     @IBAction func shareButtonTapped(_ sender: Any) {
-        let zooTube = "ZooTubeアプリで動物の動画をみよう！"
-        let text = commentTextField!.text
+        let zooTubeText = "ZooTubeアプリで動物の動画で癒されよう！"
+        let commentText = commentTextField!.text
         let videoId = self.selectedItem?.id.videoId
         let url = baseYouTubeUrl + videoId!
         let sampleUrl = NSURL(string: url)!
 
-        let items = [zooTube, text!, sampleUrl] as [Any]
+        let items = [zooTubeText, commentText!, sampleUrl] as [Any]
 
 
         //　UIActivityViewControllerをインスタンス化

@@ -32,9 +32,12 @@ class LikeViewController: UIViewController {
     // Firestoreのリスナー
     var listener: ListenerRegistration!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //一旦　collectitonViewの中身を空にする必要がある
+        videoItems = []  // UITableView に表示しているデータを格納している配列
+        videoListCollectionView.reloadData()
         setupViews()
         fetchFirestoreVideoId()
     }
@@ -94,8 +97,12 @@ class LikeViewController: UIViewController {
         let params = ["q": videoId]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
-            self.videoItems = video.items
-            print(self.videoItems)
+
+            if video.items.count <= 0 {
+                return
+            }
+
+            self.videoItems.append(video.items[0])
             let id = self.videoItems[0].snippet.channelId
             print(id)
             self.fetchYoutubeChannelInfo(id: id)
