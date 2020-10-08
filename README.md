@@ -1,5 +1,7 @@
 # ZooTubeAppProduct
 動物のYouTube動画を見れるアプリ
+【ZooTubeアプリ企画書　要件定義、機能設計書】
+https://docs.google.com/spreadsheets/d/1_FJ8OoAjNrgB_2NR6ECVZAOJ1pqVeVqhtjSl5bktIDg/edit#gid=1028010740
 
 【技術】　Swift5 Xcode12 iOS14 FireBase (Auth Firestore Strage)
 【外部ライブラリ】　Alamofire　Nuke　SDWebImage　XLPagerTabStrip　DZNEmptyDataSet　SVProgressHUD
