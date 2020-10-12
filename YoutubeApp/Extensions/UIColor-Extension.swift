@@ -2,8 +2,8 @@
 //  UIColor-Extension.swift
 //  LoginWithFirebaseApp
 //
-//  Created by Uske on 2020/02/27.
-//  Copyright © 2020 Uske. All rights reserved.
+//  Created by user on 2020/02/27.
+//  Copyright © 2020 user. All rights reserved.
 //
 
 import UIKit

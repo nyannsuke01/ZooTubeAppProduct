@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import FirebaseUI
 import FirebaseAuth
 import SVProgressHUD

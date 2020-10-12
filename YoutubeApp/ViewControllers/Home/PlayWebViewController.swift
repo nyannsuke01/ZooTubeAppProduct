@@ -3,7 +3,7 @@
 //  YoutubeApp
 //
 //  Created by user on 2020/09/09.
-//  Copyright © 2020 Uske. All rights reserved.
+//  Copyright © 2020 User. All rights reserved.
 //
 
 import UIKit

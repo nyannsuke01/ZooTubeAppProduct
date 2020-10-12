@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  YoutubeApp
 //
-//  Created by Uske on 2020/07/05.
+//  Created by user on 2020/07/05.
 //  Copyright © 2020 User. All rights reserved.
 //
 

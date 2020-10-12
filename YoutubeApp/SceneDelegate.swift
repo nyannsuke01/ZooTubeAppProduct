@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  YoutubeApp
 //
-//  Created by Uske on 2020/07/05.
-//  Copyright © 2020 Uske. All rights reserved.
+//  Created by user on 2020/07/05.
+//  Copyright © 2020 user. All rights reserved.
 //
 
 import UIKit

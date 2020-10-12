@@ -2,12 +2,13 @@
 //  User.swift
 //  LoginWithFirebaseApp
 //
-//  Created by Uske on 2020/03/11.
-//  Copyright © 2020 Uske. All rights reserved.
+//  Created by user on 2020/03/11.
+//  Copyright © 2020 user. All rights reserved.
 //
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 struct User {
     var id: String
