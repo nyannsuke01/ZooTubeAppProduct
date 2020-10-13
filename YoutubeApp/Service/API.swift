@@ -28,7 +28,8 @@ class API {
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
         params["key"] = KeyManager().getValue(key: "apiKey1") as? String
         params["part"] = "snippet"
-        
+        params["maxResults"] = "15"
+
         let request = AF.request(url, method: .get, parameters: params)
         request.responseJSON { (response) in
             guard let statusCode = response.response?.statusCode else { return }
