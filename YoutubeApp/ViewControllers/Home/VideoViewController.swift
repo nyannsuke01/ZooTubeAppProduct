@@ -76,57 +76,33 @@ class VideoViewController: TextFieldViewController {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
         let videoIds = self.selectedItem?.id.videoId
-/*
-        // 選択したvideoId
 
-        let db = Firestore.firestore()
-        // タップした動画のvideoIdがFireStoreに保存されているvideoIdにあるか調べる
-        db.collection("users").whereField("videoId", arrayContains: videoIds!)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
+        //ドキュメントEXISTを使うイメージ
+        let likeRef = Firestore.firestore().collection(Const.UserPath).document(uid).collection("likes").document(videoIds!)
+
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+
+                if let videoId = document.data()?["videoId"] as? [String] {
+                    if videoId.contains(videoIds!) {
                         print("\(document.documentID) => \(document.data())")
                         print("お気に入りに登録済の動画です")
                         //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
                         self.likedImage()
                         //　お気に入りフラグ　(未登録:0　登録済:1)
                         self.likeRegistrationFlag = 1
+
+                    } else {
+                        // お気に入りじゃない
                     }
                 }
+                print("Document data: \(dataDescription)")
+                print("①ドキュメントはあります！")
+            } else {
+                print("Document does not exist")
             }
-*/
-
-
-        //ドキュメントEXISTを使うイメージ
-
-        let likeRef = Firestore.firestore().collection(Const.UserPath).document(uid).collection("likes").document(videoIds!)
-
-       likeRef.getDocument { (document, error) in
-           if let document = document, document.exists {
-               let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-
-               if let videoId = document.data()?["videoId"] as? [String] {
-                   if videoId.contains(videoIds!) {
-                       print("\(document.documentID) => \(document.data())")
-                       print("お気に入りに登録済の動画です")
-                       //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
-                       self.likedImage()
-                       //　お気に入りフラグ　(未登録:0　登録済:1)
-                       self.likeRegistrationFlag = 1
-
-                   } else {
-                       // お気に入りじゃない
-                   }
-               }
-
-               print("Document data: \(dataDescription)")
-               print("①ドキュメントはあります！")
-           } else {
-               print("Document does not exist")
-           }
-       }
+        }
     }
 
     private func likedImage() {

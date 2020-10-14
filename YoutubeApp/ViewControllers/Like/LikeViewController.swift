@@ -35,8 +35,8 @@ class LikeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //一旦　collectitonViewの中身を空にする必要がある
-        videoItems = []  // UITableView に表示しているデータを格納している配列
+        //前に読み込んでいたcollectitonViewの中身を空にする必要がある
+        videoItems = []  // collectitonView に表示しているデータを格納している配列
         videoListCollectionView.reloadData()
         setupViews()
         fetchFirestoreVideoId()
