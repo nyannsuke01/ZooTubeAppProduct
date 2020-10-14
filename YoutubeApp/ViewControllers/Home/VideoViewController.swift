@@ -77,8 +77,32 @@ class VideoViewController: TextFieldViewController {
         let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
         let videoIds = self.selectedItem?.id.videoId
 
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+
+                if let videoId = document.data()?["videoId"] as? [String] {
+                    if videoId.contains(videoIds!) {
+                        print("\(document.documentID) => \(document.data())")
+                        print("お気に入りに登録済の動画です")
+                        //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
+                        self.likedImage()
+                        //　お気に入りフラグ　(未登録:0　登録済:1)
+                        self.likeRegistrationFlag = 1
+
+                    } else {
+                        // お気に入りじゃない
+                    }
+                }
+
+                print("Document data: \(dataDescription)")
+                print("①ドキュメントはあります！")
+            } else {
+                print("Document does not exist")
+            }
+        }
         //ドキュメントEXISTを使うイメージ
-        let likeRef = Firestore.firestore().collection(Const.UserPath).document(uid).collection("likes").document(videoIds!)
+/*        let likeRef = Firestore.firestore().collection(Const.UserPath).document(uid).collection("likes").document(videoIds!)
 
         userRef.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -103,7 +127,9 @@ class VideoViewController: TextFieldViewController {
                 print("Document does not exist")
             }
         }
+*/
     }
+
 
     private func likedImage() {
         //まだお気に入りボタンがお押されていない場合
@@ -161,7 +187,12 @@ class VideoViewController: TextFieldViewController {
             ] as [String : Any]
             //　お気に入りフラグ　(未登録:0　登録済:1)
             likeRegistrationFlag = 1
-            userRef.updateData(userDic)
+            userRef.setData(userDic, merge: true) { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+            }
             // HUDで完了を知らせる
             SVProgressHUD.showSuccess(withStatus: "お気に入り動画に追加しました")
 
