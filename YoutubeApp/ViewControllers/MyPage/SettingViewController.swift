@@ -201,7 +201,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                         "date": FieldValue.serverTimestamp(),
                         "profileImageUrl": profileImageUrl
                     ] as [String : Any]
-                      userRef.setData(userDic)
+                      userRef.setData(userDic, merge: true)
                     // HUDで完了を知らせる
                     SVProgressHUD.showSuccess(withStatus: "表示名を変更しました")
                 }

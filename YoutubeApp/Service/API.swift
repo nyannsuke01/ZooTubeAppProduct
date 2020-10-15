@@ -26,7 +26,7 @@ class API {
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
-        params["key"] = KeyManager().getValue(key: "apiKey1") as? String
+        params["key"] = KeyManager().getValue(key: "apiKey6") as? String
         params["part"] = "snippet"
         params["maxResults"] = "15"
 
