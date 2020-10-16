@@ -15,6 +15,7 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var videoListCollectionView: UICollectionView!
 
+//    let headerViewController = HeaderViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,11 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
         setupViews()
         fetchYoutubeSerachInfo()
     }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        headerViewController.setupIcon()
+//    }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
             return IndicatorInfo(title: self.keyword!)

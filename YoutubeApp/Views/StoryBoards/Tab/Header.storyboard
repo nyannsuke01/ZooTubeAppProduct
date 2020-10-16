@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sdq-V6-PX6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sdq-V6-PX6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-TM-TFT" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="104" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="G1C-tk-g4m"/>
                                 </constraints>
@@ -30,10 +31,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2SC-j6-SS4" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="G3L-XI-WQk">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -43,20 +44,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouTube_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-n7-kCM">
-                                        <rect key="frame" x="24" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="10" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Jkb-sm-Eew"/>
                                             <constraint firstAttribute="width" constant="50" id="oIz-6G-lq8"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON6-q3-00S">
-                                        <rect key="frame" x="77" y="18" width="81" height="24"/>
+                                        <rect key="frame" x="63" y="18" width="81.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x7-Xr-jFo">
-                                        <rect key="frame" x="316" y="12" width="40" height="40"/>
+                                        <rect key="frame" x="316" y="10" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="DN9-Nk-aeG"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Ooa-qw-4cF"/>
@@ -75,16 +76,18 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6aw-Ll-n5V"/>
+                                    <constraint firstItem="1x7-Xr-jFo" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="10" id="Cny-ts-8mS"/>
                                     <constraint firstItem="SIs-Fj-grf" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" id="G2f-fm-CSU"/>
-                                    <constraint firstItem="1x7-Xr-jFo" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" constant="2" id="Q9L-g7-g4t"/>
-                                    <constraint firstItem="ASJ-n7-kCM" firstAttribute="leading" secondItem="iGf-7K-u5k" secondAttribute="leading" constant="24" id="QZA-lZ-zOh"/>
+                                    <constraint firstItem="ASJ-n7-kCM" firstAttribute="leading" secondItem="iGf-7K-u5k" secondAttribute="leading" constant="10" id="HZs-lv-Zc6"/>
                                     <constraint firstItem="ON6-q3-00S" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="Uv1-bl-SaT"/>
+                                    <constraint firstItem="ON6-q3-00S" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="aIL-dF-Xbe"/>
                                     <constraint firstItem="SIs-Fj-grf" firstAttribute="leading" secondItem="1x7-Xr-jFo" secondAttribute="trailing" constant="8" id="bif-ld-Uq1"/>
-                                    <constraint firstItem="ASJ-n7-kCM" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" constant="-5" id="bmT-vb-qoU"/>
+                                    <constraint firstAttribute="bottom" secondItem="ASJ-n7-kCM" secondAttribute="bottom" constant="5" id="gFe-mW-gcF"/>
                                     <constraint firstItem="ON6-q3-00S" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" id="rNK-pf-DW4"/>
+                                    <constraint firstItem="ASJ-n7-kCM" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="5" id="u9n-bu-QVq"/>
                                     <constraint firstAttribute="trailing" secondItem="SIs-Fj-grf" secondAttribute="trailing" constant="10" id="ubY-Kt-ClH"/>
                                 </constraints>
                             </view>
@@ -107,7 +110,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="JOP-iw-S3K"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O1F-ar-bYT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iGf-7K-u5k" firstAttribute="leading" secondItem="O1F-ar-bYT" secondAttribute="leading" id="6vW-FL-9jJ"/>
                             <constraint firstItem="ktn-TM-TFT" firstAttribute="leading" secondItem="O1F-ar-bYT" secondAttribute="leading" id="9dV-hY-7li"/>
@@ -120,7 +124,6 @@
                             <constraint firstItem="HaK-O2-yZe" firstAttribute="leading" secondItem="O1F-ar-bYT" secondAttribute="leading" id="lAJ-1M-1wB"/>
                             <constraint firstItem="iGf-7K-u5k" firstAttribute="trailing" secondItem="O1F-ar-bYT" secondAttribute="trailing" id="lUB-am-jnw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1F-ar-bYT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="home" image="house" catalog="system" id="1q4-7O-C6m"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -141,7 +144,10 @@
     <resources>
         <image name="01" width="3351" height="5027"/>
         <image name="YouTube_icon" width="256" height="256"/>
-        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="setting" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
