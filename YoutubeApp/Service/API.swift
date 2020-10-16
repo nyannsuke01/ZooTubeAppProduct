@@ -26,9 +26,13 @@ class API {
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
-        params["key"] = KeyManager().getValue(key: "apiKey6") as? String
+        /*APIKeyについて
+         下記"apiKey"は1〜13まで割り振られております。動画検索結果が表示されない場合は、数字を変更してみてください。
+        */
+        params["key"] = KeyManager().getValue(key: "apiKey11") as? String
         params["part"] = "snippet"
-        params["maxResults"] = "15"
+        //検索結果を１５件表示します。（デフォルト5件）
+        // params["maxResults"] = "15"
 
         let request = AF.request(url, method: .get, parameters: params)
         request.responseJSON { (response) in
