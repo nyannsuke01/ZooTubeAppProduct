@@ -29,7 +29,7 @@
                                     <navigationItem title="ログイン" id="CIF-vL-0FK"/>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ログインをすると、お気に入りの動物の動画をお届けします。" translatesAutoresizingMaskIntoConstraints="NO" id="21H-Fq-h77">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ログインをすると、お気に入りの動物の動画をお届けします。" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21H-Fq-h77">
                                 <rect key="frame" x="57" y="108" width="300" height="70"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>

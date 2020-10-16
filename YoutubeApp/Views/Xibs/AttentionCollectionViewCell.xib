@@ -57,6 +57,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="6yY-MX-OJE" firstAttribute="leading" secondItem="8Zo-6u-zbL" secondAttribute="leading" id="Etb-iP-3CG"/>
                     <constraint firstAttribute="trailing" secondItem="6q9-J3-OoV" secondAttribute="trailing" id="Fmo-W9-YHD"/>
@@ -77,6 +78,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

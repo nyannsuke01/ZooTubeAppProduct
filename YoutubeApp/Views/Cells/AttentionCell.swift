@@ -18,7 +18,7 @@ class AttentionCell: UICollectionViewCell {
         layout.scrollDirection = .horizontal
         let colletionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         colletionView.translatesAutoresizingMaskIntoConstraints = false
-        colletionView.backgroundColor = .white
+        colletionView.backgroundColor = .systemBackground
         colletionView.delegate = self
         colletionView.dataSource = self
         

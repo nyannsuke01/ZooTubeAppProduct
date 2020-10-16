@@ -19,6 +19,10 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        activeTextField?.resignFirstResponder()
+    }
+
     internal func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         self.activeTextField = textField
         return true
