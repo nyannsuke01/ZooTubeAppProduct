@@ -1,6 +1,7 @@
 # ZooTubeAppProduct
 動物のYouTube動画を見れるアプリ
-【WebサイトよりDL!】
+
+【Webサイト】
 https://zootubeapp.firebaseapp.com/
 
 【ZooTubeアプリ企画書　要件定義、機能設計書】
