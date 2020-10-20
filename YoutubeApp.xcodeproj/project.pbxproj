@@ -62,6 +62,8 @@
 		CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71227250DD85F0045FD15 /* Header.storyboard */; };
 		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
 		CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71237250E43630045FD15 /* VideoList.storyboard */; };
+		CEC457D3253EB0B500DED942 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */; };
+		CEC457D8253EB13F00DED942 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */; };
 		CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43ED250F825400B27B85 /* Page5.storyboard */; };
 		CEDD43F2250F825500B27B85 /* Page6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EE250F825400B27B85 /* Page6.storyboard */; };
 		CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EF250F825500B27B85 /* Page4.storyboard */; };
@@ -154,6 +156,8 @@
 		CEB71227250DD85F0045FD15 /* Header.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Header.storyboard; sourceTree = "<group>"; };
 		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
 		CEB71236250E43630045FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
+		CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		CEDD43ED250F825400B27B85 /* Page5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page5.storyboard; sourceTree = "<group>"; };
 		CEDD43EE250F825400B27B85 /* Page6.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page6.storyboard; sourceTree = "<group>"; };
 		CEDD43EF250F825500B27B85 /* Page4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page4.storyboard; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
 				CE8B5C822513C6EA00F52822 /* Setting.storyboard */,
 				CE8B5C802513C69100F52822 /* Login.storyboard */,
+				CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */,
 				CEB71237250E43630045FD15 /* VideoList.storyboard */,
 				CEB71228250DD85F0045FD15 /* Page2.storyboard */,
 				CEDD43F0250F825500B27B85 /* Page3.storyboard */,
@@ -391,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				CE32FEBE25075625001082A2 /* LoginViewController.swift */,
+				CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				CE6DD328252F655D00B20CAF /* APIKey.plist in Resources */,
 				CE19A1B0251A6E960056860B /* GoogleService-Info.plist in Resources */,
 				CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */,
+				CEC457D3253EB0B500DED942 /* CreateAccount.storyboard in Resources */,
 				7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */,
 				CE8B5C832513C6EA00F52822 /* Setting.storyboard in Resources */,
 				CE8B5C812513C69100F52822 /* Login.storyboard in Resources */,
@@ -731,6 +738,7 @@
 				7C34CF5B24D6200800160445 /* AttentionCell.swift in Sources */,
 				7C138CD724C4178900C4DB2F /* UIImage-Extension.swift in Sources */,
 				7CE584CD24B1F19300281866 /* AppDelegate.swift in Sources */,
+				CEC457D8253EB13F00DED942 /* CreateAccountViewController.swift in Sources */,
 				CE8B5C8525145C2300F52822 /* User.swift in Sources */,
 				7CE584CF24B1F19300281866 /* SceneDelegate.swift in Sources */,
 				CE8B5C872514621700F52822 /* UIColor-Extension.swift in Sources */,

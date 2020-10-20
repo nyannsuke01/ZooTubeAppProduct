@@ -23,13 +23,15 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
         //バーの色
-        settings.style.buttonBarBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        settings.style.buttonBarBackgroundColor = UIColor.systemBackground
         //ボタンの色
-        settings.style.buttonBarItemBackgroundColor = UIColor(red: 73/255, green: 72/255, blue: 62/255, alpha: 1)
+        settings.style.buttonBarItemBackgroundColor = UIColor.systemBackground
         //セルの文字色
-        settings.style.buttonBarItemTitleColor = UIColor.white
+        settings.style.buttonBarItemTitleColor = UIColor.label
+        //セルの文字の太さ
+        settings.style.buttonBarItemFont = UIFont.boldSystemFont(ofSize: 18.0)
         //セレクトバーの色
-        settings.style.selectedBarBackgroundColor = UIColor(red: 254/255, green: 0, blue: 124/255, alpha: 1)
+        settings.style.selectedBarBackgroundColor = UIColor(red: 141/255, green: 104/255, blue: 71/255, alpha: 1)
 
         super.viewDidLoad()
         //プロフィール写真を円に設定

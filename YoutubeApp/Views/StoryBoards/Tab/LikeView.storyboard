@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Like-->
+        <!--お気に入り-->
         <scene sceneID="2NY-TW-fbf">
             <objects>
                 <viewController id="pmH-yx-ubP" customClass="LikeViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,19 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" お気に入り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-6h-wSt">
+                                <rect key="frame" x="0.0" y="112" width="414" height="17"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRv-AT-2pl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouTube_icon" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-Oi-V4R">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アイコン256x256" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-Oi-V4R">
                                         <rect key="frame" x="10" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="LWk-c7-y4l"/>
                                             <constraint firstAttribute="width" constant="50" id="qLy-lc-IXp"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvU-9E-h2j">
-                                        <rect key="frame" x="63" y="18" width="81" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-z5-e3A">
+                                        <rect key="frame" x="327" y="19" width="23" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="Moz-jv-h4n"/>
+                                            <constraint firstAttribute="width" secondItem="0tl-z5-e3A" secondAttribute="height" multiplier="1:1" id="ZMa-Fx-3NZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="Zio-jN-1dp"/>
+                                        </constraints>
+                                        <state key="normal" image="設定"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX0-MD-KQT">
+                                        <rect key="frame" x="63" y="21" width="80" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="eU9-sR-1hy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -40,31 +58,25 @@
                                             <constraint firstAttribute="width" secondItem="jP5-Td-3Xg" secondAttribute="height" multiplier="1:1" id="uN4-i9-mME"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-z5-e3A">
-                                        <rect key="frame" x="316" y="10" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Moz-jv-h4n"/>
-                                            <constraint firstAttribute="width" secondItem="0tl-z5-e3A" secondAttribute="height" multiplier="1:1" id="ZMa-Fx-3NZ"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Zio-jN-1dp"/>
-                                        </constraints>
-                                        <state key="normal" image="setting"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="uvU-9E-h2j" firstAttribute="centerY" secondItem="NRv-AT-2pl" secondAttribute="centerY" id="0aW-Ca-4HN"/>
-                                    <constraint firstItem="jP5-Td-3Xg" firstAttribute="centerY" secondItem="NRv-AT-2pl" secondAttribute="centerY" id="3t7-az-kS5"/>
+                                    <constraint firstItem="NX0-MD-KQT" firstAttribute="leading" secondItem="c6A-Oi-V4R" secondAttribute="trailing" constant="3" id="2MF-P9-pfm"/>
+                                    <constraint firstAttribute="bottom" secondItem="jP5-Td-3Xg" secondAttribute="bottom" constant="10" id="3lf-BF-BDX"/>
                                     <constraint firstItem="c6A-Oi-V4R" firstAttribute="centerY" secondItem="NRv-AT-2pl" secondAttribute="centerY" id="5Tu-VR-d6M"/>
-                                    <constraint firstItem="0tl-z5-e3A" firstAttribute="centerY" secondItem="NRv-AT-2pl" secondAttribute="centerY" id="Kea-nK-VYV"/>
+                                    <constraint firstItem="NX0-MD-KQT" firstAttribute="top" secondItem="NRv-AT-2pl" secondAttribute="top" constant="21" id="7or-N4-ISN"/>
+                                    <constraint firstItem="NX0-MD-KQT" firstAttribute="top" secondItem="NRv-AT-2pl" secondAttribute="top" constant="21" id="9XZ-KV-vtP"/>
                                     <constraint firstAttribute="height" constant="60" id="NJb-Ru-A4r"/>
+                                    <constraint firstItem="jP5-Td-3Xg" firstAttribute="top" secondItem="NRv-AT-2pl" secondAttribute="top" constant="10" id="NbT-ff-lMJ"/>
                                     <constraint firstItem="c6A-Oi-V4R" firstAttribute="leading" secondItem="NRv-AT-2pl" secondAttribute="leading" constant="10" id="Xrc-CK-iWX"/>
-                                    <constraint firstItem="uvU-9E-h2j" firstAttribute="leading" secondItem="c6A-Oi-V4R" secondAttribute="trailing" constant="3" id="jsZ-qm-gOn"/>
+                                    <constraint firstItem="jP5-Td-3Xg" firstAttribute="leading" secondItem="0tl-z5-e3A" secondAttribute="trailing" constant="14" id="cv5-sH-gUJ"/>
+                                    <constraint firstItem="0tl-z5-e3A" firstAttribute="top" secondItem="NRv-AT-2pl" secondAttribute="top" constant="19" id="peq-vh-N81"/>
                                     <constraint firstAttribute="trailing" secondItem="jP5-Td-3Xg" secondAttribute="trailing" constant="10" id="wan-MA-OFN"/>
-                                    <constraint firstItem="jP5-Td-3Xg" firstAttribute="leading" secondItem="0tl-z5-e3A" secondAttribute="trailing" constant="8" id="wgd-au-nax"/>
+                                    <constraint firstAttribute="bottom" secondItem="0tl-z5-e3A" secondAttribute="bottom" constant="18" id="yKE-23-35A"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-94-mvC">
-                                <rect key="frame" x="0.0" y="136" width="414" height="726"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9c-o0-QuA">
                                     <size key="itemSize" width="128" height="128"/>
@@ -83,12 +95,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お気に入り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-6h-wSt">
-                                <rect key="frame" x="0.0" y="112" width="414" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4oK-3V-eqU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,10 +108,11 @@
                             <constraint firstItem="NRv-AT-2pl" firstAttribute="trailing" secondItem="4oK-3V-eqU" secondAttribute="trailing" id="FwC-M1-mOr"/>
                             <constraint firstItem="xfg-6h-wSt" firstAttribute="trailing" secondItem="4oK-3V-eqU" secondAttribute="trailing" id="I32-6P-lBf"/>
                             <constraint firstItem="4oK-3V-eqU" firstAttribute="bottom" secondItem="Yk6-94-mvC" secondAttribute="bottom" id="PNP-qr-TDJ"/>
+                            <constraint firstItem="Yk6-94-mvC" firstAttribute="top" secondItem="xfg-6h-wSt" secondAttribute="bottom" id="fk7-Bi-YJt"/>
                             <constraint firstItem="NRv-AT-2pl" firstAttribute="leading" secondItem="4oK-3V-eqU" secondAttribute="leading" id="r4N-Xv-2cR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Like" image="heart" catalog="system" id="gsz-lt-KEX"/>
+                    <tabBarItem key="tabBarItem" title="お気に入り" image="お気に入り24x24" id="gsz-lt-KEX"/>
                     <connections>
                         <outlet property="headerHeightConstraint" destination="NJb-Ru-A4r" id="WmX-0P-Mhj"/>
                         <outlet property="headerTopConstraint" destination="DSM-Ey-gjd" id="Itn-kq-JXn"/>
@@ -121,9 +128,9 @@
     </scenes>
     <resources>
         <image name="01" width="3351" height="5027"/>
-        <image name="YouTube_icon" width="256" height="256"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="setting" width="25" height="25"/>
+        <image name="お気に入り24x24" width="24" height="24"/>
+        <image name="アイコン256x256" width="256" height="256"/>
+        <image name="設定" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
