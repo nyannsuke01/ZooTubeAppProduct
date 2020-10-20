@@ -29,9 +29,11 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
         //セルの文字色
         settings.style.buttonBarItemTitleColor = UIColor.label
         //セルの文字の太さ
-        settings.style.buttonBarItemFont = UIFont.boldSystemFont(ofSize: 18.0)
+        settings.style.buttonBarItemFont = UIFont.boldSystemFont(ofSize: 17.0)
         //セレクトバーの色
         settings.style.selectedBarBackgroundColor = UIColor(red: 141/255, green: 104/255, blue: 71/255, alpha: 1)
+//        //セレクトバーの間隔
+//        settings.style.buttonBarMinimumLineSpacing = 0.1
 
         super.viewDidLoad()
         //プロフィール写真を円に設定
@@ -64,7 +66,19 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
         let sixth = UIStoryboard(name: "Page6", bundle: nil)
         let sixthVC = sixth.instantiateViewController(withIdentifier: "Page6") as! Page6ViewController
 
-        let childViewControllers:[UIViewController] =  [firstVC, secondVC, thirdVC, fourthVC, fifthVC, sixthVC]
+        let seventh = UIStoryboard(name: "Page7", bundle: nil)
+        let seventhVC = seventh.instantiateViewController(withIdentifier: "Page7") as! Page7ViewController
+
+        let eighth = UIStoryboard(name: "Page8", bundle: nil)
+        let eighthVC = eighth.instantiateViewController(withIdentifier: "Page8") as! Page8ViewController
+
+        let ninth = UIStoryboard(name: "Page9", bundle: nil)
+        let ninthVC = ninth.instantiateViewController(withIdentifier: "Page9") as! Page9ViewController
+
+        let tenth = UIStoryboard(name: "Page10", bundle: nil)
+        let tenthVC = tenth.instantiateViewController(withIdentifier: "Page10") as! Page10ViewController
+
+        let childViewControllers:[UIViewController] =  [firstVC, secondVC, thirdVC, fourthVC, fifthVC, sixthVC, seventhVC, eighthVC, ninthVC, tenthVC]
         return childViewControllers
 
     }
@@ -73,7 +87,7 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
         print("設定ボタンがタップされました")
         let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
         let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController
-//        SettingVC.modalPresentationStyle = .fullScreen
+        SettingVC.modalPresentationStyle = .fullScreen
         self.present(SettingVC, animated: true, completion: nil)
     }
     //タブの文字列の管理

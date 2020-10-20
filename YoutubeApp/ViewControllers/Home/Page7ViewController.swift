@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
-//  YoutubeApp
+//  PageXViewController.swift
+//  ZooTube
 //
-//  Created by user on 2020/07/05.
-//  Copyright © 2020 User. All rights reserved.
+//  Created by user on 2020/03/14.
+//  Copyright © 2020 user. All rights reserved.
 //
 
 import UIKit
@@ -11,29 +11,26 @@ import SDWebImage
 import XLPagerTabStrip
 import Alamofire
 
-class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
+
+class Page7ViewController: CommonPageViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var videoListCollectionView: UICollectionView!
 
-//    let headerViewController = HeaderViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.keyword = "ねこ"
+        self.view.backgroundColor = UIColor.magenta
+        self.keyword = "イルカ"
         setupViews()
         fetchYoutubeSerachInfo()
+
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        headerViewController.setupIcon()
-//    }
-
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-            return IndicatorInfo(title: self.keyword!)
-        }
+        return IndicatorInfo(title: "イルカ")
+    }
 
-    private func setupViews() {
+    func setupViews() {
         videoListCollectionView.delegate = self
         videoListCollectionView.dataSource = self
 
@@ -42,8 +39,8 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
 
     }
     //Youtube検索情報を取得
-    private func fetchYoutubeSerachInfo() {
-        let params = ["q": "かわいい　ねこ"]
+    func fetchYoutubeSerachInfo() {
+        let params = ["q": "かわいい イルカ"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items
@@ -53,7 +50,7 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
     }
 
     //Youtubeチャンネル情報を取得
-    private func fetchYoutubeChannelInfo(id: String) {
+    func fetchYoutubeChannelInfo(id: String) {
         let params = [
             "id": id
         ]
@@ -67,9 +64,8 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
         }
     }
 }
-
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension Page7ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //アイテムが選択された時の動作
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //VideoViewControllerに遷移
@@ -82,7 +78,6 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
     //アイテムの高さを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width
-
         return .init(width: width, height: width)
 
     }
@@ -93,7 +88,6 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     //アイテムの中身を返すメソッド
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
         let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! VideoListCell
 
         if self.videoItems.count == 0 {
@@ -103,5 +97,5 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         return cell
     }
-
 }
+

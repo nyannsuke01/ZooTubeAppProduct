@@ -33,7 +33,7 @@
                                             <constraint firstAttribute="width" constant="50" id="qLy-lc-IXp"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-z5-e3A">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tl-z5-e3A" userLabel="SettingButton">
                                         <rect key="frame" x="327" y="19" width="23" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="Moz-jv-h4n"/>
@@ -41,6 +41,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="Zio-jN-1dp"/>
                                         </constraints>
                                         <state key="normal" image="設定"/>
+                                        <connections>
+                                            <action selector="toSetting:" destination="pmH-yx-ubP" eventType="touchUpInside" id="TpU-qZ-usa"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NX0-MD-KQT">
                                         <rect key="frame" x="63" y="21" width="80" height="19"/>

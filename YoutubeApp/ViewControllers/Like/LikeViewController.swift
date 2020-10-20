@@ -144,6 +144,14 @@ class LikeViewController: UIViewController {
         }
     }
 
+    @IBAction func toSetting(_ sender: Any) {
+        print("設定ボタンがタップされました")
+        let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
+        let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController
+        SettingVC.modalPresentationStyle = .fullScreen
+        self.present(SettingVC, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - ScrollViewのDelegateメソッド
