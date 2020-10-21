@@ -19,6 +19,9 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        videoListCollectionView.delegate = self
+        videoListCollectionView.dataSource = self
+
         self.keyword = "ねこ"
         setupViews()
         fetchYoutubeSerachInfo()
@@ -34,9 +37,6 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
         }
 
     private func setupViews() {
-        videoListCollectionView.delegate = self
-        videoListCollectionView.dataSource = self
-
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
 

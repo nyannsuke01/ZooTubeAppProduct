@@ -191,6 +191,7 @@
                         <outlet property="channelTitleLabel" destination="cqJ-vh-Z64" id="H9e-xk-iwy"/>
                         <outlet property="commentTextField" destination="t5g-w2-WK5" id="Wae-DY-lfx"/>
                         <outlet property="likeButton" destination="Cfp-Ix-jqP" id="HKu-cm-RB9"/>
+                        <outlet property="shareButton" destination="aMp-jl-37E" id="fuB-3y-GWC"/>
                         <outlet property="videoImageView" destination="40S-6U-dFd" id="4PW-XN-Tq9"/>
                         <outlet property="videoTitleLabel" destination="2aS-rh-Lg7" id="pKq-9q-TZf"/>
                     </connections>

@@ -16,22 +16,28 @@ import SVProgressHUD
 class SettingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var settingIconImageView: UIButton!
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var likeAnimalLabel: UILabel!
     @IBOutlet weak var likeAnimalPicker: UIPickerView!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
 
     var selectedAnimal = ""
 
     //PickerViewに格納されるリスト
-     let dataList = [
-         "ねこ","いぬ","うさぎ","ハムスター",
-         "しろくま","きつね","ペンギン","イルカ",
-         "あざらし","りす","きつね",
-         "パンダ","ラッコ"
-     ]
+    let dataList = [
+        "ねこ","いぬ","うさぎ","ハムスター",
+        "しろくま","きつね","ペンギン","イルカ",
+        "あざらし","りす","きつね",
+        "パンダ","ライオン"
+    ]
+
+    // ”×”ボタンが押された時の処理
+    @IBAction func cancelled(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,31 +51,22 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
             let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
             iconImageView.sd_setImage(with: imageRef)
         }
-
-        //ImageViewのタップ認識をONにする
-        iconImageView.isUserInteractionEnabled = true
-
         //キーボード表示のオブザーバーの設定
         setupNotificationObserver()
-
         setUpViews()
     }
 
     private func setUpViews() {
         //プロフィール写真の設定
-        iconImageView.layer.cornerRadius = 40
-        iconImageView.layer.borderColor = UIColor.gray.cgColor
-        iconImageView.layer.borderWidth = 1
+        //        iconImageView.layer.borderColor = UIColor.gray.cgColor
+        //        iconImageView.layer.borderWidth = 1
+        settingIconImageView.layer.cornerRadius = 6.0
+        changeButton.layer.cornerRadius = 6.0
 
-        //ボタンの色の設定
-        changeButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
-        logoutButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
-        cancelButton.backgroundColor = UIColor.rgb(red: 255, green: 141, blue: 0)
     }
 
     //アイコンイメージの設定
     @IBAction func imageSetting(_ sender: Any) {
-        print("image Tapped")
         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerController = UIImagePickerController()
@@ -78,7 +75,8 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.present(pickerController, animated: true, completion: nil)
         }
     }
-    // 写真を選択したときに呼ばれるメソッド
+
+    // カメラマークを選択したときに呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if info[.originalImage] != nil {
             // 選択された画像を取得する
@@ -121,10 +119,6 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.view.transform = .identity
         })
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
     @IBAction func handleChangeButton(_ sender: Any) {
         //写真を保存
@@ -163,7 +157,7 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.createUserToFirestore(profileImageUrl: urlString)
             }
             // HUDで投稿完了を表示する
-            SVProgressHUD.showSuccess(withStatus: "写真を投稿しました")
+            //SVProgressHUD.showSuccess(withStatus: "写真を投稿しました")
         }
     }
 
@@ -201,9 +195,9 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                         "date": FieldValue.serverTimestamp(),
                         "profileImageUrl": profileImageUrl
                     ] as [String : Any]
-                      userRef.setData(userDic, merge: true)
+                    userRef.setData(userDic, merge: true)
                     // HUDで完了を知らせる
-                    SVProgressHUD.showSuccess(withStatus: "表示名を変更しました")
+                    SVProgressHUD.showSuccess(withStatus: "変更を保存しました")
                 }
             }
         }
@@ -213,7 +207,6 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
 
     }
-    
 
     // ログアウトする
     @IBAction func handleLogoutButton(_ sender: Any) {
@@ -222,19 +215,20 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
             // ログイン画面を表示する
             let storyBoard = UIStoryboard(name: "Login", bundle: nil)
             let loginViewController = storyBoard.instantiateViewController(withIdentifier: "Login")
+            loginViewController.modalPresentationStyle = .fullScreen
             self.present(loginViewController, animated: true, completion: nil)
         } catch (let err) {
             print("ログアウトに失敗しました: \(err)")
         }
     }
-    @IBAction func cancellButtonTapped(_ sender: Any) {
-        // 画面を閉じてタブ画面に戻る
-        self.dismiss(animated: true, completion: nil)
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
-// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
-extension SettingViewController:UIPickerViewDelegate, UIPickerViewDataSource {
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate
+extension SettingViewController:UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -242,6 +236,7 @@ extension SettingViewController:UIPickerViewDelegate, UIPickerViewDataSource {
         // Delegate設定
         likeAnimalPicker.delegate = self
         likeAnimalPicker.dataSource = self
+        displayNameTextField.delegate = self
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -258,6 +253,13 @@ extension SettingViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectLikeAnimal = dataList[row]
         self.selectedAnimal = selectLikeAnimal
-        likeAnimalLabel.text = "好きな動物  " + selectLikeAnimal
+        likeAnimalLabel.text = selectLikeAnimal
+    }
+
+    //  UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // エンターを押したとき、キーボードを閉じる
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -9,4 +9,5 @@
 struct Const {
     static let UserPath = "users"
     static let IconImagePath = "images"
+    static let baseYouTubeUrl = "https://www.youtube.com/watch?v="
 }

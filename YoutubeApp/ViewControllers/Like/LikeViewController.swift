@@ -19,6 +19,7 @@ class LikeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emptyStateImageView: UIView!
 
     private var prevContentOffset: CGPoint = .init(x: 0, y: 0)
     private let headerMoveHeight: CGFloat = 5
@@ -50,8 +51,11 @@ class LikeViewController: UIViewController {
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
         //プロフィール写真を円に設定
         iconImageView.layer.cornerRadius = 20
-        // strageからアイコン画像の表示
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        // strageからアイコン画像、エンプティステートの表示
+        guard let uid = Auth.auth().currentUser?.uid else {
+            self.view.bringSubviewToFront(emptyStateImageView)
+            return
+        }
         let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
         iconImageView.sd_setImage(with: imageRef)
 
@@ -145,6 +149,10 @@ class LikeViewController: UIViewController {
     }
 
     @IBAction func toSetting(_ sender: Any) {
+        //設定ボタンはログインできたことが前提
+        guard (Auth.auth().currentUser?.uid) != nil else {
+            return
+        }
         print("設定ボタンがタップされました")
         let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
         let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController

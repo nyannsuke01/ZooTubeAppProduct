@@ -26,15 +26,15 @@ class API {
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
-        let randomInt = Int.random(in: 1..<51)
-        let apiKey: String = "apiKey\(randomInt)"
-        print(apiKey)
+
+        let apiKey: String = "apiKey51"
+
 
 
         params["key"] = KeyManager().getValue(key: apiKey) as? String
         params["part"] = "snippet"
         //検索結果を１５件表示します。（デフォルト5件）
-         params["maxResults"] = "15"
+         params["maxResults"] = 5
 
         let request = AF.request(url, method: .get, parameters: params)
         request.responseJSON { (response) in

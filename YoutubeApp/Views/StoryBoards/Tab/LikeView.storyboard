@@ -17,12 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="白くま" id="yK5-L0-w7k">
+                                <rect key="frame" x="0.0" y="129" width="414" height="377"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" お気に入り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-6h-wSt">
                                 <rect key="frame" x="0.0" y="112" width="414" height="17"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-94-mvC">
+                                <rect key="frame" x="0.0" y="129" width="414" height="733"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9c-o0-QuA">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sMr-zc-t8B">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4U7-PC-vYK">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRv-AT-2pl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
@@ -78,26 +103,6 @@
                                     <constraint firstAttribute="bottom" secondItem="0tl-z5-e3A" secondAttribute="bottom" constant="18" id="yKE-23-35A"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk6-94-mvC">
-                                <rect key="frame" x="0.0" y="129" width="414" height="733"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9c-o0-QuA">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sMr-zc-t8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4U7-PC-vYK">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4oK-3V-eqU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,9 +112,11 @@
                             <constraint firstItem="xfg-6h-wSt" firstAttribute="leading" secondItem="4oK-3V-eqU" secondAttribute="leading" id="5im-t7-IdX"/>
                             <constraint firstItem="Yk6-94-mvC" firstAttribute="leading" secondItem="4oK-3V-eqU" secondAttribute="leading" id="7fv-Td-Ctq"/>
                             <constraint firstItem="Yk6-94-mvC" firstAttribute="top" secondItem="xfg-6h-wSt" secondAttribute="bottom" id="9DT-sv-aCJ"/>
+                            <constraint firstItem="yK5-L0-w7k" firstAttribute="top" secondItem="xfg-6h-wSt" secondAttribute="bottom" id="Bqz-cl-cxc"/>
                             <constraint firstItem="NRv-AT-2pl" firstAttribute="top" secondItem="4oK-3V-eqU" secondAttribute="top" id="DSM-Ey-gjd"/>
                             <constraint firstItem="NRv-AT-2pl" firstAttribute="trailing" secondItem="4oK-3V-eqU" secondAttribute="trailing" id="FwC-M1-mOr"/>
                             <constraint firstItem="xfg-6h-wSt" firstAttribute="trailing" secondItem="4oK-3V-eqU" secondAttribute="trailing" id="I32-6P-lBf"/>
+                            <constraint firstItem="yK5-L0-w7k" firstAttribute="top" secondItem="xfg-6h-wSt" secondAttribute="bottom" id="Nsw-6n-RLW"/>
                             <constraint firstItem="4oK-3V-eqU" firstAttribute="bottom" secondItem="Yk6-94-mvC" secondAttribute="bottom" id="PNP-qr-TDJ"/>
                             <constraint firstItem="Yk6-94-mvC" firstAttribute="top" secondItem="xfg-6h-wSt" secondAttribute="bottom" id="fk7-Bi-YJt"/>
                             <constraint firstItem="NRv-AT-2pl" firstAttribute="leading" secondItem="4oK-3V-eqU" secondAttribute="leading" id="r4N-Xv-2cR"/>
@@ -117,6 +124,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="お気に入り" image="お気に入り24x24" id="gsz-lt-KEX"/>
                     <connections>
+                        <outlet property="emptyStateImageView" destination="yK5-L0-w7k" id="qHB-DK-vjb"/>
                         <outlet property="headerHeightConstraint" destination="NJb-Ru-A4r" id="WmX-0P-Mhj"/>
                         <outlet property="headerTopConstraint" destination="DSM-Ey-gjd" id="Itn-kq-JXn"/>
                         <outlet property="headerView" destination="NRv-AT-2pl" id="99z-od-SoN"/>
@@ -133,7 +141,8 @@
         <image name="01" width="3351" height="5027"/>
         <image name="お気に入り24x24" width="24" height="24"/>
         <image name="アイコン256x256" width="256" height="256"/>
-        <image name="設定" width="512" height="512"/>
+        <image name="白くま" width="512" height="342"/>
+        <image name="設定" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

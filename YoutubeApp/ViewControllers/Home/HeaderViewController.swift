@@ -10,6 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import Firebase
 import FirebaseUI
+import SVProgressHUD
 
 class HeaderViewController: ButtonBarPagerTabStripViewController {
 
@@ -21,6 +22,14 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
     private var prevContentOffset: CGPoint = .init(x: 0, y: 0)
     private let headerMoveHeight: CGFloat = 5
 
+    override func viewWillAppear(_ animated: Bool) {
+        //プロフィール写真を円に設定
+        iconImageView.layer.cornerRadius = 20
+        // strageからアイコン画像の表示
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
+        iconImageView.sd_setImage(with: imageRef)
+    }
     override func viewDidLoad() {
         //バーの色
         settings.style.buttonBarBackgroundColor = UIColor.systemBackground
@@ -36,12 +45,6 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
 //        settings.style.buttonBarMinimumLineSpacing = 0.1
 
         super.viewDidLoad()
-        //プロフィール写真を円に設定
-        iconImageView.layer.cornerRadius = 20
-        // strageからアイコン画像の表示
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
-        iconImageView.sd_setImage(with: imageRef)
 
     }
 
@@ -84,6 +87,11 @@ class HeaderViewController: ButtonBarPagerTabStripViewController {
     }
 
     @IBAction func toSetting(_ sender: Any) {
+
+        //設定ボタンはログインできたことが前提
+        guard (Auth.auth().currentUser?.uid) != nil else {
+            return
+        }
         print("設定ボタンがタップされました")
         let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
         let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController

@@ -81,6 +81,8 @@
 		CEEA3E28253F073100F11B88 /* Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E27253F073100F11B88 /* Page8ViewController.swift */; };
 		CEEA3E2A253F074100F11B88 /* Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E29253F074100F11B88 /* Page9ViewController.swift */; };
 		CEEA3E2F253F075100F11B88 /* Page10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */; };
+		CEEA3E35253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */; };
+		CEEA3E36253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +185,8 @@
 		CEEA3E27253F073100F11B88 /* Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page8ViewController.swift; sourceTree = "<group>"; };
 		CEEA3E29253F074100F11B88 /* Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9ViewController.swift; sourceTree = "<group>"; };
 		CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalTableViewCell.swift; sourceTree = "<group>"; };
+		CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteAnimalTableViewCell.xib; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				7C26DA6824B595C900CB29B9 /* VideoListCell.swift */,
 				7C34CF5A24D6200800160445 /* AttentionCell.swift */,
 				7C34CF5C24D624C400160445 /* AttentionCollectionViewCell.swift */,
+				CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */,
+				CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */,
 				7C34CF5E24D624EE00160445 /* AttentionCollectionViewCell.xib */,
 			);
 			path = Xibs;
@@ -607,6 +613,7 @@
 				CE8B5C812513C69100F52822 /* Login.storyboard in Resources */,
 				7C272FEA24D67C54001C376F /* Video.storyboard in Resources */,
 				7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */,
+				CEEA3E36253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib in Resources */,
 				CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
@@ -755,6 +762,7 @@
 				CEDD43FE250F829900B27B85 /* Page5ViewController.swift in Sources */,
 				CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */,
 				CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */,
+				CEEA3E35253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift in Sources */,
 				7C34CF5D24D624C400160445 /* AttentionCollectionViewCell.swift in Sources */,
 				CEDD43FA250F829900B27B85 /* Page3ViewController.swift in Sources */,
 				CE32FEBB2507561B001082A2 /* SettingViewController.swift in Sources */,
