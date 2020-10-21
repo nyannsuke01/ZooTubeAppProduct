@@ -17,10 +17,12 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likeAnimalLabel: UILabel!
     @IBOutlet weak var changeIconButton: UIButton!
-    @IBOutlet weak var videoListCollectionView: UICollectionView!
 
+    @IBOutlet weak var videoListTableView: UITableView!
 
-    let atentionCellId = "atentionCellId"
+    @IBOutlet weak var playViewListTextField: UITextView!
+
+//    let atentionCellId = "atentionCellId"
     var favoriteAnimal = ""
     private var videoItems = [Item]()
 
@@ -32,39 +34,53 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        videoListTableView.delegate = self
+        videoListTableView.dataSource = self
         setupViews()
-        //TODO: 好きな動物が入力されていれば、
+        setUpName()
+        setUpFavoriteAnimal()
+        setUpIconImage()
         fetchYoutubeSerachInfo()
     }
 
-    // アイコンの変更をタップしたときに呼ばれるメソッド
-    //TODO: 設定画面に遷移するようにする
+    // プロフィールの編集をタップしたときに呼ばれるメソッド
     @IBAction func toSettingButton(_ sender: Any) {
 
-        print("設定ボタンがタップされました")
+        print("プロフィールの編集ボタンがタップされました")
         let storyBoard = UIStoryboard(name: "Setting", bundle: nil)
         let SettingVC = storyBoard.instantiateViewController(identifier: "Setting") as! SettingViewController
         SettingVC.modalPresentationStyle = .fullScreen
         self.present(SettingVC, animated: true, completion: nil)
-    }
-    
-    private func setupViews() {
-        videoListCollectionView.delegate = self
-        videoListCollectionView.dataSource = self
 
+    }
+
+    private func setupViews() {
+
+        // FavoriteAnimalTableViewCellのXibを設定
+        self.videoListTableView.register(UINib(nibName: "FavoriteAnimalTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteAnimalTableViewCell")
+        // FavoriteAnimalTableViewCellのXibの高さを可変にする
+        videoListTableView.estimatedRowHeight = 120
+        videoListTableView.rowHeight = UITableView.automaticDimension
+        //プロフィール写真を円に設定
+        iconImageView.layer.cornerRadius = 40
+    }
+    private func setUpName() {
         guard let name = Auth.auth().currentUser?.displayName else { return }
         userNameLabel.text = name
-        likeAnimalLabel.text = user?.favoriteAnimal
+    }
+
+    private func setUpFavoriteAnimal() {
+//        playViewListTextField.text = "あなたの好きな動画一覧"
+//        let favoriteAnimal = user?.favoriteAnimal
+//        likeAnimalLabel.text = favoriteAnimal
+//        playViewListTextField.text = favoriteAnimal ?? "あなたの好きな" + "動画一覧"
+    }
+
+    private func setUpIconImage() {
         // strageからアイコン画像の表示
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
         iconImageView.sd_setImage(with: imageRef)
-
-        // VideoListCellのコレクションビューを設定
-        videoListCollectionView.register(AttentionCell.self, forCellWithReuseIdentifier: atentionCellId)
-        //プロフィール写真を円に設定
-        iconImageView.layer.cornerRadius = 40
-
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
@@ -79,6 +95,7 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
 
                     if let favoriteAnimal = userDic!["favoriteAnimal"] as? String {
                         self.likeAnimalLabel.text = favoriteAnimal
+                        playViewListTextField.text = favoriteAnimal + "の動画一覧"
                         // favoriteAnimalがnilでないならこれを使ってAPIリクエスト
                         guard let likeAnimal = self.likeAnimalLabel.text else { return }
                         fetchYouTubeAPI(likeAnimal: likeAnimal)
@@ -120,42 +137,75 @@ class MyPageViewController: UIViewController, UIImagePickerControllerDelegate, U
                 item.channel = channel
             }
 
-            self.videoListCollectionView.reloadData()
+           self.videoListTableView.reloadData()
         }
     }
 }
 
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    //　videoListCollectionViewのCollectionViewの処理
+// MARK: - UITableViewDelegate
+extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
 
-    //アイテムが選択された時の動作
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    // セクション数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videoItems.count
+    }
+    //　セル内容
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteAnimalTableViewCell") as! FavoriteAnimalTableViewCell
+        cell.selectionStyle = .none
 
+        if self.videoItems.count == 0 {
+            return cell
+        } else {
+            cell.videoItem = videoItems[indexPath.row]
+        }
+        return cell
+    }
+
+    // セルタップ時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //VideoViewControllerに遷移
         let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
 
         videoViewController.selectedItem = videoItems[indexPath.row]
 
         self.present(videoViewController, animated: true, completion: nil)
-    }
 
-    //アイテムの高さを返す
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.view.frame.width
-            return .init(width: width, height: 200)
-    }
-    //セクションの中のアイテムの数を返す（行）
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    //アイテムの中身を返すメソッド
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            //atentionCellIdのcellのみ返す
-            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: atentionCellId, for: indexPath) as! AttentionCell
-            cell.videoItems = self.videoItems
-
-            return cell
     }
 }
+
+
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+//extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//    //　videoListCollectionViewのCollectionViewの処理
+//
+//    //アイテムが選択された時の動作
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let videoViewController = UIStoryboard(name: "Video", bundle: nil).instantiateViewController(identifier: "VideoViewController") as VideoViewController
+//
+//        videoViewController.selectedItem = videoItems[indexPath.row]
+//
+//        self.present(videoViewController, animated: true, completion: nil)
+//    }
+//
+//    //アイテムの高さを返す
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let width = self.view.frame.width
+//            return .init(width: width, height: 200)
+//    }
+//    //セクションの中のアイテムの数を返す（行）
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//    //アイテムの中身を返すメソッド
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//            //atentionCellIdのcellのみ返す
+//            let cell = videoListCollectionView.dequeueReusableCell(withReuseIdentifier: atentionCellId, for: indexPath) as! AttentionCell
+//            cell.videoItems = self.videoItems
+//
+//            return cell
+//    }
+//}
 
 

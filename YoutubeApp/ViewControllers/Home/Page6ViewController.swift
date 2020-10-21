@@ -1,5 +1,5 @@
 //
-//  Page1ViewController.swift
+//  PageXViewController.swift
 //  ZooTube
 //
 //  Created by user on 2020/03/14.
@@ -20,14 +20,14 @@ class Page6ViewController: CommonPageViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.magenta
-        self.keyword = "ハムスター"
+        self.keyword = "りす"
         setupViews()
         fetchYoutubeSerachInfo()
 
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "ハムスター")
+        return IndicatorInfo(title: "りす")
     }
 
     func setupViews() {
@@ -40,7 +40,7 @@ class Page6ViewController: CommonPageViewController, IndicatorInfoProvider {
     }
     //Youtube検索情報を取得
     func fetchYoutubeSerachInfo() {
-        let params = ["q": "ハムスター"]
+        let params = ["q": "りす"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items

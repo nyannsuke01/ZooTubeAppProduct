@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Account View Controller-->
+        <scene sceneID="PCc-WH-tFt">
+            <objects>
+                <viewController storyboardIdentifier="CreateAccount" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yR6-bE-NUK" customClass="CreateAccountViewController" customModule="ZootubeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mAT-oB-WjY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-d5-f8Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpk-j3-c3e">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
+                                <items>
+                                    <navigationItem title="アカウント作成" id="k4z-Ta-mhg">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="yfG-ml-Lbf">
+                                            <connections>
+                                                <action selector="handleCancelButton:" destination="yR6-bE-NUK" id="gLK-Bu-Rpd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アカウント名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Joe-Ah-105">
+                                <rect key="frame" x="20" y="108" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="xMi-wS-sKU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-RN-i1w">
+                                <rect key="frame" x="20" y="218" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="noz-dr-ufH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK4-tR-BJb">
+                                <rect key="frame" x="20" y="293" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.50196078430000002" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="583-5h-gNE"/>
+                                </constraints>
+                                <state key="normal" title="アカウント作成">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleCreateAccountButton:" destination="yR6-bE-NUK" eventType="touchUpInside" id="fyS-pR-Xlh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htO-xm-tNm">
+                                <rect key="frame" x="20" y="163" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="048-TO-RoD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eA8-ns-hiF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cpk-j3-c3e" firstAttribute="top" secondItem="eA8-ns-hiF" secondAttribute="top" id="0Lv-x5-SWR"/>
+                            <constraint firstItem="Joe-Ah-105" firstAttribute="leading" secondItem="eA8-ns-hiF" secondAttribute="leading" constant="20" id="1fI-KB-Wm9"/>
+                            <constraint firstItem="cpk-j3-c3e" firstAttribute="centerX" secondItem="mAT-oB-WjY" secondAttribute="centerX" id="7Kg-Vr-Nvg"/>
+                            <constraint firstItem="eA8-ns-hiF" firstAttribute="trailing" secondItem="CCY-RN-i1w" secondAttribute="trailing" constant="20" id="AfQ-Zq-0y4"/>
+                            <constraint firstItem="cpk-j3-c3e" firstAttribute="top" secondItem="cAh-d5-f8Z" secondAttribute="bottom" id="D3S-uf-Yqa"/>
+                            <constraint firstItem="CCY-RN-i1w" firstAttribute="top" secondItem="htO-xm-tNm" secondAttribute="bottom" constant="20" id="FEs-rb-a8M"/>
+                            <constraint firstItem="CCY-RN-i1w" firstAttribute="leading" secondItem="eA8-ns-hiF" secondAttribute="leading" constant="20" id="Tce-5J-XKH"/>
+                            <constraint firstItem="htO-xm-tNm" firstAttribute="top" secondItem="Joe-Ah-105" secondAttribute="bottom" constant="20" id="Uib-Iw-gRg"/>
+                            <constraint firstItem="cpk-j3-c3e" firstAttribute="trailing" secondItem="eA8-ns-hiF" secondAttribute="trailing" id="W78-5q-IEz"/>
+                            <constraint firstItem="eA8-ns-hiF" firstAttribute="trailing" secondItem="htO-xm-tNm" secondAttribute="trailing" constant="20" id="Xrh-Ki-pMV"/>
+                            <constraint firstItem="cAh-d5-f8Z" firstAttribute="leading" secondItem="mAT-oB-WjY" secondAttribute="leading" id="cHk-8m-jxA"/>
+                            <constraint firstItem="lK4-tR-BJb" firstAttribute="top" secondItem="CCY-RN-i1w" secondAttribute="bottom" constant="40" id="cig-Un-TnQ"/>
+                            <constraint firstItem="lK4-tR-BJb" firstAttribute="leading" secondItem="eA8-ns-hiF" secondAttribute="leading" constant="20" id="hmA-lz-lvt"/>
+                            <constraint firstItem="eA8-ns-hiF" firstAttribute="trailing" secondItem="Joe-Ah-105" secondAttribute="trailing" constant="20" id="luc-V1-6ts"/>
+                            <constraint firstItem="cpk-j3-c3e" firstAttribute="leading" secondItem="eA8-ns-hiF" secondAttribute="leading" id="mhh-J1-6xm"/>
+                            <constraint firstAttribute="trailing" secondItem="cAh-d5-f8Z" secondAttribute="trailing" id="nMC-fA-dee"/>
+                            <constraint firstItem="Joe-Ah-105" firstAttribute="top" secondItem="cpk-j3-c3e" secondAttribute="bottom" constant="20" id="sNg-gh-beE"/>
+                            <constraint firstItem="eA8-ns-hiF" firstAttribute="trailing" secondItem="lK4-tR-BJb" secondAttribute="trailing" constant="20" id="sYI-2R-Wgc"/>
+                            <constraint firstItem="htO-xm-tNm" firstAttribute="leading" secondItem="eA8-ns-hiF" secondAttribute="leading" constant="20" id="tNh-BJ-rLi"/>
+                            <constraint firstItem="cAh-d5-f8Z" firstAttribute="top" secondItem="mAT-oB-WjY" secondAttribute="top" id="vvj-Kv-IDe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createAccountButton" destination="lK4-tR-BJb" id="MYK-q3-Jmf"/>
+                        <outlet property="displayNameTextField" destination="Joe-Ah-105" id="OH4-nm-MCf"/>
+                        <outlet property="mailAddressTextField" destination="CCY-RN-i1w" id="aLH-OJ-gfl"/>
+                        <outlet property="passwordTextField" destination="htO-xm-tNm" id="Iph-m5-MGg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeT-NX-Pha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="314.77832512315274"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

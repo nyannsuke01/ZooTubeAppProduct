@@ -62,6 +62,8 @@
 		CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71227250DD85F0045FD15 /* Header.storyboard */; };
 		CEB7122A250DD85F0045FD15 /* Page2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71228250DD85F0045FD15 /* Page2.storyboard */; };
 		CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB71237250E43630045FD15 /* VideoList.storyboard */; };
+		CEC457D3253EB0B500DED942 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */; };
+		CEC457D8253EB13F00DED942 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */; };
 		CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43ED250F825400B27B85 /* Page5.storyboard */; };
 		CEDD43F2250F825500B27B85 /* Page6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EE250F825400B27B85 /* Page6.storyboard */; };
 		CEDD43F3250F825500B27B85 /* Page4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD43EF250F825500B27B85 /* Page4.storyboard */; };
@@ -71,6 +73,16 @@
 		CEDD43FC250F829900B27B85 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F7250F829900B27B85 /* Page4ViewController.swift */; };
 		CEDD43FD250F829900B27B85 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F8250F829900B27B85 /* Page2ViewController.swift */; };
 		CEDD43FE250F829900B27B85 /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDD43F9250F829900B27B85 /* Page5ViewController.swift */; };
+		CEEA3E0F253F061200F11B88 /* Page7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E0E253F061100F11B88 /* Page7.storyboard */; };
+		CEEA3E14253F069C00F11B88 /* Page8.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E13253F069C00F11B88 /* Page8.storyboard */; };
+		CEEA3E19253F06AC00F11B88 /* Page9.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E18253F06AC00F11B88 /* Page9.storyboard */; };
+		CEEA3E1E253F06BF00F11B88 /* Page10.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E1D253F06BF00F11B88 /* Page10.storyboard */; };
+		CEEA3E23253F072100F11B88 /* Page7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E22253F072100F11B88 /* Page7ViewController.swift */; };
+		CEEA3E28253F073100F11B88 /* Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E27253F073100F11B88 /* Page8ViewController.swift */; };
+		CEEA3E2A253F074100F11B88 /* Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E29253F074100F11B88 /* Page9ViewController.swift */; };
+		CEEA3E2F253F075100F11B88 /* Page10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */; };
+		CEEA3E35253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */; };
+		CEEA3E36253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +166,8 @@
 		CEB71227250DD85F0045FD15 /* Header.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Header.storyboard; sourceTree = "<group>"; };
 		CEB71228250DD85F0045FD15 /* Page2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page2.storyboard; sourceTree = "<group>"; };
 		CEB71236250E43630045FD15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoList.storyboard; sourceTree = "<group>"; };
+		CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		CEDD43ED250F825400B27B85 /* Page5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page5.storyboard; sourceTree = "<group>"; };
 		CEDD43EE250F825400B27B85 /* Page6.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page6.storyboard; sourceTree = "<group>"; };
 		CEDD43EF250F825500B27B85 /* Page4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Page4.storyboard; sourceTree = "<group>"; };
@@ -163,6 +177,16 @@
 		CEDD43F7250F829900B27B85 /* Page4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
 		CEDD43F8250F829900B27B85 /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		CEDD43F9250F829900B27B85 /* Page5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E0E253F061100F11B88 /* Page7.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Page7.storyboard; sourceTree = "<group>"; };
+		CEEA3E13253F069C00F11B88 /* Page8.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Page8.storyboard; sourceTree = "<group>"; };
+		CEEA3E18253F06AC00F11B88 /* Page9.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Page9.storyboard; sourceTree = "<group>"; };
+		CEEA3E1D253F06BF00F11B88 /* Page10.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Page10.storyboard; sourceTree = "<group>"; };
+		CEEA3E22253F072100F11B88 /* Page7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page7ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E27253F073100F11B88 /* Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page8ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E29253F074100F11B88 /* Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page9ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10ViewController.swift; sourceTree = "<group>"; };
+		CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalTableViewCell.swift; sourceTree = "<group>"; };
+		CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteAnimalTableViewCell.xib; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +268,7 @@
 				7C26DA6824B595C900CB29B9 /* VideoListCell.swift */,
 				7C34CF5A24D6200800160445 /* AttentionCell.swift */,
 				7C34CF5C24D624C400160445 /* AttentionCollectionViewCell.swift */,
+				CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -252,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				7C26DA6B24B5965800CB29B9 /* VideoListCell.xib */,
+				CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */,
 				7C34CF5E24D624EE00160445 /* AttentionCollectionViewCell.xib */,
 			);
 			path = Xibs;
@@ -266,12 +292,17 @@
 				7C138CDF24C4213900C4DB2F /* MyPage.storyboard */,
 				CE8B5C822513C6EA00F52822 /* Setting.storyboard */,
 				CE8B5C802513C69100F52822 /* Login.storyboard */,
+				CEC457D2253EB0B400DED942 /* CreateAccount.storyboard */,
 				CEB71237250E43630045FD15 /* VideoList.storyboard */,
 				CEB71228250DD85F0045FD15 /* Page2.storyboard */,
 				CEDD43F0250F825500B27B85 /* Page3.storyboard */,
 				CEDD43EF250F825500B27B85 /* Page4.storyboard */,
 				CEDD43ED250F825400B27B85 /* Page5.storyboard */,
 				CEDD43EE250F825400B27B85 /* Page6.storyboard */,
+				CEEA3E0E253F061100F11B88 /* Page7.storyboard */,
+				CEEA3E13253F069C00F11B88 /* Page8.storyboard */,
+				CEEA3E18253F06AC00F11B88 /* Page9.storyboard */,
+				CEEA3E1D253F06BF00F11B88 /* Page10.storyboard */,
 				CEB71227250DD85F0045FD15 /* Header.storyboard */,
 			);
 			path = Tab;
@@ -391,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				CE32FEBE25075625001082A2 /* LoginViewController.swift */,
+				CEC457D7253EB13F00DED942 /* CreateAccountViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -427,6 +459,10 @@
 				CEDD43F7250F829900B27B85 /* Page4ViewController.swift */,
 				CEDD43F9250F829900B27B85 /* Page5ViewController.swift */,
 				CEDD43F6250F829900B27B85 /* Page6ViewController.swift */,
+				CEEA3E22253F072100F11B88 /* Page7ViewController.swift */,
+				CEEA3E27253F073100F11B88 /* Page8ViewController.swift */,
+				CEEA3E29253F074100F11B88 /* Page9ViewController.swift */,
+				CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */,
 				CE09D8E22508E21200C4D1BE /* TextFieldViewController.swift */,
 				7C272FE624D67C11001C376F /* VideoViewController.swift */,
 				CE09D8E025089F2F00C4D1BE /* PlayWebViewController.swift */,
@@ -568,11 +604,16 @@
 				CE6DD328252F655D00B20CAF /* APIKey.plist in Resources */,
 				CE19A1B0251A6E960056860B /* GoogleService-Info.plist in Resources */,
 				CEB71229250DD85F0045FD15 /* Header.storyboard in Resources */,
+				CEC457D3253EB0B500DED942 /* CreateAccount.storyboard in Resources */,
+				CEEA3E19253F06AC00F11B88 /* Page9.storyboard in Resources */,
 				7C138CE024C4213900C4DB2F /* MyPage.storyboard in Resources */,
 				CE8B5C832513C6EA00F52822 /* Setting.storyboard in Resources */,
+				CEEA3E14253F069C00F11B88 /* Page8.storyboard in Resources */,
+				CEEA3E1E253F06BF00F11B88 /* Page10.storyboard in Resources */,
 				CE8B5C812513C69100F52822 /* Login.storyboard in Resources */,
 				7C272FEA24D67C54001C376F /* Video.storyboard in Resources */,
 				7C138CD124C410E300C4DB2F /* BottomNavigationBar.storyboard in Resources */,
+				CEEA3E36253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib in Resources */,
 				CEDD43F1250F825500B27B85 /* Page5.storyboard in Resources */,
 				7C138CDA24C420F000C4DB2F /* Zoo.storyboard in Resources */,
 				CE32FECA250765E2001082A2 /* Photos.xcassets in Resources */,
@@ -580,6 +621,7 @@
 				CE32FEC72507656C001082A2 /* Photos.plist in Resources */,
 				CEB71235250E43630045FD15 /* VideoList.storyboard in Resources */,
 				CEDD43F4250F825500B27B85 /* Page3.storyboard in Resources */,
+				CEEA3E0F253F061200F11B88 /* Page7.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,10 +757,12 @@
 				7C272FE724D67C11001C376F /* VideoViewController.swift in Sources */,
 				CE32FEC125075D0C001082A2 /* Photo.swift in Sources */,
 				CE32FEBF25075625001082A2 /* LoginViewController.swift in Sources */,
+				CEEA3E28253F073100F11B88 /* Page8ViewController.swift in Sources */,
 				CE32FEB225075603001082A2 /* ZooViewController.swift in Sources */,
 				CEDD43FE250F829900B27B85 /* Page5ViewController.swift in Sources */,
 				CE09D8E525091DB500C4D1BE /* HeaderViewController.swift in Sources */,
 				CE09D8E32508E21200C4D1BE /* TextFieldViewController.swift in Sources */,
+				CEEA3E35253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift in Sources */,
 				7C34CF5D24D624C400160445 /* AttentionCollectionViewCell.swift in Sources */,
 				CEDD43FA250F829900B27B85 /* Page3ViewController.swift in Sources */,
 				CE32FEBB2507561B001082A2 /* SettingViewController.swift in Sources */,
@@ -731,6 +775,9 @@
 				7C34CF5B24D6200800160445 /* AttentionCell.swift in Sources */,
 				7C138CD724C4178900C4DB2F /* UIImage-Extension.swift in Sources */,
 				7CE584CD24B1F19300281866 /* AppDelegate.swift in Sources */,
+				CEEA3E23253F072100F11B88 /* Page7ViewController.swift in Sources */,
+				CEEA3E2F253F075100F11B88 /* Page10ViewController.swift in Sources */,
+				CEC457D8253EB13F00DED942 /* CreateAccountViewController.swift in Sources */,
 				CE8B5C8525145C2300F52822 /* User.swift in Sources */,
 				7CE584CF24B1F19300281866 /* SceneDelegate.swift in Sources */,
 				CE8B5C872514621700F52822 /* UIColor-Extension.swift in Sources */,
@@ -738,6 +785,7 @@
 				CEDD43FC250F829900B27B85 /* Page4ViewController.swift in Sources */,
 				CEDD43FB250F829900B27B85 /* Page6ViewController.swift in Sources */,
 				7C2E60B424BAE5BB00D3DCDC /* Chnnel.swift in Sources */,
+				CEEA3E2A253F074100F11B88 /* Page9ViewController.swift in Sources */,
 				CE09D8F52509862E00C4D1BE /* BottomNavigationBarViewController.swift in Sources */,
 				CE32FEB425075603001082A2 /* ZooPictureLayout.swift in Sources */,
 				CE09D8F32509208D00C4D1BE /* CommonPageViewController.swift in Sources */,

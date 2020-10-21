@@ -19,7 +19,10 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.keyword = "いぬ"
+        videoListCollectionView.delegate = self
+        videoListCollectionView.dataSource = self
+
+        self.keyword = "ねこ"
         setupViews()
         fetchYoutubeSerachInfo()
     }
@@ -34,16 +37,13 @@ class VideoListViewController: CommonPageViewController, IndicatorInfoProvider {
         }
 
     private func setupViews() {
-        videoListCollectionView.delegate = self
-        videoListCollectionView.dataSource = self
-
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
 
     }
     //Youtube検索情報を取得
     private func fetchYoutubeSerachInfo() {
-        let params = ["q": "犬"]
+        let params = ["q": "かわいい　ねこ"]
 
         API.shared.request(path: .search, params: params, type: Video.self) { (video) in
             self.videoItems = video.items

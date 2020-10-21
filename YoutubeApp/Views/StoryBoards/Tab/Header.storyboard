@@ -43,27 +43,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGf-7K-u5k">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YouTube_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-n7-kCM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="アイコン256x256" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-n7-kCM">
                                         <rect key="frame" x="10" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Jkb-sm-Eew"/>
                                             <constraint firstAttribute="width" constant="50" id="oIz-6G-lq8"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON6-q3-00S">
-                                        <rect key="frame" x="63" y="18" width="81.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x7-Xr-jFo">
-                                        <rect key="frame" x="316" y="10" width="40" height="40"/>
+                                        <rect key="frame" x="327" y="19" width="23" height="23"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="DN9-Nk-aeG"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Ooa-qw-4cF"/>
+                                            <constraint firstAttribute="height" constant="23" id="DN9-Nk-aeG"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="Ooa-qw-4cF"/>
                                             <constraint firstAttribute="width" secondItem="1x7-Xr-jFo" secondAttribute="height" multiplier="1:1" id="pbo-UL-dBE"/>
                                         </constraints>
-                                        <state key="normal" image="setting"/>
+                                        <state key="normal" image="設定"/>
                                         <connections>
                                             <action selector="toSetting:" destination="sdq-V6-PX6" eventType="touchUpInside" id="iGl-We-TZZ"/>
                                         </connections>
@@ -75,18 +69,27 @@
                                             <constraint firstAttribute="width" constant="40" id="bfd-Ue-se6"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZooTube" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGI-FB-jtv">
+                                        <rect key="frame" x="63" y="21" width="80" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="vkG-bI-4vw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="OGI-FB-jtv" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="568-Gy-XTW"/>
                                     <constraint firstAttribute="height" constant="60" id="6aw-Ll-n5V"/>
-                                    <constraint firstItem="1x7-Xr-jFo" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="10" id="Cny-ts-8mS"/>
+                                    <constraint firstItem="1x7-Xr-jFo" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="19" id="Cny-ts-8mS"/>
                                     <constraint firstItem="SIs-Fj-grf" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" id="G2f-fm-CSU"/>
                                     <constraint firstItem="ASJ-n7-kCM" firstAttribute="leading" secondItem="iGf-7K-u5k" secondAttribute="leading" constant="10" id="HZs-lv-Zc6"/>
-                                    <constraint firstItem="ON6-q3-00S" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="Uv1-bl-SaT"/>
-                                    <constraint firstItem="ON6-q3-00S" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="aIL-dF-Xbe"/>
-                                    <constraint firstItem="SIs-Fj-grf" firstAttribute="leading" secondItem="1x7-Xr-jFo" secondAttribute="trailing" constant="8" id="bif-ld-Uq1"/>
+                                    <constraint firstItem="SIs-Fj-grf" firstAttribute="leading" secondItem="1x7-Xr-jFo" secondAttribute="trailing" constant="14" id="bif-ld-Uq1"/>
+                                    <constraint firstItem="OGI-FB-jtv" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="21" id="cb1-7d-hol"/>
                                     <constraint firstAttribute="bottom" secondItem="ASJ-n7-kCM" secondAttribute="bottom" constant="5" id="gFe-mW-gcF"/>
-                                    <constraint firstItem="ON6-q3-00S" firstAttribute="centerY" secondItem="iGf-7K-u5k" secondAttribute="centerY" id="rNK-pf-DW4"/>
+                                    <constraint firstItem="OGI-FB-jtv" firstAttribute="leading" secondItem="ASJ-n7-kCM" secondAttribute="trailing" constant="3" id="iQh-hl-Wbl"/>
                                     <constraint firstItem="ASJ-n7-kCM" firstAttribute="top" secondItem="iGf-7K-u5k" secondAttribute="top" constant="5" id="u9n-bu-QVq"/>
                                     <constraint firstAttribute="trailing" secondItem="SIs-Fj-grf" secondAttribute="trailing" constant="10" id="ubY-Kt-ClH"/>
                                 </constraints>
@@ -125,7 +128,7 @@
                             <constraint firstItem="iGf-7K-u5k" firstAttribute="trailing" secondItem="O1F-ar-bYT" secondAttribute="trailing" id="lUB-am-jnw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="home" image="house" catalog="system" id="1q4-7O-C6m"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="ホーム24x24" id="1q4-7O-C6m"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonBarView" destination="ktn-TM-TFT" id="V0i-24-1dD"/>
@@ -143,9 +146,9 @@
     </scenes>
     <resources>
         <image name="01" width="3351" height="5027"/>
-        <image name="YouTube_icon" width="256" height="256"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="setting" width="25" height="25"/>
+        <image name="アイコン256x256" width="256" height="256"/>
+        <image name="ホーム24x24" width="24" height="24"/>
+        <image name="設定" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

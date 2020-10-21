@@ -24,6 +24,7 @@ class VideoViewController: TextFieldViewController {
     @IBOutlet weak var baseBackGroundView: UIView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var shareButton: UIButton!
 
     //　お気に入りフラグ　(未登録:0　登録済:1)
     var likeRegistrationFlag = 0
@@ -32,7 +33,7 @@ class VideoViewController: TextFieldViewController {
 
     // 共通URL
     // youtubeURL = https://www.youtube.com/watch?v=\(videoId!)
-    private let baseYouTubeUrl = "https://www.youtube.com/watch?v="
+    //private let baseYouTubeUrl = "https://www.youtube.com/watch?v="
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class VideoViewController: TextFieldViewController {
         videoTitleLabel.text = selectedItem?.snippet.title
         channelTitleLabel.text = selectedItem?.channel?.items[0].snippet.title
         
+        shareButton.layer.cornerRadius = 6.0
     }
 
     private func setupLikedImage() {
@@ -82,7 +84,7 @@ class VideoViewController: TextFieldViewController {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
 
                 if let videoId = document.data()?["videoId"] as? [String] {
-                    if videoId.contains(videoIds!) {
+                    if videoId.contains(videoIds ?? "") {
                         print("\(document.documentID) => \(document.data())")
                         print("お気に入りに登録済の動画です")
                         //お気に入りに登録済みであれば、likedImage()を呼び出し、ハートマークを表示する
@@ -151,7 +153,7 @@ class VideoViewController: TextFieldViewController {
 
         let playWebviewController = PlayWebViewController()
         let videoId = self.selectedItem?.id.videoId
-        let url = baseYouTubeUrl + videoId!
+        let url = Const.baseYouTubeUrl + videoId!
         UserDefaults.standard.set(url, forKey: "url")
         present(playWebviewController, animated: true, completion: nil)
 
@@ -160,7 +162,10 @@ class VideoViewController: TextFieldViewController {
     @IBAction func likeButtonTapped(_ sender: Any) {
 
         //ここでお気に入り追加　ログインできたことが前提であるため
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else {
+            SVProgressHUD.showSuccess(withStatus: "ログインをすると、お気に入り動画に登録できます。")
+            return
+        }
         // ログインしているユーザーのidをドキュメントのidとして作成するドキュメントを指定
         let userRef = Firestore.firestore().collection(Const.UserPath).document(uid)
         let videoId = self.selectedItem?.id.videoId
@@ -183,7 +188,7 @@ class VideoViewController: TextFieldViewController {
             likedImage()
             // 選択したvideoIdをuserDicから取り除く
             let userDic = [
-                "videoId": FieldValue.arrayUnion([videoId!])
+                "videoId": FieldValue.arrayUnion([videoId ?? ""])
             ] as [String : Any]
             //　お気に入りフラグ　(未登録:0　登録済:1)
             likeRegistrationFlag = 1
@@ -205,7 +210,7 @@ class VideoViewController: TextFieldViewController {
         let zooTubeText = "ZooTubeアプリで動物の動画で癒されよう！"
         let commentText = commentTextField!.text
         let videoId = self.selectedItem?.id.videoId
-        let url = baseYouTubeUrl + videoId!
+        let url = Const.baseYouTubeUrl + videoId!
         let sampleUrl = NSURL(string: url)!
 
         let items = [zooTubeText, commentText!, sampleUrl] as [Any]
