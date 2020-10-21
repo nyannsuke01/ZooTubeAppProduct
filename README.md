@@ -8,7 +8,7 @@ https://zootubeapp.firebaseapp.com/
 https://docs.google.com/spreadsheets/d/1_FJ8OoAjNrgB_2NR6ECVZAOJ1pqVeVqhtjSl5bktIDg/edit#gid=1028010740
 
 【技術】　
-Swift5 Xcode12 iOS14 FireBase (Auth Firestore Strage)
+Swift5 Xcode12 iOS14 Firebase (Auth認証 Firestore Strage)
 
 【工夫した点】
 
