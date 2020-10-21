@@ -49,13 +49,15 @@ class LikeViewController: UIViewController {
 
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
-        //プロフィール写真を円に設定
+        //　プロフィール写真を円に設定
         iconImageView.layer.cornerRadius = 20
         // strageからアイコン画像、エンプティステートの表示
         guard let uid = Auth.auth().currentUser?.uid else {
             self.view.bringSubviewToFront(emptyStateImageView)
             return
         }
+        //　認証済であればエンプティステートを消す
+        self.emptyStateImageView.isHidden = true
         let imageRef = Storage.storage().reference().child(Const.IconImagePath).child(uid + ".jpg")
         iconImageView.sd_setImage(with: imageRef)
 
