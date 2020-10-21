@@ -1,4 +1,4 @@
-# ZooTubeAppProduct
+# ZooTubeApp
 動物のYouTube動画を見れるアプリ
 
 【Webサイト・ダウンロード】
