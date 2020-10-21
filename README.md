@@ -15,9 +15,7 @@ https://docs.google.com/spreadsheets/d/1_FJ8OoAjNrgB_2NR6ECVZAOJ1pqVeVqhtjSl5bkt
 
 【工程】企画設計及び実装まで全て自分で行い、リリースまで行う予定です。
 
-【参考にした】
-youtube動画アプリ作成
-https://www.youtube.com/watch?v=nCpOczu1K68&t=499s
+
 
 <img width="370" alt="スクリーンショット 2020-10-22 0 57 47" src="https://user-images.githubusercontent.com/51296886/96746954-aecb9600-1402-11eb-9f17-de21dbbfc56c.png"><img width="367" alt="スクリーンショット 2020-10-22 0 59 16" src="https://user-images.githubusercontent.com/51296886/96746960-b12df000-1402-11eb-9e7a-43d97211c99b.png"><img width="366" alt="スクリーンショット 2020-10-22 1 04 56" src="https://user-images.githubusercontent.com/51296886/96746967-b55a0d80-1402-11eb-9947-3a5541effab4.png">
 
