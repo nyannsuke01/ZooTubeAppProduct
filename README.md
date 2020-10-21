@@ -12,8 +12,11 @@ Swift5 Xcode12 iOS14 FireBase (Auth Firestore Strage)
 
 【工夫した点】
 Firebase各機能を使い１人で実装
+
 デザイナーさんと協力してUIデザインを構築
+
 ダークモード対応
+
 企画からリリースまで全ての工程を行なった。
 
 
