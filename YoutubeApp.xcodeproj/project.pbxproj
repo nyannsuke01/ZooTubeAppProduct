@@ -187,6 +187,7 @@
 		CEEA3E2E253F075100F11B88 /* Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page10ViewController.swift; sourceTree = "<group>"; };
 		CEEA3E33253FBCD900F11B88 /* FavoriteAnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAnimalTableViewCell.swift; sourceTree = "<group>"; };
 		CEEA3E34253FBCD900F11B88 /* FavoriteAnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteAnimalTableViewCell.xib; sourceTree = "<group>"; };
+		CEEA3E402541516800F11B88 /* ZooTube.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZooTube.mobileprovision; sourceTree = "<group>"; };
 		E2A40D2E3BC7259E4A38B29C /* Pods-YoutubeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeAppTests/Pods-YoutubeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8F39554B2AF96C168ECE00C /* Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F08D37751E77BA3DEA7E06CB /* Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp-YoutubeAppUITests/Pods-YoutubeApp-YoutubeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 		7CE584C024B1F19300281866 = {
 			isa = PBXGroup;
 			children = (
+				CEEA3E402541516800F11B88 /* ZooTube.mobileprovision */,
 				7CE584CB24B1F19300281866 /* YoutubeApp */,
 				CE32FECC2507BB60001082A2 /* APIKey.plist */,
 				CE6DD327252F655D00B20CAF /* APIKey.plist */,
@@ -964,13 +966,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2KB84KZYV6;
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "user-team.ZooTube";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "user-team.ZooTubeApp";
 				PRODUCT_NAME = ZootubeApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -983,13 +987,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2KB84KZYV6;
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "user-team.ZooTube";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "user-team.ZooTubeApp";
 				PRODUCT_NAME = ZootubeApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

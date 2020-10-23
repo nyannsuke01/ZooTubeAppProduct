@@ -26,8 +26,9 @@ class API {
         
         var params = params
         //APIKeyを隠す処理 使用するキー GCPで設定済みのkeyを取り出す
-        //let randomInt = Int.random(in: 1..<51)
-        let apiKey: String = "apiKey53"
+       // let randomInt = Int.random(in: 51)
+        let apiKey: String = "apiKey51"
+        print(apiKey)
 
 
 
