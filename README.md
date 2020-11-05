@@ -6,6 +6,7 @@ https://zootubeapp.firebaseapp.com/
 
 【ZooTubeアプリ企画書　要件定義、機能設計書】
 上記Zipファイルからご確認ください。
+
 【技術】　
 Swift5 Xcode12 iOS14 Firebase (Auth認証 Firestore Strage)
 
