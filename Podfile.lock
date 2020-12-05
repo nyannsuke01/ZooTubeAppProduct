@@ -235,9 +235,17 @@ PODS:
   - Firebase/Firestore (6.31.1):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.17.0)
+  - Firebase/Messaging (6.31.1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.6.2)
+  - Firebase/Performance (6.31.1):
+    - Firebase/CoreOnly
+    - FirebasePerformance (~> 3.3.0)
   - Firebase/Storage (6.31.1):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.9.0)
+  - FirebaseABTesting (4.2.0):
+    - FirebaseCore (~> 6.10)
   - FirebaseAnalytics (6.8.0):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.6)
@@ -278,6 +286,37 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.8.0):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+  - FirebaseMessaging (4.6.2):
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstanceID (~> 4.6)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Reachability (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+    - Protobuf (>= 3.9.2, ~> 3.9)
+  - FirebasePerformance (3.3.2):
+    - FirebaseCore (~> 6.9)
+    - FirebaseInstallations (~> 1.5)
+    - FirebaseRemoteConfig (~> 4.7)
+    - GoogleDataTransport (~> 7.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/ISASwizzler (~> 6.2)
+    - GoogleUtilities/MethodSwizzler (~> 6.2)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.12)
+  - FirebaseRemoteConfig (4.9.1):
+    - FirebaseABTesting (~> 4.2)
+    - FirebaseCore (~> 6.10)
+    - FirebaseInstallations (~> 1.6)
+    - GoogleUtilities/Environment (~> 6.7)
+    - "GoogleUtilities/NSData+zlib (~> 6.7)"
   - FirebaseStorage (3.9.0):
     - FirebaseCore (~> 6.10)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -292,12 +331,18 @@ PODS:
     - nanopb (~> 1.30906.0)
   - GoogleDataTransport (7.3.0):
     - nanopb (~> 1.30906.0)
+  - GoogleToolboxForMac/Defines (2.3.0)
+  - GoogleToolboxForMac/Logger (2.3.0):
+    - GoogleToolboxForMac/Defines (= 2.3.0)
+  - "GoogleToolboxForMac/NSData+zlib (2.3.0)":
+    - GoogleToolboxForMac/Defines (= 2.3.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
   - GoogleUtilities/Environment (6.7.2):
     - PromisesObjC (~> 1.2)
+  - GoogleUtilities/ISASwizzler (6.7.2)
   - GoogleUtilities/Logger (6.7.2):
     - GoogleUtilities/Environment
   - GoogleUtilities/MethodSwizzler (6.7.2):
@@ -344,6 +389,7 @@ PODS:
   - nanopb/encode (1.30906.0)
   - Nuke (9.1.1)
   - PromisesObjC (1.2.10)
+  - Protobuf (3.13.0)
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
@@ -357,6 +403,8 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - Firebase/Messaging
+  - Firebase/Performance
   - Firebase/Storage
   - FirebaseUI/Storage
   - Nuke
@@ -371,16 +419,22 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - DZNEmptyDataSet
     - Firebase
+    - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - FirebasePerformance
+    - FirebaseRemoteConfig
     - FirebaseStorage
     - FirebaseUI
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleToolboxForMac
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -389,6 +443,7 @@ SPEC REPOS:
     - nanopb
     - Nuke
     - PromisesObjC
+    - Protobuf
     - SDWebImage
     - SVProgressHUD
     - XLPagerTabStrip
@@ -399,16 +454,22 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Firebase: 658370fa0181826a74b7cfca8d68c5856ca749ae
+  FirebaseABTesting: 8a9d8df3acc2b43f4a22014ddf9f601bca6af699
   FirebaseAnalytics: 0ca9aa2af7cc4dc92392b7a78bfc49feaa2eb60f
   FirebaseAuth: 09f086fae98643f1ef235674cf3ae171ce26f5ba
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseFirestore: ef0ad529a72c8e6542050dc7742fbd4cf009f297
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
+  FirebaseInstanceID: bd3ffc24367f901a43c063b36c640b345a4a5dd1
+  FirebaseMessaging: 82d75b3770a78bbce470769a6980429608b4c407
+  FirebasePerformance: 34de2b03ddfddbca26a716468a50877fd065fbe5
+  FirebaseRemoteConfig: 35a729305f254fb15a2e541d4b36f3a379da7fdc
   FirebaseStorage: 33b92875a9b556824886cc7a65120c7d2cb3a8d8
   FirebaseUI: e57e9b9c4340631151fbe67a14206d23d0974f37
   GoogleAppMeasurement: ecc30d0ab5b66d7d18e85ce1b8e2b345db60626d
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
+  GoogleToolboxForMac: 1350d40e86a76f7863928d63bcb0b89c84c521c5
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
@@ -417,10 +478,11 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   Nuke: af4301b154d3afd8a3b045a5194a9a773a00b7a8
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: be212624952de207f8f0f0e63aa4d14c738d27e5
+PODFILE CHECKSUM: b27986a6d5a7148a8f6bafc6e15871d638bda7b9
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

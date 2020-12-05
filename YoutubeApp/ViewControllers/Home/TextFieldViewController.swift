@@ -38,7 +38,7 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         let userInfo = notification.userInfo //この中にキーボードの情報がある
         let keyboardSize = (userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardY = self.view.frame.size.height - keyboardSize.height //画面全体の高さ - キーボードの高さ = キーボードが被らない高さ
-        let editingTextFieldY: CGFloat = (self.activeTextField?.frame.origin.y)!
+        guard let editingTextFieldY: CGFloat = (self.activeTextField?.frame.origin.y) else { return }
         if editingTextFieldY > keyboardY - 60 {
             UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseIn, animations: {
                 self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFieldY - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
