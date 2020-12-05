@@ -25,6 +25,8 @@ target 'YoutubeApp' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
+  pod 'Firebase/Performance'
+  pod 'Firebase/Messaging'
 
   target 'YoutubeAppUITests' do
     # Pods for testing

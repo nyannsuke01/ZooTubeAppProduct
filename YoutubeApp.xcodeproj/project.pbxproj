@@ -140,6 +140,7 @@
 		CE09D8E425091DB500C4D1BE /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		CE09D8F22509208D00C4D1BE /* CommonPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonPageViewController.swift; sourceTree = "<group>"; };
 		CE09D8F42509862E00C4D1BE /* BottomNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBarViewController.swift; sourceTree = "<group>"; };
+		CE14494A257A8A1A004710BD /* ZootubeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZootubeApp.entitlements; sourceTree = "<group>"; };
 		CE19A1AF251A6E960056860B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE32FEAF25075603001082A2 /* ZooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
 		CE32FEB025075603001082A2 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 		7CE584CB24B1F19300281866 /* YoutubeApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE14494A257A8A1A004710BD /* ZootubeApp.entitlements */,
 				7C138CD524C4177500C4DB2F /* Extensions */,
 				7C2E60B524BAFFF000D3DCDC /* Service */,
 				7C2E60B024BACC1500D3DCDC /* Models */,
@@ -965,8 +967,9 @@
 			baseConfigurationReference = 35A45D4D8CAA326FFF3F1924 /* Pods-YoutubeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YoutubeApp/ZootubeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2KB84KZYV6;
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -986,8 +989,9 @@
 			baseConfigurationReference = 5DCF2AE556FCD2E5C906725C /* Pods-YoutubeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YoutubeApp/ZootubeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2KB84KZYV6;
 				INFOPLIST_FILE = YoutubeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
