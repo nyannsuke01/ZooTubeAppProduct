@@ -34,5 +34,3 @@ MVC一部MVVM
 https://apps.apple.com/jp/app/zootube/id1536881050
 
 
-<img width="370" alt="スクリーンショット 2020-10-22 0 57 47" src="https://user-images.githubusercontent.com/51296886/96746954-aecb9600-1402-11eb-9f17-de21dbbfc56c.png"><img width="367" alt="スクリーンショット 2020-10-22 0 59 16" src="https://user-images.githubusercontent.com/51296886/96746960-b12df000-1402-11eb-9e7a-43d97211c99b.png"><img width="366" alt="スクリーンショット 2020-10-22 1 04 56" src="https://user-images.githubusercontent.com/51296886/96746967-b55a0d80-1402-11eb-9947-3a5541effab4.png">
-
