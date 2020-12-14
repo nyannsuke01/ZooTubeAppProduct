@@ -1024,7 +1024,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoutubeApp.app/YoutubeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZootubeApp.app/ZootubeApp";
 			};
 			name = Debug;
 		};
@@ -1046,7 +1046,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoutubeApp.app/YoutubeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZootubeApp.app/ZootubeApp";
 			};
 			name = Release;
 		};
