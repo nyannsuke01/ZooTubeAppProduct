@@ -26,7 +26,7 @@ Pods/*
 !.gitkeep
 .DS_Store
 
-YouTubeApp.xcworkspace
+
 GoogleService-Info.plist
 APIKey.plist
 
