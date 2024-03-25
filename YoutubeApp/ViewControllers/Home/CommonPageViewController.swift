@@ -33,4 +33,31 @@ class CommonPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    // Youtube検索情報を取得
+func fetchYoutubeSearchInfo(keyword: String) {
+    let params = ["q": keyword]
+
+    API.shared.request(path: .search, params: params, type: Video.self) { [weak self] (video) in
+        guard let self = self else { return }
+        
+        self.videoItems = video.items
+        if let id = self.videoItems.first?.snippet.channelId {
+            self.fetchYoutubeChannelInfo(id: id)
+        }
+    }
+}
+        //Youtubeチャンネル情報を取得
+    func fetchYoutubeChannelInfo(id: String) {
+        let params = [
+            "id": id
+        ]
+
+        API.shared.request(path: .channels, params: params, type: Channel.self) { (channel) in
+            self.videoItems.forEach { (item) in
+                item.channel = channel
+            }
+
+            self.videoListCollectionView.reloadData()
+        }
+    }
 }
