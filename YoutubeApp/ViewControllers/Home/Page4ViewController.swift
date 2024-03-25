@@ -21,8 +21,7 @@ class Page4ViewController: CommonPageViewController, IndicatorInfoProvider {
         self.view.backgroundColor = UIColor.magenta
         self.keyword = "パンダ"
         setupViews()
-        fetchYoutubeSerachInfo()
-
+        fetchYoutubeSearchInfo(keyword: "パンダ　かわいい")
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -36,31 +35,6 @@ class Page4ViewController: CommonPageViewController, IndicatorInfoProvider {
         // VideoListCellのコレクションビューを設定
         videoListCollectionView.register(UINib(nibName: "VideoListCell", bundle: nil), forCellWithReuseIdentifier: cellId)
 
-    }
-    //Youtube検索情報を取得
-    func fetchYoutubeSerachInfo() {
-        let params = ["q": "パンダ　かわいい"]
-
-        API.shared.request(path: .search, params: params, type: Video.self) { (video) in
-            self.videoItems = video.items
-            let id = self.videoItems[0].snippet.channelId
-            self.fetchYoutubeChannelInfo(id: id)
-        }
-    }
-
-    //Youtubeチャンネル情報を取得
-    func fetchYoutubeChannelInfo(id: String) {
-        let params = [
-            "id": id
-        ]
-
-        API.shared.request(path: .channels, params: params, type: Channel.self) { (channel) in
-            self.videoItems.forEach { (item) in
-                item.channel = channel
-            }
-
-            self.videoListCollectionView.reloadData()
-        }
     }
 }
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
